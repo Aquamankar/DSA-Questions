@@ -1,0 +1,49 @@
+Day 15: Map – Frequency, First Unique
+
+Count the frequency of each element using a HashMap.
+
+
+Find the first unique element in an array.
+
+
+Implement group anagrams using a HashMap.
+
+
+Find the longest substring without repeating characters.
+
+
+Find the intersection of two arrays using a HashMap.
+
+
+Day 16: Map – Group Anagrams
+
+Group anagrams from a list of strings.
+
+
+Find the top k frequent elements using a HashMap.
+
+
+Implement least frequently used (LFU) cache.
+
+
+Check if two arrays are equal using a HashMap.
+
+
+Find the subarray with the most distinct elements.
+
+
+Day 17: TreeMap – Custom Sorting
+
+Use TreeMap to store key-value pairs and custom sort them.
+
+
+Implement a priority queue using a TreeMap.
+
+
+Perform range queries on a TreeMap.
+
+
+Find the smallest key greater than a given number in a TreeMap.
+
+
+Write a program to sort an array using a TreeMap.
