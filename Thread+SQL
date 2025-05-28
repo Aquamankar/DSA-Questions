@@ -1,0 +1,32 @@
+Day 26: SQL – Joins, Basic Queries
+
+Write SQL queries for INNER JOIN, LEFT JOIN, RIGHT JOIN.
+
+
+Write SQL queries to find duplicates in a table.
+
+
+Write a GROUP BY query.
+
+
+Write a query to find the second highest salary.
+
+
+Write a subquery to filter results in SQL.
+
+
+Day 27: Threads – Runnable, Sync
+
+Implement a thread using Runnable interface.
+
+
+Implement thread synchronization using synchronized.
+
+
+Create a thread using the Thread class.
+
+
+Implement a producer-consumer problem using threads.
+
+
+Demonstrate thread deadlock and how to avoid it.
