@@ -1,0 +1,32 @@
+Day 10: Stack – Valid Parentheses
+
+Implement a stack to check if parentheses in a string are balanced.
+
+
+Implement a min stack that supports push, pop, and min operations.
+
+
+Implement next greater element using a stack.
+
+
+Evaluate postfix expressions using a stack.
+
+
+Sort a stack using recursion.
+
+
+Day 11: Stack – Min Stack, NGE
+
+Implement a min stack that returns the minimum element in constant time.
+
+
+Find the next greater element for each element in an array.
+
+
+Implement sort a stack using another stack.
+
+
+Find the previous greater element for each element in an array.
+
+
+Implement a dynamic stack that doubles its size when full.
