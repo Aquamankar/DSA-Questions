@@ -1,0 +1,115 @@
+Day 4: Strings – Reversal, Char Count
+
+Important Problems:
+
+1.Reverse a string (in-place using two pointers).
+
+
+2.Reverse each word in a sentence.
+
+
+3.Check if a string is a palindrome.
+
+
+4.Count the number of vowels and consonants.
+
+
+5.Find the most frequent character in a string.
+
+
+6.Remove all whitespaces from a string.
+
+
+7.Convert a string to lowercase and uppercase.
+
+
+8.Find the first non-repeating character.
+
+
+9.Remove duplicate characters from a string.
+
+
+10.Check if two strings are rotations of each other.
+
+
+Day 5: Strings – Palindromes, Anagrams
+
+🔹 Important Problems:
+
+11.Check if a string is a palindrome (ignore non-alphanumerics).
+
+
+12.Find the longest palindromic substring (expand around center).
+
+
+13.Check if two strings are anagrams.
+
+
+14.Group anagrams from a list of strings.
+
+
+15.Check if a string can be rearranged to form a palindrome.
+
+
+16.Count all palindromic substrings.
+
+
+17.Remove minimum characters to make a string palindrome.
+
+
+18.Check if two strings are meta strings (can be made equal by swapping two characters).
+
+
+19.Find all anagrams of a pattern in a text.
+
+
+20.Longest palindromic subsequence (DP).
+
+
+
+Day 6: Strings – Compression, Rotation
+
+21.String compression: ·  String compression (e.g., "aaabb" → "a3b2").
+
+22.·  ·  Check if one string is a rotation of another (e.g., "ABCD" and "CDAB").
+23.·  ·  Left rotate a string by k positions.
+24.·  ·  Right rotate a string by k positions.
+25.·  ·  Implement basic string matching (indexOf).
+26.·  ·  Replace spaces with %20 (URLify).
+27.·  ·  Find the smallest window in a string containing all characters of another.
+28.·  ·  Remove characters from string2 that are present in string1.
+29.·  ·  Check if two strings are isomorphic.
+30.·  ·  Multiply two large strings (as numbers) without converting to integer.
+·  
+Day 7: Review + Mini Test
+
+Find the sum of all even numbers in an array.
+
+
+Check if a string is a valid palindrome considering spaces and punctuation.
+
+
+Merge two sorted arrays into a single sorted array.
+
+
+Implement quick sort on an array.
+
+
+Find the missing number in an array of integers.
+
+
+Day 8: LinkedList – Reversal, Middle Node
+
+Reverse a singly linked list.
+
+
+Find the middle node of a linked list.
+
+
+Detect a cycle in a linked list.
+
+
+Find the n-th node from the end of a linked list.
+
+
+Merge two sorted linked lists into one sorted list.
