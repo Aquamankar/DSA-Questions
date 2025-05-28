@@ -1,0 +1,32 @@
+Day 8: LinkedList – Reversal, Middle Node
+
+Reverse a singly linked list.
+
+
+Find the middle node of a linked list.
+
+
+Detect a cycle in a linked list.
+
+
+Find the n-th node from the end of a linked list.
+
+
+Merge two sorted linked lists into one sorted list.
+
+
+Day 9: LinkedList – Cycle Detection
+
+Detect a cycle in a linked list using Floyd’s Tortoise and Hare Algorithm.
+
+
+Find the start node of the cycle in a linked list.
+
+
+Implement the merge point in two linked lists.
+
+
+Find the intersection point of two linked lists.
+
+
+Remove the loop in a linked list.
