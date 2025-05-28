@@ -1,0 +1,94 @@
+🌸 Day 1: Arrays – Traversals, Basics
+
+Find the maximum element in an array.
+
+
+Find the minimum element in an array.
+
+
+Calculate the sum and average of all elements.
+
+
+Reverse the array (print or store in reverse).
+
+
+Check if the array is sorted (in ascending order).
+
+
+Find the second largest element.
+
+
+Copy elements of one array into another.
+
+
+Count the number of even and odd elements in an array.
+
+
+Find the frequency of each element in an array.
+
+
+Find the largest and smallest element in a single traversal.
+
+
+🌸 Day 2: Arrays – Sorting, Searching
+
+1.Sort the array using Bubble Sort.
+
+
+2.Sort the array using Selection Sort.
+
+
+3.Sort the array using Insertion Sort.
+
+
+4.Implement Binary Search (array must be sorted first).
+
+
+5.Implement Linear Search (no need for sorted array).
+
+
+6.Find the first occurrence of an element.
+
+
+7.Find the last occurrence of an element.
+
+
+8.Count the number of occurrences of an element.
+
+
+9.Check if two arrays are equal (after sorting).
+
+
+10.Merge two sorted arrays into a single sorted array.
+
+
+🌸 Day 3: Arrays – Kadane’s Algorithm, Prefix Sum
+
+1.Find the maximum subarray sum using Kadane’s Algorithm.
+
+
+2.Find the maximum sum subarray of size k.
+
+
+3.Find the prefix sum array for a given array.
+
+
+4.Given a prefix sum array, find the sum of elements between two given indices.
+
+
+5.Find the equilibrium index (index where sum of left = sum of right).
+
+
+6.Find the number of subarrays with a given sum (using prefix sums).
+
+
+7.Find the longest subarray with sum = 0 (important!).
+
+
+8.Subarray sum divisible by k.
+
+
+9.Minimum length subarray with sum ≥ given value.
+
+
+10.Maximum length subarray with equal number of 0s and 1s (in a binary array).
