@@ -27,6 +27,42 @@ Count the number of even and odd elements in an array.
 Find the frequency of each element in an array.
 
 
+Q12   find the peak elemnt ----->
+
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Try programiz.pro");
+        
+        int [] arr= {1,2,3,4,5,78,3,5,23,1,78,90};
+        
+        //find peek elements
+        int low=0; int high=arr.length-1;
+        
+        while(low <= high){
+            
+            int mid =low +(high-low)/2;
+            
+            if((mid==0 || arr[mid] > arr[mid-1]) && (mid==arr.length-1 || arr [mid] >= arr[mid +1])){
+                 System.out.println("Peak element: " + arr[mid]);
+                return;  // Peak found, exit
+            }
+            
+            if(mid < arr.length-1  && arr[mid ]< arr[mid+1]){
+                low=mid+1;
+            }else{
+                high=mid-1;
+            }
+        }
+        
+        
+    }
+}
+
+
 Find the largest and smallest element in a single traversal.
 
 
