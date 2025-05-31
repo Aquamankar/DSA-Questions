@@ -206,6 +206,33 @@ Reverse a singly linked list.
 
 Find the middle node of a linked list.
 
+Code->>>>>>>
+
+class ListNode {
+    int val;
+    ListNode next;
+    ListNode(int val) {
+        this.val = val;
+    }
+}
+
+public class MiddleOfLinkedList {
+    public ListNode findMiddle(ListNode head) {
+        if (head == null) return null;
+
+        ListNode slow = head;
+        ListNode fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        return slow; // This is the middle node
+    }
+}
+
+
 
 Detect a cycle in a linked list.
 
