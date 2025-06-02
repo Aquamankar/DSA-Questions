@@ -27,6 +27,83 @@ Implement method overriding in a subclass.
 Use interfaces for abstraction in Java.
 
 
+
+Q1.  You have Emp sort them with name and then age in reverse order 
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Try programiz.pro");
+        //comparator emp
+        
+        Emp emp1=new Emp(1,23,"ali");
+          Emp emp2=new Emp(2,24,"jaili");
+          
+            Emp emp3=new Emp(3,20,"ali");
+            List<Emp> emps=Arrays.asList(emp1,emp2,emp3);
+            
+               System.out.println(emps);
+               
+               //sort this with id
+               emps.stream().sorted(Comparator.comparing(Emp::getName,Comparator.reverseOrder()).thenComparing(Emp::getAge,Comparator.reverseOrder())).forEach(s->    System.out.println(s));
+            
+        
+        
+        
+    }
+}
+
+class Emp{
+    
+    int id;
+    int age;
+    String name;
+    
+    Emp(int id,int age,String name){
+        this.id=id;
+        this.name=name;
+        this.age=age;
+    }
+ 
+    public String toString(){
+        return "id : "+ this.id +" age :" + this.age +" name : "+ this.name;
+    }
+    
+    public int getId(){
+        return this.id;
+        
+    }
+    
+        public int getAge(){
+        return this.age;
+        
+    }
+    
+        public String getName(){
+        return this.name;
+        
+    }
+    
+        public void setId(int id){
+        this.id=id;
+        
+    }
+    
+            public void setAge(int age){
+        this.age=age;
+        
+}
+    
+      
+            public void setName(String age){
+        this.name=age;
+        
+}
+}
+
+
 Create a factory design pattern in Java.
 
 
