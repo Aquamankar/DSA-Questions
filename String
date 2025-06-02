@@ -276,3 +276,81 @@ public class NthNodeFromEnd {
 
 
 Merge two sorted linked lists into one sorted list.
+
+
+code---------------------->
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Try programiz.pro");
+    
+    ListNode head=new ListNode(1);
+    head.next=new ListNode(2);
+    head.next.next=new ListNode(4);
+    head.next.next.next=new ListNode(7);
+      
+      
+          ListNode head1=new ListNode(1);
+    head1.next=new ListNode(3);
+    head1.next.next=new ListNode(5);
+    head1.next.next.next=new ListNode(6);  
+    
+    printList(head1);
+       printList(head);
+       
+       //merge two linkef list
+       
+  ListNode node=    mergeList(head,head1);
+  printList(node);
+    
+        
+    }
+    
+    public static ListNode mergeList(ListNode l1, ListNode l2){
+    
+          ListNode dummy=new ListNode(0);
+          ListNode curr=dummy;
+          
+          while(l1 !=null && l2 .next !=null){
+              if(l1.val < l2.val){
+                  curr.next=l1;
+                  l1=l1.next;
+              }
+              else{
+                curr.next=l2;
+                l2=l2.next;
+              }
+              
+              curr=curr.next;
+              
+          }
+          
+          if(l1.next !=null) curr.next=l1;
+          if(l2.next !=null) curr.next=l2;
+          
+          return dummy.next;
+        
+    }
+    
+    public static void    printList( ListNode head){
+        while(head !=null){
+             System.out.print(head.val +"-> ");
+             head=head.next;
+        }
+         System.out.println("null ");
+    }
+}
+
+class ListNode{
+    
+    int val;
+    
+    ListNode next;
+  
+  ListNode(int val){
+      this.val=val;
+  }
+}
