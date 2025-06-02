@@ -20,8 +20,76 @@ Day 9: LinkedList – Cycle Detection
 Detect a cycle in a linked list using Floyd’s Tortoise and Hare Algorithm.
 
 
-Find the start node of the cycle in a linked list.
+Find the start node of the cycle in a linked list
 
+code->>>>>>>>>>>------------------------------------------------------
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Try programiz.pro");
+        // Common part
+        ListNode merge = new ListNode(3);
+        merge.next = new ListNode(4);
+        merge.next.next = new ListNode(5);
+
+        // List A: 1 -> 2 -> 3 -> 4 -> 5
+        ListNode headA = new ListNode(1);
+        headA.next = new ListNode(2);
+        headA.next.next = merge;
+
+        // List B: 9 -> 3 -> 4 -> 5
+        ListNode headB = new ListNode(9);
+        headB.next = merge;
+
+        ListNode result = getMergeNode(headA, headB);
+        if (result != null) {
+            System.out.println("Merge Point: " + result.val);
+        } else {
+            System.out.println("No merge point.");
+        }
+    
+
+    
+        
+    }
+
+    public static ListNode getMergeNode(ListNode headA, ListNode headB) {
+        ListNode a = headA;
+        ListNode b = headB;
+
+        while (a != b) {
+            
+            a = (a == null) ? headB : a.next;
+             System.out.println("a "+ a);
+            b = (b == null) ? headA : b.next;
+                 System.out.println("b "+ b);
+        }
+
+        return a; // Could be null or the merge point
+    }
+    
+    public static void    printList( ListNode head){
+        while(head !=null){
+             System.out.print(head.val +"-> ");
+             head=head.next;
+        }
+         System.out.println("null ");
+    }
+}
+
+class ListNode{
+    
+    int val;
+    
+    ListNode next;
+  
+  ListNode(int val){
+      this.val=val;
+  }
+}
+>>>>>>>>>>>>>>>>>>>>>>>---------------------------------------------------
 
 Implement the merge point in two linked lists.
 
