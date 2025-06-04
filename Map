@@ -48,57 +48,73 @@ Find the smallest key greater than a given number in a TreeMap.
 
 Write a program to sort an array using a TreeMap.
 
+
+--------------------------------------------------------------------------------------------------------------------------------
+
 ✅ HashMap + Stream-Based Java Questions
+
+
 🔹 Functional Programming / Stream API with HashMap
-How to iterate over a HashMap using Java 8 Streams?
 
-How to sort a HashMap by values using Streams?
 
-How to count frequency of characters/words in a string using Collectors.toMap() and Collectors.groupingBy()?
+1.How to iterate over a HashMap using Java 8 Streams?
 
-How to filter a Map by values or keys using Stream API?
+2.How to sort a HashMap by values using Streams?
 
-How to convert a List to a Map using Java Streams?
+3.How to count frequency of characters/words in a string using Collectors.toMap() and Collectors.groupingBy()?
 
-Example: List<Employee> → Map<Id, Employee>
+4.How to filter a Map by values or keys using Stream API?
 
-How to merge two maps using Java 8+?
+5.How to convert a List to a Map using Java Streams?
 
-How to find the max/min value in a HashMap using Streams?
+6.Example: List<Employee> → Map<Id, Employee>
 
-How to remove null values from a Map using Stream API?
+7.How to merge two maps using Java 8+?
 
-How to group a list of objects by a field using Collectors.groupingBy()?
+8.How to find the max/min value in a HashMap using Streams?
+
+9.How to remove null values from a Map using Stream API?
+
+10.How to group a list of objects by a field using Collectors.groupingBy()?
 
 Example: Group employees by department
 
-How to convert Map<Key, List<Value>> to Map<Key, Value> by reducing the list using Streams?
+11.How to convert Map<Key, List<Value>> to Map<Key, Value> by reducing the list using Streams?
 
+
+--------------------------------------------------------------------------------------------------------------------------------
 ✅ SQL-Based Java Coding – Nth Highest Salary Style
+
+
 (These are typically modeled in either SQL or Java Streams using collections.)
 
 🔹 Java-Based Solutions (without SQL)
-Given a list of employee salaries, find the 2nd/3rd/Nth highest salary.
+1.Given a list of employee salaries, find the 2nd/3rd/Nth highest salary.
 
-Solution: Use TreeSet, PriorityQueue, or distinct().sorted().skip(n-1).findFirst() in Streams.
+2.Solution: Use TreeSet, PriorityQueue, or distinct().sorted().skip(n-1).findFirst() in Streams.
 
-Find all employees with the highest salary in each department.
+3.Find all employees with the highest salary in each department.
 
-Group by department, then use Collectors.maxBy().
+4.Group by department, then use Collectors.maxBy().
 
-Find duplicate elements in a list using HashMap.
+5.Find duplicate elements in a list using HashMap.
 
-Find the top K frequent elements in a list using HashMap + PriorityQueue.
+6.Find the top K frequent elements in a list using HashMap + PriorityQueue.
 
-Find the employee with the longest name using Stream.
+7.Find the employee with the longest name using Stream.
 
-Group employees by age and count how many in each group.
+8.Group employees by age and count how many in each group.
 
-From a list of transactions, find the highest transaction amount per user.
+9.From a list of transactions, find the highest transaction amount per user.
 
-Find if any employee names are anagrams of each other using Map of sorted strings.
+10.Find if any employee names are anagrams of each other using Map of sorted strings.
+
+
+
 
 ✅ Combined Stream + HashMap Challenges
+
+
 How to find the most frequent word in a sentence using Stream and HashMap?
 
 How to find employees whose salary is greater than the average salary using Streams?
@@ -124,16 +140,8 @@ Let me know which type of questions or topics you'd like to focus more on.
 
 
 
-You said:
+
 String string map find higest price nth 
-
-
-ChatGPT said:
-Great! You're asking for a Java program that uses a Map<String, String> (e.g., product name → price) and finds:
-
-The highest price
-
-The Nth highest price
 
 Let’s break it down with an example and complete code.
 
