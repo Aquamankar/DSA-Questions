@@ -1,19 +1,21 @@
 Day 15: Map – Frequency, First Unique
 
-Count the frequency of each element using a HashMap.
+1.Count the frequency of each element using a HashMap.
 
 
-Find the first unique element in an array.
+2.Find the first unique element in an array.
 
 
-Implement group anagrams using a HashMap.
+3.Implement group anagrams using a HashMap.
 
 
-Find the longest substring without repeating characters.
+4.Find the longest substring without repeating characters.
 
 
-Find the intersection of two arrays using a HashMap.
+5.Find the intersection of two arrays using a HashMap.
 
+
+--------------------------------------------------------------------------------------------------------
 
 Day 16: Map – Group Anagrams
 
@@ -61,7 +63,71 @@ Write a program to sort an array using a TreeMap.
 
 2.How to sort a HashMap by values using Streams?
 
+code ->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+import java.util.*;
+import java.util.stream.*;
+
+class Main {
+    public static void main(String[] args) {
+        // Original HashMap
+        HashMap<Character, Integer> map = new HashMap<>();
+        map.put('A', 10);
+        map.put('B', 20);
+        map.put('c', 20);
+
+        // Sort by value and collect to LinkedHashMap
+        Map<Character, Integer> sortedMap = map.entrySet()
+            .stream()
+            .sorted(Map.Entry.comparingByValue()) // Correct method
+            .collect(Collectors.toMap(
+                Map.Entry::getKey,
+                Map.Entry::getValue,
+                (oldValue, newValue) -> oldValue, // merge function
+                LinkedHashMap::new // preserve order
+            ));
+
+        System.out.println("Sorted Map: " + sortedMap);
+    }
+}
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 3.How to count frequency of characters/words in a string using Collectors.toMap() and Collectors.groupingBy()?
+
+import java.util.*;
+import java.util.stream.*;
+import java.util.function.Function;
+
+class Main {
+    public static void main(String[] args) {
+        String str = "this is a sentense count a word first and then find the charchter";
+
+        // Count character frequencies (excluding spaces)
+        Map<Character, Long> m = str.replaceAll("\\s+", "").chars()
+            .mapToObj(c -> (char) c)
+            .collect(Collectors.groupingBy(
+                Function.identity(),
+                Collectors.counting()
+            ));
+
+        System.out.println("Character Frequency: " + m);
+
+        // Sort them by frequency (ascending order)
+        Map<Character, Long> sortMap = m.entrySet().stream()
+            .sorted(Map.Entry.comparingByValue())
+            .collect(Collectors.toMap(
+                Map.Entry::getKey,
+                Map.Entry::getValue,
+                (e1, e2) -> e1,            // merge function
+                LinkedHashMap::new         // maintain insertion order
+            ));
+
+        System.out.println("Sorted by Frequency: " + sortMap);
+    }
+}
+
+----------------------------------------------------------------------
 
 4.How to filter a Map by values or keys using Stream API?
 
