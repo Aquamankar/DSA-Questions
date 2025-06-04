@@ -47,3 +47,153 @@ Find the smallest key greater than a given number in a TreeMap.
 
 
 Write a program to sort an array using a TreeMap.
+
+✅ HashMap + Stream-Based Java Questions
+🔹 Functional Programming / Stream API with HashMap
+How to iterate over a HashMap using Java 8 Streams?
+
+How to sort a HashMap by values using Streams?
+
+How to count frequency of characters/words in a string using Collectors.toMap() and Collectors.groupingBy()?
+
+How to filter a Map by values or keys using Stream API?
+
+How to convert a List to a Map using Java Streams?
+
+Example: List<Employee> → Map<Id, Employee>
+
+How to merge two maps using Java 8+?
+
+How to find the max/min value in a HashMap using Streams?
+
+How to remove null values from a Map using Stream API?
+
+How to group a list of objects by a field using Collectors.groupingBy()?
+
+Example: Group employees by department
+
+How to convert Map<Key, List<Value>> to Map<Key, Value> by reducing the list using Streams?
+
+✅ SQL-Based Java Coding – Nth Highest Salary Style
+(These are typically modeled in either SQL or Java Streams using collections.)
+
+🔹 Java-Based Solutions (without SQL)
+Given a list of employee salaries, find the 2nd/3rd/Nth highest salary.
+
+Solution: Use TreeSet, PriorityQueue, or distinct().sorted().skip(n-1).findFirst() in Streams.
+
+Find all employees with the highest salary in each department.
+
+Group by department, then use Collectors.maxBy().
+
+Find duplicate elements in a list using HashMap.
+
+Find the top K frequent elements in a list using HashMap + PriorityQueue.
+
+Find the employee with the longest name using Stream.
+
+Group employees by age and count how many in each group.
+
+From a list of transactions, find the highest transaction amount per user.
+
+Find if any employee names are anagrams of each other using Map of sorted strings.
+
+✅ Combined Stream + HashMap Challenges
+How to find the most frequent word in a sentence using Stream and HashMap?
+
+How to find employees whose salary is greater than the average salary using Streams?
+
+Convert a Map<String, List<Employee>> into a flat list of Employees using Stream API.
+
+Given a list of numbers, return a frequency map using Streams.
+
+Given a list of Employee{name, salary, dept} — group by dept, and for each dept, find top 2 highest-paid employees.
+
+Would you like code solutions for:
+
+Nth highest salary using Streams?
+
+Sorting HashMap by value using Streams?
+
+Grouping and finding max in Map using Collectors.groupingBy()?
+
+Let me know which type of questions or topics you'd like to focus more on.
+
+
+
+
+
+
+You said:
+String string map find higest price nth 
+
+
+ChatGPT said:
+Great! You're asking for a Java program that uses a Map<String, String> (e.g., product name → price) and finds:
+
+The highest price
+
+The Nth highest price
+
+Let’s break it down with an example and complete code.
+
+✅ Input Example
+java
+Copy code
+Map<String, String> productMap = new HashMap<>();
+productMap.put("Phone", "16000.0");
+productMap.put("Tablet", "6000.0");
+productMap.put("Laptop", "150000.0");
+productMap.put("Headphones", "3000.0");
+productMap.put("Camera", "50000.0");
+✅ Java Code: Find Nth Highest Price
+java
+Copy code
+import java.util.*;
+import java.util.stream.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Map<String, String> productMap = new HashMap<>();
+        productMap.put("Phone", "16000.0");
+        productMap.put("Tablet", "6000.0");
+        productMap.put("Laptop", "150000.0");
+        productMap.put("Headphones", "3000.0");
+        productMap.put("Camera", "50000.0");
+
+        int n = 2; // Change this to get Nth highest price
+
+        Optional<Double> nthHighest = productMap.values().stream()
+                .map(Double::parseDouble)
+                .distinct()
+                .sorted(Comparator.reverseOrder())
+                .skip(n - 1)
+                .findFirst();
+
+        if (nthHighest.isPresent()) {
+            double price = nthHighest.get();
+            System.out.println(n + "th highest price: " + price);
+
+            // Also print product(s) with this price
+            List<String> products = productMap.entrySet().stream()
+                    .filter(entry -> Double.parseDouble(entry.getValue()) == price)
+                    .map(Map.Entry::getKey)
+                    .collect(Collectors.toList());
+
+            System.out.println("Product(s) with " + n + "th highest price: " + products);
+        } else {
+            System.out.println("Not enough unique prices to find " + n + "th highest.");
+        }
+    }
+}
+✅ Output (when n = 2)
+yaml
+Copy code
+2th highest price: 50000.0
+Product(s) with 2th highest price: [Camera]
+✅ Notes:
+Prices are in String, so we convert them to Double.
+
+Used .distinct() to avoid duplicate prices.
+
+You can change n = 1 
