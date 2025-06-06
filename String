@@ -184,27 +184,28 @@ public class KMPMatcher {
 ·  
 Day 7: Review + Mini Test
 
-Find the sum of all even numbers in an array.
+1.Find the sum of all even numbers in an array.
 
 
-Check if a string is a valid palindrome considering spaces and punctuation.
+2.Check if a string is a valid palindrome considering spaces and punctuation.
 
 
-Merge two sorted arrays into a single sorted array.
+3.Merge two sorted arrays into a single sorted array.
 
 
-Implement quick sort on an array.
+4.Implement quick sort on an array.
 
 
-Find the missing number in an array of integers.
+5.Find the missing number in an array of integers.
 
-
+----------------------------------------------------------------------------------------------------------------------
 Day 8: LinkedList – Reversal, Middle Node
 
-Reverse a singly linked list.
+
+1.Reverse a singly linked list.
 
 
-Find the middle node of a linked list.
+2.Find the middle node of a linked list.
 
 Code->>>>>>>
 
@@ -234,10 +235,13 @@ public class MiddleOfLinkedList {
 
 ----------------------------------------------------------------------------------------------------
 
-Detect a cycle in a linked list.
+3.Detect a cycle in a linked list.
+
+
+
 
 ---------------------------------------------------------------------------------------------------
-Find the n-th node from the end of a linked list.
+4.Find the n-th node from the end of a linked list.
 
 code->>>>>>>>>>>>>
 
