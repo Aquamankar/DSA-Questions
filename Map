@@ -19,10 +19,40 @@ Day 15: Map – Frequency, First Unique
 
 Day 16: Map – Group Anagrams
 
-Group anagrams from a list of strings.
+Q1. Group anagrams from a list of strings.
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        String[] strs = {"hello", "eat", "ate", "troll", "lorlt"};
+
+        // Map to group anagrams
+        HashMap<String, List<String>> map = new HashMap<>();
+
+        for (String s : strs) {
+            // Convert string to char array, sort it, and turn back into string
+            char[] chars = s.toCharArray();
+            Arrays.sort(chars);
+            String sorted = new String(chars);
+
+            // Add to map
+            if (!map.containsKey(sorted)) {
+                map.put(sorted, new ArrayList<>());
+            }
+            map.get(sorted).add(s);
+        }
+
+        // Print grouped anagrams
+        for (List<String> group : map.values()) {
+            System.out.println(group);
+        }
+    }
+}
 
 
-Q2 Find the top k frequent elements using a HashMap.
+------------------------------------------------------------------------------------------------------------
+Q2. Find the top k frequent elements using a HashMap.
 
 Ans->
 
