@@ -22,9 +22,9 @@ Day 16: Map – Group Anagrams
 Group anagrams from a list of strings.
 
 
-Find the top k frequent elements using a HashMap.
+Q2 Find the top k frequent elements using a HashMap.
 
-
+Ans->
 
 import java.util.*;
 
