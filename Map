@@ -25,6 +25,51 @@ Group anagrams from a list of strings.
 Find the top k frequent elements using a HashMap.
 
 
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        int k = 2;
+        String s = "hello world";
+        
+        HashMap<Character, Integer> map = new HashMap<>();
+        
+        // Count frequency of each character (excluding spaces)
+        for (char c : s.toCharArray()) {
+            if (c != ' ') {
+                map.put(c, map.getOrDefault(c, 0) + 1);
+            }
+        }
+
+        // Min-heap to keep top k frequent characters
+        PriorityQueue<Map.Entry<Character, Integer>> pq =
+            new PriorityQueue<>(Comparator.comparingInt(Map.Entry::getValue));
+        
+        // Maintain top k elements in priority queue
+        for (Map.Entry<Character, Integer> entry : map.entrySet()) {
+            pq.offer(entry);
+            if (pq.size() > k) {
+                pq.poll();
+            }
+        }
+
+        // Extract result from priority queue
+        List<Character> result = new ArrayList<>();
+        while (!pq.isEmpty()) {
+            result.add(pq.poll().getKey());
+        }
+
+        // Reverse to get highest frequency first
+        Collections.reverse(result);
+        System.out.println("Top " + k + " frequent characters: " + result);
+    }
+}
+
+-------------------------------------------------------------------------------------------------------
+
+
+
 Implement least frequently used (LFU) cache.
 
 
