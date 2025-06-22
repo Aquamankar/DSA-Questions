@@ -217,7 +217,34 @@ class Main {
 
 5.How to convert a List to a Map using Java Streams?
 
-6.Example: List<Employee> → Map<Id, Employee>
+-----------------Example: List<Employee> → Map<Id, Employee>=-----------------------------------
+
+import java.util.*;
+import java.util.stream.*;
+import java.util.function.Function;
+
+public class Main {
+    public static void main(String[] args) {
+
+        List<Employee> employees = Arrays.asList(
+            new Employee(101, "Alice"),
+            new Employee(102, "Bob"),
+            new Employee(103, "Charlie")
+        );
+
+        // Convert List<Employee> to Map<Id, Employee>
+        Map<Integer, Employee> employeeMap = employees.stream()
+            .collect(Collectors.toMap(
+                Employee::getId,     // key = employee ID
+                Function.identity()  // value = Employee object itself
+            ));
+
+        System.out.println("Employee Map: " + employeeMap);
+    }
+}
+
+---------------------------------------------------------------------------------------------------
+
 
 7.How to merge two maps using Java 8+?
 
