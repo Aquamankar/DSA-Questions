@@ -166,6 +166,15 @@ class Main {
     }
 }
 
+
+'''
+------------------------------------for reverse order------------------------
+
+.sorted(Map.Entry.<Integer, Integer>comparingByValue().reversed())
+
+
+'''
+
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 3.How to count frequency of characters/words in a string using Collectors.toMap() and Collectors.groupingBy()?
