@@ -141,6 +141,31 @@ class Main {
 ---------------------------------------------------------------
 
 4.find the smallest key greater than a given number in a TreeMap.
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Try programiz.pro");
+        
+        TreeMap<Integer,String> tmap= new TreeMap<>();
+        
+        tmap.put(1,"stree");
+        tmap.put(2,"Hanuman");
+        tmap.put(3, "Aneeti");
+            tmap.put(5,"KGF");
+        tmap.put(4, "MCA");
+        
+        int givenKey=2;
+         System.out.println("just one higher key from given " + tmap.higherKey(givenKey)); //3
+          
+         
+        
+    }
+}
+
+
+-----------------------------------------------------------------
 
 
 5.Write a program to sort an array using a TreeMap.
