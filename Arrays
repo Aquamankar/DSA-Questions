@@ -18,6 +18,39 @@
 6.Find the second largest element.
 
 
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Try programiz.pro");
+        // .Find the second largest element.
+        int [] a1={1,4,2,5,3,56,77,8};
+        int n=2;
+        int ans=Arrays.stream(a1)
+        .boxed()
+        .sorted()
+        .skip(a1.length - n)
+        .findFirst()
+        .get();
+        
+        
+        
+        int reverseAns=Arrays.stream(a1).
+        boxed()
+        .sorted(Comparator.reverseOrder())
+        .skip(n-1).
+        findFirst()
+        .get();
+        
+        System.out.println("Try programiz.pro " + ans);
+        System.out.println("Try programiz.pro " + reverseAns);
+        
+
+    }
+}
+-----------------------------------------------------------------------------------------------
+
+
 7.Copy elements of one array into another.
 
 import java.util.Arrays;
