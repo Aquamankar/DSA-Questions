@@ -1,30 +1,67 @@
 🌸 Day 1: Arrays – Traversals, Basics
 
-Find the maximum element in an array.
+1.Find the maximum element in an array.
 
 
-Find the minimum element in an array.
+2.Find the minimum element in an array.
 
 
-Calculate the sum and average of all elements.
+3.Calculate the sum and average of all elements.
 
 
-Reverse the array (print or store in reverse).
+4.Reverse the array (print or store in reverse).
 
 
-Check if the array is sorted (in ascending order).
+5.Check if the array is sorted (in ascending order).
 
 
-Find the second largest element.
+6.Find the second largest element.
 
 
-Copy elements of one array into another.
+7.Copy elements of one array into another.
+
+import java.util.Arrays;
+
+class Main {
+    public static void main(String[] args) {
+        int[] original = {1, 2, 3, 4, 5};
+
+        // Method 1: System.arraycopy
+        int[] copy1 = new int[original.length];
+        System.arraycopy(original, 0, copy1, 0, original.length);
+
+        // Method 2: Arrays.copyOf
+        int[] copy2 = Arrays.copyOf(original, original.length);
+
+        // Method 3: clone
+        int[] copy3 = original.clone();
+
+        // Method 4: Loop
+        int[] copy4 = new int[original.length];
+        for (int i = 0; i < original.length; i++) {
+            copy4[i] = original[i];
+        }
+
+        // Method 5: Streams
+        int[] copy5 = Arrays.stream(original).toArray();
+
+        System.out.println("Original: " + Arrays.toString(original));
+        System.out.println("Copy using System.arraycopy: " + Arrays.toString(copy1));
+        System.out.println("Copy using Arrays.copyOf: " + Arrays.toString(copy2));
+        System.out.println("Copy using clone: " + Arrays.toString(copy3));
+        System.out.println("Copy using loop: " + Arrays.toString(copy4));
+        System.out.println("Copy using Streams: " + Arrays.toString(copy5));
+    }
+}
 
 
-Count the number of even and odd elements in an array.
+-------------------------------------------------------------
 
 
-Find the frequency of each element in an array.
+8.Count the number of even and odd elements in an array.
+
+
+9.Find the frequency of each element in an array.
 
 
 
