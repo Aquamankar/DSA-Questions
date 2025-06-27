@@ -374,15 +374,86 @@ Example: Group employees by department
 ✅ Combined Stream + HashMap Challenges
 
 
-How to find the most frequent word in a sentence using Stream and HashMap?
+Q1.How to find the most frequent word in a sentence using Stream and HashMap?
 
-How to find employees whose salary is greater than the average salary using Streams?
 
-Convert a Map<String, List<Employee>> into a flat list of Employees using Stream API.
+import java.util.*;
+import java.util.stream.*;
 
-Given a list of numbers, return a frequency map using Streams.
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Try programiz.pro");
 
-Given a list of Employee{name, salary, dept} — group by dept, and for each dept, find top 2 highest-paid employees.
+        String s = "this is a repeative string this is not a proper response this";
+
+        // Split the sentence into words
+        String[] words = s.split(" ");
+
+        // Create a map of word -> frequency
+        Map<String, Long> map = Arrays.stream(words)
+                .collect(Collectors.groupingBy(word -> word, Collectors.counting()));
+
+        // Find the most frequent word
+        Optional<Map.Entry<String, Long>> mostFrequent = map.entrySet()
+                .stream() // ✅ convert Set to Stream
+                .max(Map.Entry.comparingByValue()); // ✅ no generics needed
+
+        // Print the result
+        mostFrequent.ifPresent(entry ->
+                System.out.println("Most frequent word: '" + entry.getKey() + "' occurred " + entry.getValue() + " times"));
+    }
+}
+
+
+
+---------------------------------------without stream-----------------------------------------------------
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Try programiz.pro");
+
+        String s = "this is a repeative string this is not a proper response this";
+
+        String[] words = s.split(" ");
+
+        Map<String, Integer> map = new HashMap<>();
+
+        // Count word frequency manually
+        for (String word : words) {
+            map.put(word, map.getOrDefault(word, 0) + 1);
+        }
+
+        // Find the word with the maximum count
+        String mostFrequentWord = null;
+        int maxCount = 0;
+
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            if (entry.getValue() > maxCount) {
+                maxCount = entry.getValue();
+                mostFrequentWord = entry.getKey();
+            }
+        }
+
+        // Print result
+        System.out.println("Most frequent word: '" + mostFrequentWord + "' occurred " + maxCount + " times");
+    }
+}
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+Q2.How to find employees whose salary is greater than the average salary using Streams?
+
+Q3.Convert a Map<String, List<Employee>> into a flat list of Employees using Stream API.
+
+Q4.Given a list of numbers, return a frequency map using Streams.
+
+Q5.Given a list of Employee{name, salary, dept} — group by dept, and for each dept, find top 2 highest-paid employees.
 
 Would you like code solutions for:
 
