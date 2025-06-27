@@ -100,13 +100,50 @@ class Main {
 
 
 
-Implement least frequently used (LFU) cache.
+Q3.Implement least frequently used (LFU) cache.
 
 
-Check if two arrays are equal using a HashMap.
+Q4.Check if two arrays are equal using a HashMap.
 
 
-Find the subarray with the most distinct elements.
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Try programiz.pro");
+        //Check if two arrays are equal using a HashMap.
+        
+        int [] a1={1,2,3};
+         int [] a2={1,3};
+         
+         HashMap<Integer,Integer> map=new HashMap<>();
+         
+         for(int i:a1){
+             map.put(i, map.getOrDefault(i,0)+1);
+         }
+         
+         for(int i=0;i<a2.length;i++){
+             if(map.containsKey(a2[i])){
+                 
+                 map.put(a2[i] , map.get(a2[i]) -1);
+             }
+             if(map.get(a2[i]) ==0){
+                 map.remove(a2[i]);
+             }
+             else{
+                  System.out.println("if empty map " + map.isEmpty());
+                  return;
+             }
+         }
+                 System.out.println("if empty map " + map.isEmpty());
+         
+    }
+}
+--------------------------------------------------------------------------------------------------------------
+
+
+Q5.Find the subarray with the most distinct elements.
 
 
 Day 17: TreeMap – Custom Sorting
