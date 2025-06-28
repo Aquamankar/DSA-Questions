@@ -208,6 +208,41 @@ class Main {
 5.Write a program to sort an array using a TreeMap.
 
 
+
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+       
+        
+        // 5.Write a program to sort an array using a TreeMap.
+        int [] arr={1,42,2,5,2,6,8,5,90};
+        TreeMap<Integer,Integer> map=new TreeMap<>();
+        
+        for(int i: arr){
+            
+            map.put(i, map.getOrDefault(i,0)+1);
+        }
+        
+        int [] ans=new int[arr.length];
+        int idx=0;
+        for(Map.Entry<Integer,Integer> entry:map.entrySet()){
+            
+            for(int i=0;i<entry.getValue();i++){
+                ans[idx++]=entry.getKey();
+            }
+        }
+        
+        
+            for(int i: ans){
+            
+             System.out.println("Try programiz.pro "+ i);
+        }
+    }
+}
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 ✅ HashMap + Stream-Based Java Questions
