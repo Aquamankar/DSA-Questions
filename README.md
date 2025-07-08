@@ -1,6 +1,6 @@
 ### Java Interview Questions and Programs
 
-#### **1. How to calculare nth Root?**
+#### **1. How to calculate nth Root?**
 
 
 ```
