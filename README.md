@@ -1,7 +1,38 @@
 ### Java Interview Questions and Programs
 
+#### **1. How to calculare nth Root?**
 
-####  **1. check if number is Armstrong number or not
+
+```
+public class Main {
+    public static void main(String[] args) {
+        double x = 81; // You can change this number
+        int n = 5;     // nth root to calculate
+
+        // Calculations using Math.pow()
+        double square = Math.pow(x, 2);
+        double squareRoot = Math.pow(x, 0.5);
+        double cube = Math.pow(x, 3);
+        double cubeRoot = Math.pow(x, 1.0 / 3);
+        double fourthRoot = Math.pow(x, 0.25);
+        double fifthRoot = Math.pow(x, 1.0 / 5);
+        double nthRoot = Math.pow(x, 1.0 / n);
+
+        // Output
+        System.out.println("Given Number: " + x);
+        System.out.println("Square (x^2): " + square);
+        System.out.println("Square Root (√x): " + squareRoot);
+        System.out.println("Cube (x^3): " + cube);
+        System.out.println("Cube Root (∛x): " + cubeRoot);
+        System.out.println("4th Root (x^(1/4)): " + fourthRoot);
+        System.out.println("5th Root (x^(1/5)): " + fifthRoot);
+        System.out.println(n + "th Root (x^(1/" + n + ")): " + nthRoot);
+    }
+}
+```
+---
+
+####  **1. check if number is Armstrong number or not***
 
 
 ```java
