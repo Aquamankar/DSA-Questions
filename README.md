@@ -1,6 +1,6 @@
 ### Java Interview Questions and Programs
 
-#### ***1. chaeck if number is Armstrong number or not
+#### **1. check if number is Armstrong number or not
 ```
 // Online Java Compiler
 // Use this editor to write, compile and run your Java code online
