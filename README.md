@@ -1,6 +1,35 @@
 ### Java Interview Questions and Programs
 
----
+#### ***1. chaeck if number is Armstrong number or not
+```
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Try programiz.pro");
+        int num=153;
+        int dummy=num;
+        double result=0;
+        String s=String.valueOf(dummy);
+    int digits= s.length();
+         System.out.println("Try programiz.pro " + s  +" "+digits);
+        while(dummy >0){
+            
+            int digit =dummy %10;
+            result= result + Math.pow(digit, digits);
+            dummy=dummy/10;
+        }
+        
+        if(result==num){
+           System.out.println("Try programiz.pro " + result + " is equlas to number");
+             System.out.println(" this number is armstrong number ");
+        }
+    }
+}
+
+
+```
 
 #### **1. What is the output of the following code?**
 
