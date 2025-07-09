@@ -11,6 +11,38 @@ Important Problems:
 3.Check if a string is a palindrome.
 
 
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Try programiz.pro");
+        String s="ate";
+    
+        boolean flag=isPalindrom(s);
+              System.out.println("palindrom " + flag );
+      
+    }
+    
+     public static boolean isPalindrom(String  s){
+             int left=0, right=s.length()-1;
+           while(left<=right){
+            if(s.charAt(left) == s.charAt(right)){
+                left++;
+                right--;
+                continue;
+            }
+            else{
+                return false;
+            }
+        }
+        return true;
+     }
+}
+
+----------------------------------------------------------------------------
+
+
 4.Count the number of vowels and consonants.
 
 
