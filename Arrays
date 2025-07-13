@@ -181,18 +181,77 @@ Find the largest and smallest element in a single traversal.
 
 3.Find the prefix sum array for a given array.
 
+public static int[] prefixSum(int[] arr) {
+    int[] prefix = new int[arr.length];
+    prefix[0] = arr[0];
+    for (int i = 1; i < arr.length; i++) {
+        prefix[i] = prefix[i - 1] + arr[i];
+    }
+    return prefix;
+}
+--------------------------------------------------------------------------
 
 4.Given a prefix sum array, find the sum of elements between two given indices.
 
-
+public static int rangeSum(int[] prefix, int i, int j) {
+    if (i == 0) return prefix[j];
+    return prefix[j] - prefix[i - 1];
+}
+-------------------------------------------------------------------------------
 5.Find the equilibrium index (index where sum of left = sum of right).
 
+public static int equilibriumIndex(int[] arr) {
+    int totalSum = Arrays.stream(arr).sum();
+    int leftSum = 0;
+
+    for (int i = 0; i < arr.length; i++) {
+        totalSum -= arr[i]; // Now totalSum is rightSum
+        if (leftSum == totalSum) return i;
+        leftSum += arr[i];
+    }
+    return -1;
+}
+--_-------------------------------------------------------------------------------------
 
 6.Find the number of subarrays with a given sum (using prefix sums).
 
 
+public static int subarraySum(int[] nums, int k) {
+    Map<Integer, Integer> map = new HashMap<>();
+    map.put(0, 1);
+    int count = 0, sum = 0;
+
+    for (int num : nums) {
+        sum += num;
+        if (map.containsKey(sum - k)) {
+            count += map.get(sum - k);
+        }
+        map.put(sum, map.getOrDefault(sum, 0) + 1);
+    }
+
+    return count;
+}
+-------------------------------_-----------------------------------------
 7.Find the longest subarray with sum = 0 (important!).
 
+public static int longestSubarrayWithZeroSum(int[] arr) {
+    Map<Integer, Integer> map = new HashMap<>();
+    int maxLen = 0, sum = 0;
+
+    for (int i = 0; i < arr.length; i++) {
+        sum += arr[i];
+
+        if (sum == 0) maxLen = i + 1;
+        else if (map.containsKey(sum)) {
+            maxLen = Math.max(maxLen, i - map.get(sum));
+        } else {
+            map.put(sum, i);
+        }
+    }
+
+    return maxLen;
+}
+--------------------------_-----------------------_------------------------------
 
 8.Subarray sum divisible by k.
 
