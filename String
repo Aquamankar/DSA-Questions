@@ -242,6 +242,21 @@ public class KMPMatcher {
 26.·  ·  Replace spaces with %20 (URLify).
 27.·  ·  Find the smallest window in a string containing all characters of another.
 28.·  ·  Remove characters from string2 that are present in string1.
+
+ans 
+public static String removeChars(String s1, String s2) {
+    Set<Character> set = new HashSet<>();
+    for (char c : s1.toCharArray()) set.add(c);
+
+    StringBuilder result = new StringBuilder();
+    for (char c : s2.toCharArray()) {
+        if (!set.contains(c)) result.append(c);
+    }
+
+    return result.toString();
+}
+
+--_---------------------_------------_-------------------------------
 29.·  ·  Check if two strings are isomorphic.
 30.·  ·  Multiply two large strings (as numbers) without converting to integer.
 ·  
