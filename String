@@ -135,8 +135,30 @@ Day 6: Strings – Compression, Rotation
 21.String compression: ·  String compression (e.g., "aaabb" → "a3b2").
 
 22.·  ·  Check if one string is a rotation of another (e.g., "ABCD" and "CDAB").
+
+
+
+--_--------------_-------------------------_------_----------_---------------------------
 23.·  ·  Left rotate a string by k positions.
+
+public static String leftRotate(String str, int k) {
+    k = k % str.length(); // To handle k > str.length
+    return str.substring(k) + str.substring(0, k);
+}
+
+
+-_-----------------------------------------------------------_--_-_---_----
 24.·  ·  Right rotate a string by k positions.
+
+public static String rightRotate(String str, int k) {
+    int n = str.length();
+    k = k % n;
+    return str.substring(n - k) + str.substring(0, n - k);
+}
+
+
+
+--------------------------------------_-----------------_--_--_-----_-----_---_-
 25.·  ·  Implement basic string matching (indexOf).
 
      brute force->>>>>
