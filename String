@@ -2,6 +2,48 @@ Day 4: Strings – Reversal, Char Count
 
 Important Problems:
 
+1.1 convert String to Number
+
+String str = "123";
+int num = Integer.parseInt(str);
+System.out.println(num);  // Output: 123
+
+
+1.2 Collect numbers from String of "aaa123bbb456"
+
+String input = "aaa123bbb456";
+StringBuilder numbers = new StringBuilder();
+
+for (char c : input.toCharArray()) {
+    if (Character.isDigit(c)) {
+        numbers.append(c);
+    }
+}
+
+System.out.println(numbers.toString());  // Output: 123456
+
+
+1.3 Sum of numbers in String "abc123def456gkl"
+public class Main {
+    public static void main(String[] args) {
+        String s = "abc123lmn456xyz789";
+
+        int sum = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (Character.isDigit(c)) {
+                int digit = c - '0'; // or use Character.getNumericValue(c)
+                sum += digit;
+            }
+        }
+
+        System.out.println("Sum of all digits = " + sum);  // Output: 1+2+3+4+5+6+7+8+9 = 45
+    }
+}
+
+
+
 1.Reverse a string (in-place using two pointers).
 
 
