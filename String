@@ -64,6 +64,31 @@ class Main {
 10.Check if two strings are rotations of each other.
 
 
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        String a = "abcd";
+        String b = "cdab";
+
+        // 10. Check if two strings are rotations of each other.
+        if (a.length() != b.length()) {
+            System.out.println("False");
+            return;
+        }
+
+        String c = a + a;
+        if (c.contains(b)) {
+            System.out.println("True");  // ✅ b is a rotation of a
+        } else {
+            System.out.println("False");
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------------------------------------------------
+
 Day 5: Strings – Palindromes, Anagrams
 
 🔹 Important Problems:
