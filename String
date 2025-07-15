@@ -258,11 +258,15 @@ public class KMPMatcher {
 
 
 
-
+----------------------------------------------------------------------------------------------------------------------------------------
         
 
 26.·  ·  Replace spaces with %20 (URLify).
+
 27.·  ·  Find the smallest window in a string containing all characters of another.
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------
 28.·  ·  Remove characters from string2 that are present in string1.
 
 ans 
@@ -278,10 +282,65 @@ public static String removeChars(String s1, String s2) {
     return result.toString();
 }
 
---_---------------------_------------_-------------------------------
-29.·  ·  Check if two strings are isomorphic.
+--_---------------------_------------_--------------------------------------------------------------------------
+
+29.  Check if two strings are isomorphic.
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        String a = "egg";
+        String b = "add";
+
+        if (a.length() != b.length()) {
+            System.out.println("Not isomorphic");
+            return;
+        }
+
+        Map<Character, Character> map1 = new HashMap<>();
+        Map<Character, Character> map2 = new HashMap<>();
+
+        boolean isIsomorphic = true;
+
+        for (int i = 0; i < a.length(); i++) {
+            char c1 = a.charAt(i);
+            char c2 = b.charAt(i);
+
+            if (map1.containsKey(c1)) {
+                if (map1.get(c1) != c2) {
+                    isIsomorphic = false;
+                    break;
+                }
+            } else {
+                map1.put(c1, c2);
+            }
+
+            if (map2.containsKey(c2)) {
+                if (map2.get(c2) != c1) {
+                    isIsomorphic = false;
+                    break;
+                }
+            } else {
+                map2.put(c2, c1);
+            }
+        }
+
+        System.out.println(isIsomorphic ? "Isomorphic" : "Not isomorphic");
+    }
+}
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+
+
 30.·  ·  Multiply two large strings (as numbers) without converting to integer.
 ·  
+
+----------------------------------------------------------------------------------------------------------------------------
 Day 7: Review + Mini Test
 
 1.Find the sum of all even numbers in an array.
