@@ -147,7 +147,69 @@ Find the largest and smallest element in a single traversal.
 2.Sort the array using Selection Sort.
 
 
+
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Try programiz.pro");
+        //selection sort
+        int [] arr={2,1,5,7,3,2,6};
+        
+        for(int i=0;i<arr.length;i++){
+           
+          
+          int min=i;
+            for(int j=i+1;j<arr.length;j++){
+                if(arr[j] < arr[min]){
+                    min=j;
+                }
+            }
+            
+            //swap with i to min
+            
+            int temp=arr[i];
+            arr[i]=arr[min];
+            arr[min]=temp;
+            
+        }
+          for (int num : arr) {
+            System.out.print(num + " ");
+        }
+        
+    }
+}
+
+
+
+---------------------------------------------------------------------------------------------------
+
+
 3.Sort the array using Insertion Sort.
+
+public static void main(String[] args) {
+        System.out.println("Try programiz.pro");
+        //insertion sort
+        int [] arr={2,1,5,7,3,2,6};
+        
+        for(int i=1;i<arr.length;i++){
+            //arr[j ] sorted
+            int j=i-1;
+            int key=arr[i];
+            while(j >=0 && arr[j] > key){
+                arr[j+1]=arr[j];
+                j--;
+            }
+            
+            // insert the key at the right position
+            arr[j + 1] = key;
+            
+        }
+          for (int num : arr) {
+            System.out.print(num + " ");
+        }
+        
+    }
+}
+----------------------------------------------------------------------------------------------------------------------
 
 
 4.Implement Binary Search (array must be sorted first).
