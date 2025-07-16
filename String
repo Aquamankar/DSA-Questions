@@ -87,6 +87,28 @@ class Main {
 
 4.Count the number of vowels and consonants.
 
+4.Count the number of vowels and consonants.
+
+      String str = "1aaa23abauo";
+      String vowels="aeiouAEIOU";
+      int vcount=0;
+      int ccount=0;
+      
+      for(char c:str.toCharArray()){
+          if(!Character.isDigit(c)){
+              if(vowels.indexOf(c) != -1){
+                  vcount++;
+              
+              }
+              else{
+                  ccount++;
+              }
+          }
+      }
+      System.out.println("Try programiz.pro  vowels " +  vcount);
+        System.out.println("Try programiz.pro  consonant " +  ccount);
+
+--------------------------------------------------------------------------------------------------------------------
 
 5.Find the most frequent character in a string.
 
