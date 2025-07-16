@@ -1,5 +1,54 @@
 🌸 Day 1: Arrays – Traversals, Basics
 
+
+1.1 Subarray with most distinct elements:
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {5, 1, 3, 5, 2, 3, 4, 1}; // Sample input
+        findSubarrayWithMostDistinctElements(arr);
+    }
+
+    public static void findSubarrayWithMostDistinctElements(int[] arr) {
+        int n = arr.length;
+        Map<Integer, Integer> map = new HashMap<>(); // element -> frequency
+        int left = 0, right = 0;
+        int maxLen = 0, start = 0, end = 0;
+
+        while (right < n) {
+            // Add current element to the map
+            map.put(arr[right], map.getOrDefault(arr[right], 0) + 1);
+
+            // Shrink the window if duplicates present
+            while (map.get(arr[right]) > 1) {
+                map.put(arr[left], map.get(arr[left]) - 1);
+                if (map.get(arr[left]) == 0) {
+                    map.remove(arr[left]);
+                }
+                left++;
+            }
+
+            // Update max if current window has more distinct elements
+            if (map.size() > maxLen) {
+                maxLen = map.size();
+                start = left;
+                end = right;
+            }
+
+            right++;
+        }
+
+        System.out.println("Subarray with most distinct elements:");
+        for (int i = start; i <= end; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println("\nNumber of distinct elements: " + maxLen);
+    }
+}
++---------------------_---------_------------------_----_-_--------
+
 1.Find the maximum element in an array.
 
 
