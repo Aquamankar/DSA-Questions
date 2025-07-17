@@ -1,0 +1,9 @@
+Design a URL shortening service (like bit.ly).
+
+How would you design a rate limiter (e.g., max 100 requests/minute/user)?
+
+How would you handle concurrency in a shared in-memory cache?
+
+What are CAP theorem and its implications on distributed systems?
+
+How would you scale a read-heavy system vs a write-heavy one?
