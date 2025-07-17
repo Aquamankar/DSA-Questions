@@ -57,6 +57,37 @@ Q2. Find the top k frequent elements using a HashMap.
 Ans->
 
 import java.util.*;
+import java.util.stream.*;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] nums = {1, 1, 1, 2, 2, 3}; // Example input
+        int k = 2;
+
+        List<Integer> result = topKFrequent(nums, k);
+        System.out.println("Top " + k + " frequent elements: " + result);
+    }
+
+    public static List<Integer> topKFrequent(int[] nums, int k) {
+        // Step 1: Count frequency using HashMap
+        Map<Integer, Long> freqMap = Arrays.stream(nums)
+                .boxed()
+                .collect(Collectors.groupingBy(e -> e, Collectors.counting()));
+
+        // Step 2: Sort by frequency (descending) and pick top k
+        return freqMap.entrySet()
+                .stream()
+                .sorted((a, b) -> Long.compare(b.getValue(), a.getValue()))
+                .limit(k)
+                .map(Map.Entry::getKey)
+                .collect(Collectors.toList());
+    }
+}
+
+
+------------------------------------------__-------------------------------
+
+import java.util.*;
 
 class Main {
     public static void main(String[] args) {
