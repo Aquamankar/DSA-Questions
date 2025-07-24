@@ -17,10 +17,65 @@ Merge two sorted linked lists into one sorted list.
 
 Day 9: LinkedList – Cycle Detection
 
-Detect a cycle in a linked list using Floyd’s Tortoise and Hare Algorithm.
+Q.1 Detect a cycle in a linked list using Floyd’s Tortoise and Hare Algorithm.
+
+class ListNode {
+    int val;
+    ListNode next;
+    ListNode(int val) {
+        this.val = val;
+        this.next = null;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Step 1: Create nodes
+        ListNode head = new ListNode(1);
+        ListNode node2 = new ListNode(2);
+        ListNode node3 = new ListNode(3);
+        ListNode node4 = new ListNode(4);
+        ListNode node5 = new ListNode(5);
+
+        // Step 2: Link nodes
+        head.next = node2;
+        node2.next = node3;
+        node3.next = node4;
+        node4.next = node5;
+
+        // Step 3: Create cycle (make 5 point to 3)
+        node5.next = node3;
+
+        // Step 4: Detect cycle
+        boolean result = hasCycle(head);
+        System.out.println("Cycle detected? " + result);
+    }
+
+    static boolean hasCycle(ListNode head) {
+        if (head == null || head.next == null) {
+            return false;
+        }
+
+        ListNode slow = head, fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;         // move 1 step
+            fast = fast.next.next;    // move 2 steps
+
+            if (slow == fast) {
+                return true;          // cycle found
+            }
+        }
+
+        return false; // no cycle
+    }
+}
 
 
-Find the start node of the cycle in a linked list
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Q2. Find the start node of the cycle in a linked list
 
 code->>>>>>>>>>>------------------------------------------------------
 // Online Java Compiler
