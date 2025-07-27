@@ -85,6 +85,18 @@ public class Main {
 }
 
 
+=======================================================================
+
+// Step 2: Sort by frequency descending and pick top k
+        return freqMap.entrySet()
+                .stream()
+                .sorted(Comparator.comparingLong(Map.Entry<Integer, Long>::getValue).reversed())
+                .limit(k)
+                .map(Map.Entry::getKey)
+                .collect(Collectors.toList());
+========================================================================
+
+
 ------------------------------------------__-------------------------------
 
 import java.util.*;
