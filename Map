@@ -515,11 +515,77 @@ class Main {
 
 Q2.How to find employees whose salary is greater than the average salary using Streams?
 
+
+
 Q3.Convert a Map<String, List<Employee>> into a flat list of Employees using Stream API.
+
 
 Q4.Given a list of numbers, return a frequency map using Streams.
 
+
+
+--------------------------------------------------------------------------------------------------------------------------------------
 Q5.Given a list of Employee{name, salary, dept} — group by dept, and for each dept, find top 2 highest-paid employees.
+
+import java.util.*;
+import java.util.stream.*;
+
+class Employee {
+    private String name;
+    private double salary;
+    private String dept;
+
+    public Employee(String name, double salary, String dept) {
+        this.name = name;
+        this.salary = salary;
+        this.dept = dept;
+    }
+
+    public String getName() { return name; }
+    public double getSalary() { return salary; }
+    public String getDept() { return dept; }
+
+    @Override
+    public String toString() {
+        return name + " (" + salary + ")";
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        List<Employee> emps = Arrays.asList(
+            new Employee("Alice", 70000, "HR"),
+            new Employee("Bob", 80000, "IT"),
+            new Employee("Charlie", 60000, "HR"),
+            new Employee("David", 90000, "IT"),
+            new Employee("Eva", 75000, "HR"),
+            new Employee("Frank", 85000, "Finance"),
+            new Employee("Grace", 82000, "Finance")
+        );
+
+        // Step 1: Group by department
+        Map<String, List<Employee>> grouped = emps.stream()
+            .collect(Collectors.groupingBy(Employee::getDept));
+
+        // Step 2: Sort each group by salary and take top 2
+        Map<String, List<Employee>> top2PerDept = grouped.entrySet().stream()
+            .collect(Collectors.toMap(
+                Map.Entry::getKey,
+                entry -> entry.getValue().stream()
+                    .sorted(Comparator.comparingDouble(Employee::getSalary).reversed())
+                    .limit(2)
+                    .collect(Collectors.toList())
+            ));
+
+        // Output
+        top2PerDept.forEach((dept, list) -> {
+            System.out.println(dept + " -> " + list);
+        });
+    }
+}
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
 
 Would you like code solutions for:
 
