@@ -19,6 +19,40 @@ Day 15: Map – Frequency, First Unique
 
 Day 16: Map – Group Anagrams
 
+
+Q.1.1 sort words in a sentence by frequency 
+
+
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+public class WordFrequencySorter {
+    public static void main(String[] args) {
+        String sentence = "this is a test this is only a test this test is";
+
+        Map<String, Long> frequencyMap = Arrays.stream(sentence.split(" "))
+                .collect(Collectors.groupingBy(
+                        Function.identity(),
+                        Collectors.counting()
+                ));
+
+        List<Map.Entry<String, Long>> sortedWords = frequencyMap.entrySet().stream()
+                .sorted(Comparator
+                        .comparing(Map.Entry<String, Long>::getValue, Comparator.reverseOrder())
+                        .thenComparing(Map.Entry::getKey)
+                )
+                .collect(Collectors.toList());
+
+        // Print result
+        sortedWords.forEach(entry ->
+                System.out.println(entry.getKey() + " = " + entry.getValue()));
+    }
+}
+
+
+----_-----------------------------------------------------------
+
 Q1. Group anagrams from a list of strings.
 
 import java.util.*;
