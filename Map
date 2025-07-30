@@ -53,6 +53,25 @@ public class WordFrequencySorter {
 
 ----_-----------------------------------------------------------
 
+
+Q1.2 convert a Map<String, List<String>> into a Map<String, Integer> where each key maps to the count of items in its list
+
+
+Map<String, List<String>> input = new HashMap<>();
+input.put("fruits", Arrays.asList("apple", "banana", "orange"));
+input.put("vegetables", Arrays.asList("carrot", "broccoli"));
+input.put("drinks", Arrays.asList("water"));
+
+
+Map<String, Integer> countMap = input.entrySet()
+    .stream()
+    .collect(Collectors.toMap(
+        Map.Entry::getKey,
+        entry -> entry.getValue().size()
+    ));
+
+----------------------------------------------------------------------
+
 Q1. Group anagrams from a list of strings.
 
 import java.util.*;
