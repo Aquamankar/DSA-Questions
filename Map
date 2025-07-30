@@ -31,6 +31,71 @@ Day 15: Map – Frequency, First Unique
 
 --------------------------------------------------------------------------------------------------------
 
+7. Groupe Int [] by module value %3.
+
+
+import java.util.*;
+import java.util.stream.Collectors;
+
+class Main {
+    public static void main(String[] args) {
+        int[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+        // Group by modulo 3 using boxed()
+        Map<Integer, List<Integer>> grouped = Arrays.stream(nums)
+                .boxed()
+                .collect(Collectors.groupingBy(n -> n % 3));
+
+        System.out.println(grouped);
+    }
+}
+==========================================================================================
+ // Groupe Int [] by module value %3
+          int [] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+            Map<Integer, List<Integer>> grouped = Arrays.stream(nums).mapToObj(i-> (int) i )
+                .collect(Collectors.groupingBy(c -> c%3));
+
+        System.out.println(grouped);
+
+===========================================================================================
+
+---------------------------------------------------------------------------------------------------------------
+
+8. Reverse mapping Map<String, String> reverse it to Map<String,List<String>> .
+
+import java.util.*;
+import java.util.stream.Collectors;
+
+class Main {
+    public static void main(String[] args) {
+        Map<String, List<String>> map = new HashMap<>();
+        map.put("a", Arrays.asList("2", "4", "6"));
+        map.put("b", Arrays.asList("2", "8"));
+
+        Map<String, String> flattened = map.entrySet().stream()
+            .flatMap(entry -> entry.getValue().stream()
+                .map(value -> new AbstractMap.SimpleEntry<>(value, entry.getKey())))
+            .collect(Collectors.toMap(
+                Map.Entry::getKey,
+                Map.Entry::getValue,
+                (v1, v2) -> v1 // in case of duplicate key like "2", keep first (can change logic)
+            ));
+
+        System.out.println(flattened);
+    }
+}
+
+
+//{2=a, 4=a, 6=a, 8=b}
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------
+9. Groupes words by length
+
+
+-------------------------------------------------------------------------------------------------------------------
 Day 16: Map – Group Anagrams
 
 
