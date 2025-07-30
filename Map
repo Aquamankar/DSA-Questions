@@ -15,6 +15,20 @@ Day 15: Map – Frequency, First Unique
 5.Find the intersection of two arrays using a HashMap.
 
 
+
+----------------------------------------------------------------------------------------------------------------
+6. Group strings by thier first character
+
+
+ public static void main(String[] args) {
+        String[] str = {"apple", "avacado", "bananana", "grapes", "gouava"};
+
+        Map<Character, List<String>> grouped = Arrays.stream(str)
+                .collect(Collectors.groupingBy(c -> c.charAt(0)));
+
+        System.out.println(grouped);
+    }
+
 --------------------------------------------------------------------------------------------------------
 
 Day 16: Map – Group Anagrams
