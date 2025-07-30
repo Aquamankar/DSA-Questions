@@ -241,6 +241,53 @@ class Main {
 
 Q5.Find the subarray with the most distinct elements.
 
+----------------------------------------------------------------------------------------------------------------
+Q6. Convert String [] to Map with thier lengths
+
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.function.Function;
+class Main {
+    public static void main(String[] args) {
+   
+         // String create map with thier lengths
+         
+          String [] str={"alp","pinapple","apple","strawberry","orange","lichi"};
+
+       // -------------using collectors.toMap by--- Map<K,V>------------------------------ 
+          
+          Map<String,Integer>map = Arrays.stream(str).
+          collect(Collectors.toMap(Function.identity(), String::length));
+          
+              System.out.println("Try programiz.pro " + map);
+
+              //output 
+              // {alp=3, pinapple=8, apple=5, strawberry=10, orange=6, lichi=5}
+
+       // -------------using gruping by--- Map<K,List<V>>------------------------------ 
+        Map<Integer,List<String>>map2 = Arrays.stream(str).collect(Collectors.groupingBy(String::length));
+        
+         System.out.println("Try programiz.pro " + map2);
+
+          //output
+         //  {3=[alp], 5=[apple, lichi], 6=[orange], 8=[pinapple], 10=[strawberry]}
+    }
+
+===================================================================================================================
+
+         
+         //flat this map
+       
+Map<String, Integer> flatMap = map2.entrySet().stream()
+        .flatMap(entry -> entry.getValue().stream()
+                .map(value -> new AbstractMap.SimpleEntry<>(value, entry.getKey())))
+        .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+
+System.out.println("Flattened map: " + flatMap);
+
+=====================================================================================================================
+
+------------------------------------------------------------------------------------------------------------------
 
 Day 17: TreeMap – Custom Sorting
 
