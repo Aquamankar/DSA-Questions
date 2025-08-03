@@ -1,0 +1,63 @@
+DSA Interview Cheat Sheet
+
+Prepared on: 03 August 2025
+
+
+
+Arrays
+- Two Sum
+- Kadane's Algorithm (Maximum Subarray)
+- Merge Intervals
+- Sort 0s, 1s, 2s (Dutch National Flag)
+- Subarray with Given XOR
+- Sliding Window Maximum
+Strings
+- Longest Substring Without Repeating Characters
+- Group Anagrams
+- String Compression
+- Minimum Window Substring
+- Valid Parentheses
+Linked List
+- Reverse a Linked List
+- Detect Cycle (Floyd's Algorithm)
+- Merge Two Sorted Lists
+- Add Two Numbers
+- Copy List with Random Pointer
+Stack & Queue
+- Min Stack
+- Next Greater Element
+- Implement Stack using Queues
+- Sliding Window Maximum
+Trees
+- Inorder / Preorder / Postorder Traversals
+- Level Order Traversal
+Diameter of Binary Tree
+- Lowest Common Ancestor
+- Maximum Path Sum
+Trie
+- Implement Trie
+- Longest Common Prefix
+- Word Search II
+Heap / Priority Queue
+- Kth Largest Element
+- Merge K Sorted Lists
+- Top K Frequent Elements
+Dynamic Programming
+- Climbing Stairs
+- Longest Increasing Subsequence
+- Longest Common Subsequence
+- 0/1 Knapsack
+- Edit Distance
+Greedy
+- Activity Selection
+- Jump Game
+- Buy and Sell Stock
+- Fractional Knapsack
+Graph (BFS/DFS)
+- Number of Islands
+- Clone Graph
+- Course Schedule (Topological Sort)
+- Shortest Path in Binary Matrix
+- Dijkstra's Algorithm
+Backtracking
+- N-Queens
