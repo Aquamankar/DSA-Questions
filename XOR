@@ -1,0 +1,22 @@
+What is XOR?
+XOR (^) is a bitwise operation:
+
+
+0 ^ 0 = 0  
+1 ^ 0 = 1  
+0 ^ 1 = 1  
+1 ^ 1 = 0
+
+Properties:
+
+a ^ a = 0
+
+a ^ 0 = a
+
+XOR is commutative and associative
+
+ 1. Find the single non-repeating element
+2.Find the two non-repeating elements
+3.Check if subarray with XOR = K exists
+ 4. XOR of all subarrays
+Return XOR of all elements in all subarrays
