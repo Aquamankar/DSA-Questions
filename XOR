@@ -15,8 +15,41 @@ a ^ 0 = a
 
 XOR is commutative and associative
 
- 1. Find the single non-repeating element
+1. Find the single non-repeating element
+
 2.Find the two non-repeating elements
+
+
+-------------------------------------------------------------------------------------------------------------------------------------
 3.Check if subarray with XOR = K exists
- 4. XOR of all subarrays
+import java.util.HashMap;
+import java.util.Map;
+
+class Main {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 4, 3, 2, 6};
+        int k = 4;
+        int count = 0;
+
+        Map<Integer, Integer> freq = new HashMap<>();
+
+        for (int num : arr) {
+            // XOR property: if a ^ b = k, then b = a ^ k
+            int complement = num ^ k;
+
+            // Check how many times complement has appeared so far
+            count += freq.getOrDefault(complement, 0);
+
+            // Store current number in the map
+            freq.put(num, freq.getOrDefault(num, 0) + 1);
+        }
+
+        System.out.println("Optimized count of pairs with XOR = " + k + " is: " + count);
+    }
+}
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+4. XOR of all subarrays
 Return XOR of all elements in all subarrays
