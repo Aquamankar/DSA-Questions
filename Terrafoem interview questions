@@ -1,0 +1,48 @@
+
+🔰 Beginner-Level Terraform Questions
+✅ Basics & Concepts
+What is Terraform and what are its main features?
+
+How does Terraform differ from other Infrastructure as Code tools like CloudFormation or Ansible?
+
+What are providers in Terraform?
+
+What is the difference between Terraform init, plan, apply, and destroy?
+
+What are resources and data sources in Terraform?
+
+What is a Terraform state file and why is it important?
+
+What is the difference between terraform.tfvars and terraform.tf?
+
+How do you define variables in Terraform?
+
+What are output values in Terraform?
+
+What is interpolation in Terraform?
+
+⚙️ Intermediate-Level Questions
+✅ State Management & Modules
+What is remote state in Terraform? Why is it needed?
+
+How do you use backend configuration for remote state (e.g., S3)?
+
+What are modules in Terraform and why would you use them?
+
+How do you call a module in Terraform?
+
+What is a data block in Terraform?
+
+Explain the use of terraform workspace.
+
+What happens if you manually change infrastructure that Terraform manages?
+
+How do you manage secrets in Terraform (e.g., passwords, access keys)?
+
+What is the purpose of terraform refresh?
+
+How do you handle dependencies between resources in Terraform?
+
+🚀 Advanced-Level Questions
+✅ Real-World Use, Error Handling, Optimization
+How do you handle circular dependencies in Terraform?
