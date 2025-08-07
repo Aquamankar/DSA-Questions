@@ -433,6 +433,51 @@ public static int longestSubarrayWithZeroSum(int[] arr) {
 
 8.Subarray sum divisible by k.
 
+import java.util.*;
+
+public class SubarraySumDivByK {
+    public int subarraysDivByK(int[] nums, int k) {
+        Map<Integer, Integer> map = new HashMap<>();
+        map.put(0, 1); // base case: subarray starts from index 0
+
+        int sum = 0, count = 0;
+
+        for (int num : nums) {
+            sum += num;
+            int mod = ((sum % k) + k) % k; // handle negative mods
+
+            count += map.getOrDefault(mod, 0);
+            map.put(mod, map.getOrDefault(mod, 0) + 1);
+        }
+
+        return count;
+    }
+}
+#####₹₹₹₹₹₹################
+So why store mod in map?
+Because:
+
+If two prefix sums give the same remainder when divided by k, the subarray between them has a sum divisible by k.
+
+So:
+
+We don't care about actual prefix sums or array values.
+
+We care about how many times a certain remainder has appeared before.
+#₹₹₹₹₹₹₹₹₹₹₹₹₹₹₹#######₹###₹₹₹₹₹₹₹₹₹₹######
+
+You have prefix sums prefixSum[j] and prefixSum[i].
+
+Then the sum of the subarray from i+1 to j is:
+prefixSum[j] - prefixSum[i].
+
+We want:
+(prefixSum[j] - prefixSum[i]) % k == 0
+
+➡️ This means:
+prefixSum[j] % k == prefixSum[i] % k
+
+--------------------------------------------------------------------------------
 
 9.Minimum length subarray with sum ≥ given value.
 
