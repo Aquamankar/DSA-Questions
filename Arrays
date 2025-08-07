@@ -409,6 +409,78 @@ public static int subarraySum(int[] nums, int k) {
 
     return count;
 }
+------------------------------------------------------------------------------------------------------------------
+6.1 variation  finding the number of subarrays with sum equal to k with indexes
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, -2, 4, -4, 1, 5};
+        int k = 4;
+
+        // To store result as list of [startIndex, endIndex]
+        List<int[]> result = new ArrayList<>();
+
+        // prefixSum to index list map
+        Map<Integer, List<Integer>> map = new HashMap<>();
+        map.put(0, new ArrayList<>(Arrays.asList(-1)));  // handle subarray from start
+
+        int sum = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+
+            // Check if (sum - k) is already in map
+            int rem = sum - k;
+            if (map.containsKey(rem)) {
+                for (int startIdx : map.get(rem)) {
+                    result.add(new int[]{startIdx + 1, i}); // [start, end] of subarray
+                }
+            }
+
+            // Add current sum to map
+            map.putIfAbsent(sum, new ArrayList<>());
+            map.get(sum).add(i);
+        }
+
+        System.out.println("Subarrays with sum = " + k + ":");
+        for (int[] indices : result) {
+            System.out.println("Start: " + indices[0] + ", End: " + indices[1]);
+        }
+        System.out.println("Total count: " + result.size());
+    }
+}
+###############################################################
+
+🧠 Prefix Sum Concept Refresher:
+sum is the prefix sum up to index i, i.e., arr[0] + arr[1] + ... + arr[i].
+
+If there’s a previous prefix sum startSum such that:
+
+𝑠𝑢𝑚−𝑠𝑡𝑎𝑟𝑡𝑆𝑢𝑚=𝑘
+
+sum−startSum=k
+Then the subarray from startIdx + 1 to i has sum k.
+
+####################################################################
+ Why startIdx + 1?
+Let’s say we had a prefix sum of startSum at index startIdx.
+
+And now, we are at index i with current prefix sum sum.
+
+The subarray from index startIdx + 1 to i is the one where:
+
+arr[startIdx+1]+arr[startIdx+2]+...+arr[i]=sum−startSum=k
+
+arr[startIdx+1]+arr[startIdx+2]+...+arr[i]=sum−startSum=k
+So we do:
+
+java
+Copy
+Edit
+result.add(new int[]{startIdx + 1, i});
+
 -------------------------------_-----------------------------------------
 7.Find the longest subarray with sum = 0 (important!).
 
