@@ -352,7 +352,65 @@ public class KMPMatcher {
 
 26.·  ·  Replace spaces with %20 (URLify).
 
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
 27.·  ·  Find the smallest window in a string containing all characters of another.
+
+
+import java.util.*;
+
+class Main {
+    public static String minWindow(String s, String t) {
+        if (s.length() < t.length()) return "";
+
+        Map<Character, Integer> tFreq = new HashMap<>();
+        for (char c : t.toCharArray()) {
+            tFreq.put(c, tFreq.getOrDefault(c, 0) + 1);
+        }
+
+        int required = tFreq.size();
+        int formed = 0;
+
+        Map<Character, Integer> windowFreq = new HashMap<>();
+        int left = 0, right = 0;
+        int minLen = Integer.MAX_VALUE;
+        int minStart = 0;
+
+        while (right < s.length()) {
+            char c = s.charAt(right);
+            windowFreq.put(c, windowFreq.getOrDefault(c, 0) + 1);
+
+            if (tFreq.containsKey(c) && windowFreq.get(c).intValue() == tFreq.get(c).intValue()) {
+                formed++;
+            }
+
+            while (formed == required) {
+                if (right - left + 1 < minLen) {
+                    minLen = right - left + 1;
+                    minStart = left;
+                }
+
+                char leftChar = s.charAt(left);
+                windowFreq.put(leftChar, windowFreq.get(leftChar) - 1);
+                if (tFreq.containsKey(leftChar) && windowFreq.get(leftChar) < tFreq.get(leftChar)) {
+                    formed--;
+                }
+                left++;
+            }
+
+            right++;
+        }
+
+        return minLen == Integer.MAX_VALUE ? "" : s.substring(minStart, minStart + minLen);
+    }
+
+    public static void main(String[] args) {
+        String s = "ADOBECODEBANC";
+        String t = "ABC";
+        System.out.println("Smallest Window: " + minWindow(s, t));
+    }
+}
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
