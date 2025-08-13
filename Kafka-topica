@@ -1,0 +1,160 @@
+kafka topics wise study and revision 
+
+
+ Kafka Basics & Architecture
+What is Kafka and when to use it
+
+Kafka vs traditional message brokers (RabbitMQ, ActiveMQ)
+
+Kafka components:
+
+Producer
+
+Consumer
+
+Topic
+
+Partition
+
+Broker
+
+Cluster
+
+Zookeeper (older) / KRaft (newer)
+
+Log-based storage concept
+
+Pull vs Push in Kafka
+
+2. Topics & Partitions
+Topic creation and naming conventions
+
+Partitions for scalability
+
+Partition leader and replicas
+
+Replication factor
+
+How Kafka ensures fault tolerance
+
+How consumers know which partition to read from
+
+3. Producers
+Producer API basics
+
+Producer acknowledgments (acks=0, 1, all)
+
+Message keys and partitioning strategy
+
+Batching and compression (gzip, snappy, lz4, zstd)
+
+Idempotent producers
+
+Producer retries and delivery guarantees
+
+4. Consumers & Consumer Groups
+Consumer API basics
+
+Consumer group concept
+
+Offset management (auto vs manual commit)
+
+Rebalance events and how they work
+
+Consumer lag
+
+Poll mechanism (poll() method)
+
+Static vs dynamic group membership
+
+5. Kafka Message Delivery Semantics
+At-most-once
+
+At-least-once
+
+Exactly-once semantics (EOS)
+
+How Kafka achieves each
+
+6. Kafka Storage & Retention
+Log segment files
+
+Retention policies:
+
+Time-based retention
+
+Size-based retention
+
+Log compaction
+
+How Kafka handles old messages
+
+7. Kafka Streams & KSQL
+Kafka Streams API
+
+Stateless vs stateful processing
+
+Windowing in streams
+
+KSQL basics for streaming queries
+
+8. Kafka Connect
+Source connectors (e.g., MySQL → Kafka)
+
+Sink connectors (e.g., Kafka → Elasticsearch)
+
+Standalone vs distributed mode
+
+Common connectors and configs
+
+9. Kafka Security
+Authentication (SASL, Kerberos, SSL)
+
+Authorization (ACLs)
+
+Encryption in-transit (TLS)
+
+10. Kafka in Production
+Monitoring metrics (through JMX, Prometheus)
+
+Common operational issues:
+
+High consumer lag
+
+Under-replicated partitions
+
+Leader imbalance
+
+Scaling Kafka clusters
+
+Backup & disaster recovery
+
+Schema management with Confluent Schema Registry (Avro, JSON, Protobuf)
+
+✅ Common Kafka Interview Questions
+
+Explain Kafka’s architecture in detail.
+
+How does Kafka achieve fault tolerance?
+
+How do you ensure exactly-once message processing?
+
+What is consumer lag and how do you reduce it?
+
+How does partitioning affect message ordering?
+
+How do you secure a Kafka cluster?
+
+If you want, I can prepare you a Kafka Interview Quick Revision Sheet with 50+ questions and short bullet answers, so you can go through them like flashcards before an interview. That format works really well for last-minute prep.
+
+
+
+
+
+
+
+
+
+
+
+
