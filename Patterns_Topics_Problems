@@ -1,0 +1,341 @@
+I’ll list each pattern ➝ give 5–10 handpicked problems under it.
+This will serve as a pattern → practice set roadmap for you.
+
+📘 Pattern-Wise DSA Practice Questions
+1️⃣ Sliding Window Pattern
+
+Used for substring/array problems where we check contiguous ranges.
+
+Problems:
+
+Maximum Sum Subarray of Size K
+
+Longest Substring Without Repeating Characters
+
+Longest Substring with At Most K Distinct Characters
+
+Minimum Window Substring
+
+Find All Anagrams in a String
+
+Permutation in String (Check if s2 contains permutation of s1)
+
+Longest Repeating Character Replacement
+
+Subarrays with K Different Integers
+
+Smallest Subarray with Sum ≥ K
+
+Max Consecutive Ones (with at most K flips)
+
+2️⃣ Two Pointers Pattern
+
+Used for sorted arrays / linked lists problems.
+
+Problems:
+
+Two Sum (sorted array version)
+
+3Sum
+
+4Sum
+
+Container With Most Water
+
+Trapping Rain Water (Two Pointer version)
+
+Remove Duplicates from Sorted Array
+
+Move Zeroes
+
+Sort Colors (Dutch National Flag problem)
+
+Minimum Difference Pair from Two Arrays
+
+Intersection of Two Arrays
+
+3️⃣ Fast & Slow Pointers (Cycle Detection)
+
+Used in linked lists / circular arrays.
+
+Problems:
+
+Linked List Cycle Detection
+
+Find the Starting Node of Cycle in Linked List
+
+Happy Number
+
+Middle of Linked List
+
+Palindrome Linked List (using reverse 2nd half)
+
+Detect Cycle in Circular Array
+
+Find Duplicate Number (Floyd’s cycle detection)
+
+Intersection Node of Two Linked Lists
+
+4️⃣ Merge Intervals Pattern
+
+Used when problems involve overlapping intervals.
+
+Problems:
+
+Merge Intervals
+
+Insert Interval
+
+Interval List Intersections
+
+Minimum Number of Meeting Rooms
+
+Employee Free Time
+
+Non-overlapping Intervals
+
+Task Scheduler (interval + heap hybrid)
+
+5️⃣ Cyclic Sort Pattern
+
+Used for array problems with numbers in a range (1..n).
+
+Problems:
+
+Cyclic Sort (base)
+
+Find Missing Number
+
+Find All Missing Numbers
+
+Find the Duplicate Number
+
+Find All Duplicates in an Array
+
+First Missing Positive
+
+Set Mismatch
+
+6️⃣ In-place Linked List Reversal
+
+Used for reversing linked lists in parts.
+
+Problems:
+
+Reverse Linked List
+
+Reverse Linked List II (between positions m and n)
+
+Reverse Nodes in K-Group
+
+Rotate Linked List
+
+Reorder List
+
+Swap Nodes in Pairs
+
+7️⃣ Tree BFS Pattern
+
+Level-order traversal type.
+
+Problems:
+
+Binary Tree Level Order Traversal
+
+Binary Tree Zigzag Level Order Traversal
+
+Average of Levels in Binary Tree
+
+Maximum Depth of Binary Tree (BFS)
+
+Minimum Depth of Binary Tree
+
+Binary Tree Right Side View
+
+Cousins in Binary Tree
+
+8️⃣ DFS (Recursion/Stack)
+
+Used for exploring trees/graphs recursively.
+
+Problems:
+
+Maximum Depth of Binary Tree (DFS)
+
+Diameter of Binary Tree
+
+Path Sum I / II
+
+Symmetric Tree (DFS)
+
+Subtree of Another Tree
+
+Count Good Nodes in Binary Tree
+
+Number of Islands (DFS version)
+
+9️⃣ Two Heaps Pattern
+
+Used for median and scheduling problems.
+
+Problems:
+
+Find Median from Data Stream
+
+Sliding Window Median
+
+IPO (maximize capital with projects)
+
+Find Right Interval
+
+Meeting Rooms II (Heap version)
+
+🔟 Subsets Pattern
+
+Used for generating combinations / permutations.
+
+Problems:
+
+Subsets (all subsets)
+
+Subsets II (with duplicates)
+
+Permutations
+
+Permutations II (with duplicates)
+
+Combination Sum
+
+Combination Sum II
+
+Palindrome Partitioning
+
+Letter Combinations of a Phone Number
+
+1️⃣1️⃣ Modified Binary Search
+
+Used for rotated arrays, peaks, searching problems.
+
+Problems:
+
+Binary Search (base)
+
+Search in Rotated Sorted Array
+
+Find Minimum in Rotated Sorted Array
+
+Find Peak Element
+
+First and Last Position of Element in Sorted Array
+
+Single Element in a Sorted Array
+
+Median of Two Sorted Arrays
+
+1️⃣2️⃣ Bitwise XOR Pattern
+
+Used for finding missing / unique elements.
+
+Problems:
+
+Single Number (every element appears twice except one)
+
+Single Number II (appears 3 times except one)
+
+Missing Number
+
+Two Single Numbers (find 2 unique numbers in array)
+
+Find XOR of numbers in range
+
+1️⃣3️⃣ Top K Elements (Heap)
+
+Used with PriorityQueue.
+
+Problems:
+
+Kth Largest Element in Array
+
+Top K Frequent Elements
+
+Top K Frequent Words
+
+K Closest Points to Origin
+
+Connect Ropes to Minimize Cost
+
+Reorganize String
+
+Sort Characters by Frequency
+
+1️⃣4️⃣ 0/1 Knapsack DP
+
+Classic subset DP.
+
+Problems:
+
+0/1 Knapsack
+
+Subset Sum Problem
+
+Partition Equal Subset Sum
+
+Target Sum
+
+Coin Change
+
+Minimum Number of Coins to Make Amount
+
+Unbounded Knapsack
+
+1️⃣5️⃣ Topological Sort (Graph Ordering)
+
+Used in DAG problems.
+
+Problems:
+
+Course Schedule I
+
+Course Schedule II
+
+Alien Dictionary
+
+Minimum Height Trees
+
+Sequence Reconstruction
+
+1️⃣6️⃣ Greedy Pattern
+
+Used when locally optimal = globally optimal.
+
+Problems:
+
+Jump Game I
+
+Jump Game II
+
+Gas Station
+
+Candy Distribution
+
+Non-overlapping Intervals (greedy)
+
+Minimum Number of Arrows to Burst Balloons
+
+1️⃣7️⃣ Matrix Traversal Pattern
+
+Used for grid/2D problems.
+
+Problems:
+
+Number of Islands
+
+Word Search
+
+Surrounded Regions
+
+Rotting Oranges
+
+Spiral Matrix
+
+Flood Fill
