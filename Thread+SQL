@@ -30,3 +30,320 @@ Implement a producer-consumer problem using threads.
 
 
 Demonstrate thread deadlock and how to avoid it.
+
+
+I’ll break them down into BASIC and ADVANCED, and for each topic I’ll give you:
+👉 Definition (What it is)
+👉 Why/When to use it
+👉 How to use (with code snippets if needed)
+👉 Common interview points / pitfalls
+
+Let’s start building this into a study-style document so you can revise later.
+
+Java Multithreading & Concurrency Notes
+🟢 BASIC TOPICS
+1. Application, Process, and Thread
+
+Application: A running program (e.g., java MyApp).
+
+Process: Instance of an application, with its own memory and resources.
+
+Thread: A lightweight unit of execution within a process.
+Multiple threads in a process share the same memory.
+
+👉 Interview Point: Difference between process and thread
+
+Process: heavyweight, separate memory.
+
+Thread: lightweight, shares memory.
+
+2. How to Create a Thread
+
+Extending Thread class
+
+class MyThread extends Thread {
+    public void run() {
+        System.out.println("Thread running...");
+    }
+}
+new MyThread().start();
+
+
+Implementing Runnable
+
+class MyRunnable implements Runnable {
+    public void run() {
+        System.out.println("Thread running...");
+    }
+}
+new Thread(new MyRunnable()).start();
+
+
+Using Lambda
+
+new Thread(() -> System.out.println("Thread running...")).start();
+
+
+👉 Interviewers prefer Runnable because Java supports multiple interfaces but not multiple inheritance.
+
+3. How to Join a Thread
+Thread t1 = new Thread(() -> {
+    System.out.println("Task 1");
+});
+t1.start();
+t1.join();  // waits until t1 finishes
+System.out.println("Main continues...");
+
+4. How to Interrupt a Thread
+
+Used to gracefully stop threads.
+
+Thread t = new Thread(() -> {
+    while (!Thread.currentThread().isInterrupted()) {
+        // work
+    }
+});
+t.start();
+t.interrupt();
+
+
+👉 Doesn’t kill the thread immediately, sets an interrupt flag.
+
+5. Threads Synchronization
+
+Ensures only one thread executes a critical section at a time.
+
+synchronized void increment() {
+    counter++;
+}
+
+
+👉 Interview Q: Why not always use synchronization?
+
+It can cause performance bottlenecks.
+
+6. Happens-Before Relationship
+
+Defines visibility + ordering guarantees in Java Memory Model (JMM).
+Examples:
+
+Unlock on a monitor happens-before subsequent lock.
+
+Writing to volatile happens-before subsequent read.
+
+7. Locks Granularity
+
+Coarse-grained lock: One lock for the entire object → simpler, slower.
+
+Fine-grained lock: Multiple locks for smaller data pieces → faster, but complex.
+
+8. Volatile Variables
+
+Guarantees visibility of changes across threads.
+
+Does not guarantee atomicity.
+
+volatile boolean running = true;
+
+9. Atomic Variables
+
+java.util.concurrent.atomic package.
+
+Provides atomic operations without locks.
+
+AtomicInteger counter = new AtomicInteger();
+counter.incrementAndGet();
+
+10. Wait/Notify & Producer-Consumer Pattern
+
+wait(): releases lock, waits.
+
+notify(): wakes one waiting thread.
+
+notifyAll(): wakes all.
+
+synchronized (lock) {
+    while (!condition) lock.wait();
+    // work
+    lock.notify();
+}
+
+
+👉 Often used in Producer-Consumer.
+
+11. ThreadLocal Variables
+
+Each thread gets its own copy.
+
+ThreadLocal<Integer> threadLocal = ThreadLocal.withInitial(() -> 0);
+
+12. Race Condition
+
+Two/more threads access shared data → inconsistent results.
+
+Fix: use synchronization/atomic variables/locks.
+
+13. Deadlock
+
+Two/more threads wait forever for each other’s locks.
+👉 Prevent using lock ordering or tryLock() with timeout.
+
+14. Starvation
+
+A thread never gets CPU or resources because others dominate.
+👉 Fix with fair locks (new ReentrantLock(true)).
+
+15. Livelock
+
+Threads keep reacting to each other but no progress is made.
+👉 Example: Two people stepping aside repeatedly to avoid collision.
+
+🔵 ADVANCED TOPICS
+1. Lock & ReentrantLock
+
+Advanced version of synchronized.
+
+Allows tryLock, fairness, timed lock.
+
+Lock lock = new ReentrantLock();
+if (lock.tryLock()) {
+    try { /* critical section */ }
+    finally { lock.unlock(); }
+}
+
+2. Read-Write Lock
+
+Multiple readers OR one writer.
+
+ReadWriteLock rw = new ReentrantReadWriteLock();
+rw.readLock().lock();
+rw.readLock().unlock();
+
+3. Condition Variables
+
+Advanced wait/notify with ReentrantLock.
+
+Condition notFull = lock.newCondition();
+
+4. Semaphore
+
+Controls access with permits.
+
+Semaphore sem = new Semaphore(3);
+sem.acquire();
+sem.release();
+
+5. CyclicBarrier (Parallel Sum Example)
+
+All threads wait until a barrier is reached.
+
+CyclicBarrier barrier = new CyclicBarrier(3, () -> System.out.println("All done"));
+
+6. CountDownLatch (Merge-Sort Example)
+
+Waits until latch reaches 0.
+
+CountDownLatch latch = new CountDownLatch(3);
+latch.countDown();
+latch.await();
+
+7. Exchanger
+
+Two threads exchange data.
+
+Exchanger<String> exchanger = new Exchanger<>();
+
+8. Phaser
+
+Similar to CyclicBarrier, but supports dynamic registration.
+
+9. CopyOnWrite Collections
+
+Safe for iteration without ConcurrentModificationException.
+
+CopyOnWriteArrayList<String> list = new CopyOnWriteArrayList<>();
+
+10. Non-Blocking Queues
+
+ConcurrentLinkedQueue → lock-free, fast.
+
+11. Blocking Queues
+
+ArrayBlockingQueue, LinkedBlockingQueue
+
+Used in producer-consumer.
+
+12. ConcurrentMap
+
+Thread-safe map, no global lock.
+
+ConcurrentHashMap<Integer, String> map = new ConcurrentHashMap<>();
+
+13. Map-Reduce Algorithm
+
+Break tasks into parts (Map) → combine results (Reduce).
+
+Example: Parallel word count.
+
+14. Executors
+
+High-level API to manage thread pools.
+
+ExecutorService service = Executors.newFixedThreadPool(5);
+
+15. Scheduled Tasks
+ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+scheduler.scheduleAtFixedRate(task, 0, 10, TimeUnit.SECONDS);
+
+16. ThreadPoolExecutor & ThreadFactory
+
+Fine control over pools.
+
+ThreadFactory customizes threads.
+
+17. Fork-Join Pool
+
+Splits tasks recursively (Divide & Conquer).
+
+Used in parallel streams.
+
+18. CompletableFuture
+
+Async computations with chaining.
+
+CompletableFuture.supplyAsync(() -> "Hello")
+    .thenApply(s -> s + " World");
+
+19. Parallel Streams
+list.parallelStream().map(...).collect(...);
+
+20. Spinlock & Busy Wait
+
+Thread repeatedly checks condition instead of sleeping.
+
+Rarely used (high CPU cost).
+
+21. Lock-Free & Wait-Free Algorithms
+
+Algorithms using atomic operations (CAS).
+
+High performance, used in ConcurrentLinkedQueue.
+
+22. Throughput & Latency
+
+Throughput: Work done per unit time.
+
+Latency: Time per task.
+👉 Tradeoff often in concurrent systems.
+
+23. Profiling
+
+Measuring thread usage, CPU, memory.
+
+Tools: VisualVM, JConsole, Flight Recorder.
+
+24. Microbenchmarks with JMH
+
+Framework for accurate performance testing.
+
+Avoids JVM warm-up bias.
