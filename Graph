@@ -1,0 +1,42 @@
+📌 Graph
+🟢 Basic
+
+Represent Graph using adjacency list & adjacency matrix.
+
+BFS & DFS traversal.
+
+Detect cycle in an undirected graph.
+
+Detect cycle in a directed graph (DFS + recursion stack).
+
+Find number of connected components.
+
+🟡 Intermediate
+
+Topological Sort (DFS + Kahn’s Algorithm).
+
+Shortest Path in Unweighted Graph (BFS).
+
+Dijkstra’s Algorithm (Shortest Path in Weighted Graph).
+
+Bellman-Ford Algorithm.
+
+Floyd-Warshall Algorithm.
+
+Bipartite Graph Check.
+
+🔴 Advanced
+
+Minimum Spanning Tree (Prim’s & Kruskal’s).
+
+Kosaraju’s Algorithm (Strongly Connected Components).
+
+Tarjan’s Algorithm (Bridges & Articulation Points).
+
+Course Schedule Problem (Cycle detection + Topological Sort).
+
+Word Ladder Problem (BFS on words).
+
+Network Delay Time (Dijkstra).
+
+Travelling Salesman Problem (TSP – DP + Bitmask).
