@@ -1,27 +1,65 @@
 📌 Tree (Binary Tree + BST)
 🟢 Basic
 
-Preorder, Inorder, Postorder Traversal (recursive & iterative).
+1. Preorder, Inorder, Postorder Traversal (recursive & iterative).
+#####  Recursive
+---------------------PreOrder----------------------------------
+public static void preOrder(TreeNode root) {
+    if (root == null) return;
 
-Level Order Traversal (BFS).
+    System.out.print(root.val + " ");   // 1. Visit root
+    preOrder(root.left);                // 2. Traverse left
+    preOrder(root.right);               // 3. Traverse right
+}
+-----------------------------------------------------------------
+---------------------Inorder----------------------------------
+  // Recursive inorder traversal
+    public static void inorderRecursive(TreeNode root) {
+        if (root == null) return;
 
-Height/Depth of a Binary Tree.
+        inorderRecursive(root.left);   // visit left
+        System.out.print(root.val + " "); // visit root
+        inorderRecursive(root.right);  // visit right
+    }
+-----------------------------------------------------------------
+---------------------Postorder----------------------------------
+public static void postOrder(TreeNode root) {
+    if (root == null) return;
 
-Check if a tree is balanced.
+    postOrder(root.left);               // 1. Traverse left
+    postOrder(root.right);              // 2. Traverse right
+    System.out.print(root.val + " ");   // 3. Visit root
+}
+
+-----------------------------------------------------------------
+
+
+######  iterative
+
+
+
+
+
+
+2. Level Order Traversal (BFS).
+
+3. Height/Depth of a Binary Tree.
+
+4. Check if a tree is balanced.
 
 🟡 Intermediate
 
-Lowest Common Ancestor (LCA).
+1. Lowest Common Ancestor (LCA).
 
-Diameter of a Binary Tree.
+2. Diameter of a Binary Tree.
 
-Serialize and Deserialize a Binary Tree.
+3. Serialize and Deserialize a Binary Tree.
 
-Check if two trees are identical.
+4. Check if two trees are identical.
 
-Boundary Traversal of a Binary Tree.
+5. Boundary Traversal of a Binary Tree.
 
-Convert Sorted Array to BST.
+6. Convert Sorted Array to BST.
 
 🔴 Advanced
 
