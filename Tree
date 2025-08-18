@@ -1,0 +1,67 @@
+📌 Tree (Binary Tree + BST)
+🟢 Basic
+
+Preorder, Inorder, Postorder Traversal (recursive & iterative).
+
+Level Order Traversal (BFS).
+
+Height/Depth of a Binary Tree.
+
+Check if a tree is balanced.
+
+🟡 Intermediate
+
+Lowest Common Ancestor (LCA).
+
+Diameter of a Binary Tree.
+
+Serialize and Deserialize a Binary Tree.
+
+Check if two trees are identical.
+
+Boundary Traversal of a Binary Tree.
+
+Convert Sorted Array to BST.
+
+🔴 Advanced
+
+Vertical Order Traversal.
+
+Binary Tree Maximum Path Sum.
+
+Morris Traversal (without recursion/stack).
+
+Count number of nodes in a Complete Binary Tree (O(log² n)).
+
+Recover BST where two nodes are swapped.
+
+Construct tree from inorder & preorder/postorder.
+
+📌 Trie
+🟢 Basic
+
+Implement Trie (Insert, Search, Delete).
+
+Check if a word exists in a dictionary.
+
+Count words with a given prefix.
+
+🟡 Intermediate
+
+Auto-complete suggestions using Trie.
+
+Longest Word in Dictionary.
+
+Word Break Problem (using Trie + DP).
+
+Find unique prefix for every word.
+
+🔴 Advanced
+
+Maximum XOR of two numbers in an array (using Trie).
+
+Word Search II (Leetcode 212) – Backtracking + Trie.
+
+Palindrome Pairs using Trie.
+
+Implement T9 Dictionary (old phone keypad).
