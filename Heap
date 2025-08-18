@@ -1,0 +1,30 @@
+📌 Heap
+🟢 Basic
+
+Implement a Min Heap and Max Heap from scratch.
+
+Insert and Delete operations in a heap.
+
+Convert an array into a heap (Heapify).
+
+Find the kth largest/smallest element in an array using a heap.
+
+🟡 Intermediate
+
+Merge K sorted arrays using a heap.
+
+Find the K closest numbers to a given number.
+
+Connect ropes with minimum cost (Huffman-like problem).
+
+Top K frequent elements in an array.
+
+🔴 Advanced
+
+Sliding Window Maximum using a heap.
+
+Median of a stream of integers using heaps.
+
+Task Scheduler (Leetcode 621).
+
+Trapping Rain Water II (using min heap for 2D grid).
