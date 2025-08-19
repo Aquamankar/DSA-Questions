@@ -1,0 +1,82 @@
+🔹 String Questions for Coding Interviews
+1. Basic String Manipulation
+
+Reverse a string without using library functions.
+
+Check if a string is a palindrome.
+
+Count vowels and consonants in a string.
+
+Convert the first letter of each word to uppercase.
+
+Remove all duplicates from a string.
+
+Find the frequency of each character in a string.
+
+Remove all white spaces from a string.
+
+Check if two strings are anagrams.
+
+Find the first non-repeating character in a string.
+
+Implement your own substring() function.
+
+2. Two Pointers / Sliding Window
+
+Longest substring without repeating characters.
+
+Check if a string contains a permutation of another string.
+
+Minimum window substring that contains all characters of another string.
+
+Longest palindromic substring.
+
+Smallest substring with all unique characters.
+
+Count substrings with exactly k distinct characters.
+
+Find all anagram indices of a pattern in a string.
+
+Longest substring with at most k distinct characters.
+
+3. Pattern Matching & Searching
+
+Implement strStr() (find index of substring).
+
+KMP Algorithm for pattern searching.
+
+Rabin-Karp Algorithm for substring search.
+
+Z-algorithm for pattern searching.
+
+Find the longest prefix which is also a suffix.
+
+4. Recursion & Backtracking
+
+Print all permutations of a string.
+
+Generate all subsets of a string.
+
+Generate all valid parenthesis strings of length n.
+
+Word break problem (split string into dictionary words).
+
+Restore IP addresses from a string.
+
+5. Advanced / Tricky
+
+Find the longest repeating subsequence.
+
+Check if two strings are isomorphic.
+
+Encode and decode strings (like LeetCode 271).
+
+Implement string compression (e.g., aaabb → a3b2).
+
+Multiply two numbers given as strings.
+
+Add binary strings.
+
+Longest common prefix in an array of strings.
+
+Print all palindromic substrings of a string.
