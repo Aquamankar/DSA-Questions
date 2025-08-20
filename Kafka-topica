@@ -74,6 +74,82 @@ At-least-once
 
 Exactly-once semantics (EOS)
 
+
+-----------------------------------------------------------------------
+
+
+1. At-most-once
+
+Meaning: A message is delivered zero or one time. No retries. If it fails once, it’s lost forever.
+
+When it happens in Kafka:
+
+Producer sends message without retries or acknowledgments (acks=0).
+
+Consumer commits offset before processing the record (so if crash happens after commit → message lost).
+
+Use case: Low-value, high-speed data like metrics, logs where losing a few records doesn’t matter.
+
+Configuration:
+
+Producer: acks=0, enable.idempotence=false.
+
+Consumer: Commit offsets before processing messages.
+
+🔹 2. At-least-once
+
+Meaning: A message is delivered one or more times. No data loss, but duplicates are possible.
+
+When it happens in Kafka:
+
+Producer retries on failure (acks=all with retries enabled).
+
+Consumer commits offset after processing (so no loss, but on crash message may reprocess → duplicate).
+
+Use case: Financial transactions, billing systems, where data loss is unacceptable but duplicates can be handled.
+
+Configuration:
+
+Producer: acks=all, enable.idempotence=false, retries > 0.
+
+Consumer: Commit offsets only after successful processing.
+
+🔹 3. Exactly-once (EOS)
+
+Meaning: Each message is processed only once → no loss, no duplicates.
+
+How Kafka achieves this:
+
+Idempotent producer: (enable.idempotence=true) ensures producer retries do not create duplicates.
+
+Transactions: (transactional.id on producer) allows a group of messages across topics/partitions to be atomic.
+
+Consumer offsets are stored as part of the same transaction → ensures "read-process-write" occurs exactly once.
+
+Use case: Payments, order systems, stock trades where duplicates/loss are unacceptable.
+
+Configuration:
+
+Producer:
+
+enable.idempotence=true
+transactional.id=my-tx-id
+acks=all
+
+
+Consumer: Use transactional-aware consumers with isolation.level=read_committed.
+
+✅ Summary:
+
+At-most-once: Fastest, possible loss, no duplicates.
+
+At-least-once: Reliable, possible duplicates.
+
+Exactly-once: Reliable and no duplicates (heavier).
+
+Would you like me to also draw a diagram showing how producer + broker + consumer interact in each case (so you can use it for interview answers)?
+------------------------------------_--------------------------------------
+
 How Kafka achieves each
 
 6. Kafka Storage & Retention
