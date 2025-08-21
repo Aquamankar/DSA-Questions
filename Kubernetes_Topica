@@ -1,0 +1,139 @@
+📌 Kubernetes Topics for Interview Prep
+1. Kubernetes Basics
+
+What is Kubernetes? Why do we use it?
+
+Difference between Kubernetes and Docker Swarm.
+
+Core components: Pod, Node, Deployment, ReplicaSet, Service.
+
+Control Plane vs Worker Node.
+
+kube-apiserver, kube-scheduler, kube-controller-manager, etcd, kubelet, kube-proxy.
+
+2. Pods and Workloads
+
+What is a Pod? Can a Pod run multiple containers?
+
+Difference between Pod, ReplicaSet, Deployment, StatefulSet, DaemonSet, Job, CronJob.
+
+Rolling updates vs Recreate deployment strategy.
+
+How to scale applications in Kubernetes.
+
+3. Services & Networking
+
+ClusterIP, NodePort, LoadBalancer, and ExternalName services.
+
+Difference between Ingress and LoadBalancer.
+
+CNI (Container Network Interface) and common plugins (Flannel, Calico, Cilium).
+
+DNS in Kubernetes (CoreDNS).
+
+How service discovery works in Kubernetes.
+
+4. Storage & Config
+
+PersistentVolume (PV) vs PersistentVolumeClaim (PVC).
+
+StorageClass and dynamic provisioning.
+
+ConfigMap vs Secret.
+
+How Kubernetes handles environment variables.
+
+5. Security & RBAC
+
+Role, ClusterRole, RoleBinding, ClusterRoleBinding.
+
+Service accounts and how they differ from user accounts.
+
+Network Policies.
+
+Pod Security Standards (baseline, restricted).
+
+6. Scheduling & Resource Management
+
+How does the Kubernetes scheduler decide where to place a Pod?
+
+NodeSelector, Affinity, Taints and Tolerations.
+
+Resource requests and limits (CPU, memory).
+
+Horizontal Pod Autoscaler (HPA), Vertical Pod Autoscaler (VPA).
+
+Pod Disruption Budgets.
+
+7. Monitoring & Logging
+
+How do you monitor Kubernetes?
+
+Prometheus, Grafana, EFK/ELK stack.
+
+LivenessProbe, ReadinessProbe, StartupProbe.
+
+8. Helm & Operators
+
+What is Helm? Helm chart basics.
+
+Difference between Helm and Kustomize.
+
+Operators – what they are and when to use them.
+
+9. CI/CD & Kubernetes
+
+How Kubernetes fits into CI/CD pipelines.
+
+Rolling updates vs Blue-Green vs Canary deployments.
+
+10. Advanced Concepts
+
+ETCD – what does it store?
+
+Kubernetes namespaces and resource quotas.
+
+API Gateway vs Ingress.
+
+Difference between StatefulSet and Deployment.
+
+How Kubernetes achieves high availability.
+
+📌 Sample Kubernetes Interview Questions
+✅ Basic
+
+What is Kubernetes and why is it needed if we already have Docker?
+
+Explain the difference between Deployment, ReplicaSet, and StatefulSet.
+
+What are the different types of services in Kubernetes?
+
+✅ Intermediate
+
+How does Kubernetes handle service discovery?
+
+What’s the difference between ConfigMap and Secret?
+
+How do you scale an application in Kubernetes?
+
+Explain how rolling updates work in Kubernetes.
+
+What is a DaemonSet? Give a use case.
+
+✅ Advanced
+
+How does Kubernetes scheduler decide pod placement?
+
+Explain taints and tolerations with an example.
+
+What is the difference between Ingress Controller and LoadBalancer?
+
+How do you secure communication between pods?
+
+What happens when etcd goes down?
+
+How do HPA and VPA differ?
+
+What’s the difference between StatefulSet and Deployment in terms of storage?
+
+👉 Would you like me to also prepare a cheat sheet PDF with diagrams + short definitions + most asked interview Q&A for Kubernetes (like we did for Hibernate/SQL/Java)? That way you can keep it handy for quick revision before interviews.
