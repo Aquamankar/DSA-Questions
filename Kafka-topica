@@ -67,6 +67,69 @@ Poll mechanism (poll() method)
 
 Static vs dynamic group membership
 
+--------------------++++++++++++++++++++-------------------------------------
+
+Static vs Dynamic Group Membership
+
+Dynamic Membership (default)
+
+When a consumer joins, Kafka assigns it a new member ID.
+
+On restart → it gets a new ID, so Kafka rebalances.
+
+Frequent restarts = frequent rebalances = bad performance.
+
+Static Membership
+
+Consumer keeps a fixed identity (via group.instance.id).
+
+On restart → Kafka remembers the consumer’s partition assignment → avoids full rebalance.
+
+Much more stable for production workloads.
+
+Config Example:
+
+group.instance.id=my-consumer-1
+
+
+(Each consumer must have a unique group.instance.id).
+
+Benefit:
+
+Reduces downtime.
+
+Useful for long-lived applications where consumers restart often.
+
+🔹 Interview Questions
+
+What is consumer lag? How do you monitor it?
+
+Why does Kafka use a poll-based model instead of push?
+
+What happens if a consumer doesn’t call poll() in time?
+
+What’s the difference between max.poll.records and max.poll.interval.ms?
+
+What is static membership in Kafka consumer groups?
+
+What problem does static membership solve compared to dynamic membership?
+
+Can two consumers in the same group have the same group.instance.id?
+
+👉 Do you want me to now extend the Kafka_Consumer.md file with:
+
+Consumer basics + groups (previous answer)
+
+Consumer lag
+
+Poll mechanism
+
+Static vs dynamic membership
+
+so you’ll have one consolidated file for Kafka consumer interview prep?
+
+--------------------------------------+++++++-------------------------&
+
 5. Kafka Message Delivery Semantics
 At-most-once
 
