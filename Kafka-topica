@@ -119,8 +119,18 @@ Can two consumers in the same group have the same group.instance.id?
 👉 Do you want me to now extend the Kafka_Consumer.md file with:
 
 Consumer basics + groups (previous answer)
-
+_------_------------------_---;;;;;-_---:---------_----_-------__-----_-------
 Consumer lag
+Consumer lag = Difference between the latest offset in a partition (what the producer has written) and the offset last committed/read by the consumer.
+
+In other words, it tells how far behind the consumer is compared to the producer.
+
+👉 Formula:
+
+Consumer Lag = Latest Offset (Log End Offset) - Consumer’s Current Offset
+
+
+_------------------------------------------------_-----------------
 
 Poll mechanism
 
