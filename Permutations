@@ -1,3 +1,162 @@
 🔟 Subsets Pattern
 
 Used for generating combinations / permutations.
+
+Problems:
+
+1.Subsets (all subsets)
+
+2.Subsets II (with duplicates)
+
+3.Permutations
+
+4.Permutations II (with duplicates)
+
+5.Combination Sum
+
+6.Combination Sum II
+
+7.Palindrome Partitioning
+
+8.Letter Combinations of a Phone Number
+
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------3.Permutations-----------------------------------------------------------------------
+
+  🔹 What is a Permutation?
+
+A permutation of a set/string/array is a reordering of its elements.
+For example, for ABC, permutations are:
+ABC, ACB, BAC, BCA, CAB, CBA.
+
+🔹 Types / Patterns of Permutation Problems
+
+
+1. Basic Permutations
+
+Generate all permutations of a given string/array.
+
+Example: "abc" → [abc, acb, bac, bca, cab, cba].
+
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        String s = "AAB";
+        Set<String> result = new LinkedHashSet<>(); // maintains order + removes duplicates
+        permute(s.toCharArray(), 0, s.length(), result);
+        System.out.println(result);
+    }
+
+    public static void permute(char[] ch, int left, int right, Set<String> result) {
+        if (left == right) {
+            result.add(new String(ch));
+            return;
+        }
+
+        for (int i = left; i < right; i++) {
+            swap(ch, left, i);
+            permute(ch, left + 1, right, result);
+            swap(ch, left, i);
+        }
+    }
+
+    public static void swap(char[] ch, int i, int j) {
+        char temp = ch[i];
+        ch[i] = ch[j];
+        ch[j] = temp;
+    }
+}
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+2. Permutations with Constraints
+
+Apply conditions while generating:
+
+No adjacent duplicates
+Example: "aab" → disallow "aab" if aa are together.
+
+No vowels together
+Example: "aeiou" → arrange so vowels are not side by side.
+
+Only increasing order subsequences
+Example: [1, 2, 3] but only keep [123].
+
+3. Permutations with Duplicates
+
+Input may have repeating characters.
+
+Need to generate unique permutations.
+
+Example: "aab" → [aab, aba, baa] (not duplicate aab twice).
+
+4. K-th Permutation
+
+Instead of generating all, directly find the k-th lexicographic permutation.
+
+Example: For 123, 3rd permutation = 213.
+
+5. Next Permutation
+
+Find the next lexicographic order permutation of a sequence.
+
+Example: 123 → 132, 321 → 123.
+
+6. Permutations as Choices/Arrangements
+
+Selecting arrangements when order matters.
+
+Formula: nPr = n! / (n-r)!.
+
+Example: 5P3 = 5*4*3 = 60.
+
+7. Backtracking Permutation Problems
+
+These follow the recursion + decision tree pattern:
+
+Include or exclude element.
+
+Swap elements and backtrack.
+
+Example: classic permute(nums[]).
+
+8. Circular Permutations
+
+Elements arranged in a circle.
+
+Example: For ABC, (ABC, BCA, CAB) are same in circle, so fewer unique ones.
+
+9. Constrained Digit/Number Permutations
+
+Digits with certain restrictions.
+
+Example: 4-digit numbers formed using 1,2,3,4 but divisible by 2.
+
+10. Substring/Anagram Permutations
+
+Find all permutations that are substrings in another string.
+
+Example: Is "abc" permutation present in "eidbaooo"? (yes → "bao").
+
+✅ Quick Summary:
+
+Basic → all permutations
+
+With duplicates → unique ones
+
+With constraints → adjacency, order, etc.
+
+K-th / Next permutation → sequence problems
+
+Formula based → nPr
+
+Backtracking → recursion pattern
+
+Special cases → circular, digit-based, anagram
