@@ -1,0 +1,377 @@
+1️⃣ Filtering / Selecting Pattern
+
+Use filter() to select elements based on a condition.
+
+Often combined with collect() or count().
+
+Examples:
+
+Find all even numbers from a list → list.stream().filter(x -> x % 2 == 0).collect(Collectors.toList())
+
+Filter students with marks > 75
+
+Count elements matching a condition → stream.filter(...).count()
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+2️⃣ Mapping / Transforming Pattern
+
+Use map() to transform elements.
+
+Often combined with collect().
+
+Examples:
+
+Convert list of strings to uppercase → list.stream().map(String::toUpperCase)
+
+Extract employee names from a list of Employee objects
+
+Convert list of integers to their squares
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+3️⃣ Reducing / Aggregation Pattern
+
+Use reduce(), sum(), max(), min().
+
+Often for aggregating results into one value.
+
+Examples:
+
+Sum of all numbers → stream.reduce(0, Integer::sum)
+
+Find maximum salary from a list of employees
+
+Concatenate all strings in a list → stream.reduce("", String::concat)
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+4️⃣ Collecting / Grouping Pattern
+
+Use collect(), Collectors.groupingBy(), Collectors.toMap().
+
+Often used for grouping, partitioning, or converting to map/list/set.
+
+Examples:
+
+Group employees by department → Collectors.groupingBy(Employee::getDept)
+
+Count frequency of each word → Collectors.groupingBy(Function.identity(), Collectors.counting())
+
+Partition numbers into even and odd → Collectors.partitioningBy(x -> x % 2 == 0)
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+5️⃣ Sorting Pattern
+
+Use sorted() with natural or custom comparator.
+
+Can be combined with limit() for top K elements.
+
+Examples:
+
+Sort numbers in ascending order → stream.sorted()
+
+Sort employees by salary descending → sorted(Comparator.comparing(Employee::getSalary).reversed())
+
+Find top 3 highest marks → sorted(...).limit(3)
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+6️⃣ Matching / Checking Pattern
+
+Use anyMatch(), allMatch(), noneMatch() to check conditions.
+
+Examples:
+
+Check if any number is negative → anyMatch(x -> x < 0)
+
+Check if all strings are uppercase → allMatch(s -> s.equals(s.toUpperCase()))
+
+Check if no employee has zero salary → noneMatch(e -> e.getSalary() == 0)
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+7️⃣ Finding / Searching Pattern
+
+Use findFirst(), findAny() to get elements.
+
+Examples:
+
+Find first even number → stream.filter(x -> x % 2 == 0).findFirst()
+
+Find any employee with salary > 5000 → findAny()
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+8️⃣ Distinct / Unique Pattern
+
+Use distinct() to remove duplicates.
+
+Examples:
+
+Remove duplicate numbers from list → stream.distinct().collect(Collectors.toList())
+
+Find unique words in a sentence
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+9️⃣ FlatMap / Nested Collection Pattern
+
+Use flatMap() for nested collections.
+
+Examples:
+
+Flatten a list of lists → listOfLists.stream().flatMap(List::stream)
+
+Get all courses of all students → students.stream().flatMap(s -> s.getCourses().stream())
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+10️⃣ Limit / Skip / Pagination Pattern
+
+Control number of elements processed.
+
+Examples:
+
+Get first 5 numbers → stream.limit(5)
+
+Skip first 3 elements → stream.skip(3)
+
+Combine skip + limit → pagination
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+1️⃣ Employee Object + Stream API Questions
+
+
+
+
+Assume:
+
+class Employee {
+    String name;
+    String department;
+    double salary;
+    int age;
+    List<String> projects;
+
+    // Constructor + getters + setters
+}
+------------------------------------------------------------------------------------------------------------------------------------------------
+Filtering / Selecting
+
+Find all employees with salary > 5000.
+
+List employees in department "IT".
+
+Get employees younger than 30.
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Mapping / Transforming
+
+Get a list of all employee names.
+
+Convert employee names to uppercase.
+
+Get a list of employee salaries multiplied by 1.1 (10% increment).
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Reducing / Aggregation
+
+Find total salary of all employees.
+
+Find the employee with the highest salary.
+
+Average salary per department.
+
+
+-----------------------------------------------------------------------------------------------------------
+
+Collecting / Grouping
+
+Group employees by department.
+
+Count employees in each department.
+
+Partition employees into those with salary > 5000 and ≤ 5000.
+
+List names of employees per department.
+
+-----------------------------------------------------------------------------------------------------------=-----------------
+
+Sorting / Top K
+
+Get top 3 highest-paid employees.
+
+Sort employees by age ascending.
+
+-----------------------------------------------------------------------------------------------------------
+
+Matching / Checking
+
+Check if all employees earn more than 2000.
+
+Check if any employee works on "ProjectX".
+
+Check if no employee has negative salary.
+
+-----------------------------------------------------------------------------------------------------------
+
+FlatMap / Nested
+
+List all distinct projects across all employees.
+
+Count total number of projects assigned.
+
+-----------------------------------------------------------------------------------------------------------
+
+2️⃣ Map-Based Questions
+Frequency / Counting
+
+Count occurrences of employee names in a list of employees (duplicate names possible).
+
+Count number of employees per department.
+-----------------------------------------------------------------------------------------------------------
+
+Grouping
+
+Group employees by age bracket: <30, 30-40, >40.
+
+Group employees by first letter of name.
+
+Group employees by department, then list employees with salary > 5000 in each group.
+-----------------------------------------------------------------------------------------------------------
+
+Pair / Index / Lookup
+
+Given an employee name, get all employees with that name using a map.
+
+Map department → highest-paid employee in that department.
+
+Map project → list of employees working on it.
+-----------------------------------------------------------------------------------------------------------
+
+Advanced / Nested Maps
+
+Map department → (Map of age → List of employees).
+
+Map project → (Map of department → number of employees).
+-----------------------------------------------------------------------------------------------------------
+
+3️⃣ String-Based Questions
+Frequency / Counting
+
+Count frequency of characters in employee names.
+
+Count frequency of first letters of employee names.
+
+Find first non-repeating character in a name.
+
+-----------------------------------------------------------------------------------------------------------
+
+Sliding Window / Substring
+
+Longest substring without repeating characters in employee name.
+
+Longest common prefix among employee names.
+
+-----------------------------------------------------------------------------------------------------------
+
+Anagram / Permutations
+
+Check if two employee names are anagrams.
+
+Find all permutations of employee initials (first letters of names).
+
+-----------------------------------------------------------------------------------------------------------
+
+Matching / Transform
+
+Get all names containing "a" (case-insensitive).
+
+Convert all employee names to title case.
+
+Replace spaces with underscores in names.
+
+-----------------------------------------------------------------------------------------------------------
+
+4️⃣ IntStream / Number-Based Stream Patterns
+Filtering / Selecting
+
+Filter employees with age > 30 using IntStream.
+
+Get employees with salary in range 4000–6000.
+
+-----------------------------------------------------------------------------------------------------------
+
+Mapping / Transforming
+
+Create an IntStream of ages.
+
+Multiply all salaries by 1.05 using mapToDouble.
+
+-----------------------------------------------------------------------------------------------------------
+
+Reducing / Aggregation
+
+Sum of all ages.
+
+Max age among employees.
+
+Average salary.
+
+-----------------------------------------------------------------------------------------------------------
+
+Sorting / Top K
+
+Sort ages ascending.
+
+Find top 3 salaries using IntStream.
+
+-----------------------------------------------------------------------------------------------------------
+
+Distinct / Unique
+
+Find distinct ages of employees.
+
+Range / Pagination
+
+Generate IntStream.range(1, 11) → sum of first 10 numbers.
+
+Skip first 3 salaries and sum the rest.
+
+-----------------------------------------------------------------------------------------------------------
+5️⃣ Combined / Advanced Pattern Questions
+
+List all employees in department "IT" whose name starts with "A" and sort by salary descending.
+
+Group employees by department, then find max salary in each group.
+
+Partition employees into those older than 30 and younger, then get names in each group.
+
+Count how many employees are working on each project (flatMap + groupingBy).
+
+Find all employees whose name is a palindrome.
+
+Get top 3 employees with longest names.
+
+Find employees whose salary is above the average salary.
+
+Find the most common first letter of employee names.
+-----------------------------------------------------------------------------------------------------------
+
+✅ How to Practice
+
+Step 1: Take 2–3 questions from each pattern per day.
+
+Step 2: Try Stream API + Map + String + IntStream solutions.
+
+Step 3: Optimize using collectors, grouping, partitioning, flatMap.
+
+Step 4: After solving, try mixing patterns, like “filter → group → map → reduce”.
