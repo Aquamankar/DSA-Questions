@@ -133,6 +133,52 @@ class Main {
 No vowels together
 Example: "aeiou" → arrange so vowels are not side by side.
 
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        String s = "aeib"; // example
+        List<String> result = new ArrayList<>();
+        permute(s.toCharArray(), 0, s.length(), result);
+        System.out.println(result);
+    }
+
+    public static void permute(char[] ch, int left, int right, List<String> result) {
+        if (left == right) {
+            if (noVowelsTogether(ch)) {
+                result.add(new String(ch));
+            }
+            return;
+        }
+
+        for (int i = left; i < right; i++) {
+            swap(ch, left, i);
+            permute(ch, left + 1, right, result);
+            swap(ch, left, i);
+        }
+    }
+
+    public static boolean noVowelsTogether(char[] ch) {
+        Set<Character> vowels = new HashSet<>(Arrays.asList('a','e','i','o','u'));
+        for (int i = 1; i < ch.length; i++) {
+            if (vowels.contains(ch[i]) && vowels.contains(ch[i - 1])) {
+                return false; // two vowels together
+            }
+        }
+        return true;
+    }
+
+    public static void swap(char[] ch, int i, int j) {
+        char temp = ch[i];
+        ch[i] = ch[j];
+        ch[j] = temp;
+    }
+}
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
 Only increasing order subsequences
 Example: [1, 2, 3] but only keep [123].
 
