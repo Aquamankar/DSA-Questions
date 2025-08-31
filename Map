@@ -9,11 +9,49 @@ Day 15: Map – Frequency, First Unique
 3.Implement group anagrams using a HashMap.
 
 
+
 4.Find the longest substring without repeating characters.
 
 
+
+
+
+
+-----------+++++------------------------------------------------------------------------
 5.Find the intersection of two arrays using a HashMap.
 
+import java.util.*;
+
+public class ArrayIntersection {
+    public static int[] intersection(int[] arr1, int[] arr2) {
+        Map<Integer, Integer> map = new HashMap<>();
+        List<Integer> result = new ArrayList<>();
+
+        // store frequency of arr1
+        for (int num : arr1) {
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+
+        // check arr2
+        for (int num : arr2) {
+            if (map.containsKey(num) && map.get(num) > 0) {
+                result.add(num);
+                map.put(num, map.get(num) - 1); // reduce frequency
+            }
+        }
+
+        // convert list -> array
+        return result.stream().mapToInt(i -> i).toArray();
+    }
+
+    public static void main(String[] args) {
+        int[] arr1 = {4, 9, 5};
+        int[] arr2 = {9, 4, 9, 8, 4};
+
+        int[] result = intersection(arr1, arr2);
+        System.out.println("Intersection: " + Arrays.toString(result));
+    }
+}
 
 
 ----------------------------------------------------------------------------------------------------------------
