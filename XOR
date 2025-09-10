@@ -120,6 +120,14 @@ So always check if (i != j) before swapping in array/string.
 
 
 
+⚡ Variations commonly asked in interviews:
+
+Every element appears thrice except one → use bitwise count method.
+
+Two elements appear once, others appear twice → use XOR + partitioning trick.
+
+Element appears k times except one → use modulo arithmetic on bit counts.
+
 -------------------------------------------------------------------------------------------------------------------------------------
 3.Check if subarray with XOR = K exists
 import java.util.HashMap;
