@@ -108,9 +108,16 @@ So always check if (i != j) before swapping in array/string.
 
 👉 Do you want me to create a list of XOR-only problems (like swapping, missing number, single number detection, etc.), or just stick with swapping variations?
 
+---------------------------++++++++--------_---------------_--------------------------------------------------------------------------------_----_---_--------__---
 1. Find the single non-repeating element
 
+
+
+
+
 2.Find the two non-repeating elements
+
+
 
 
 -------------------------------------------------------------------------------------------------------------------------------------
@@ -141,8 +148,32 @@ class Main {
     }
 }
 
+Let’s define:
+
+prefixXor[i] = XOR of arr[0..i]
+
+For subarray (l..r), XOR is:
+
+arr[l] ^ arr[l+1] ^ ... ^ arr[r] = prefixXor[r] ^ prefixXor[l-1]
+
+
+So, we need:
+
+prefixXor[r] ^ prefixXor[l-1] = K
+
+
+
+
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 4. XOR of all subarrays
+
 Return XOR of all elements in all subarrays
+
+
+
+-----------------------------------------------------------------------------------
