@@ -15,6 +15,99 @@ a ^ 0 = a
 
 XOR is commutative and associative
 
+
+
+XOR Swap Logic
+
+We know XOR properties:
+
+a ^ a = 0
+
+a ^ 0 = a
+
+XOR is commutative & associative
+
+So, to swap two numbers a and b without a temp variable:
+
+a = a ^ b;
+b = a ^ b; // (a ^ b) ^ b = a
+a = a ^ b; // (a ^ b) ^ a = b
+
+
+Now a and b are swapped.
+
+🔹 Basic XOR Swap Example
+public class XorSwap {
+    public static void main(String[] args) {
+        int a = 5, b = 9;
+
+        System.out.println("Before swap: a=" + a + ", b=" + b);
+
+        a = a ^ b;
+        b = a ^ b;
+        a = a ^ b;
+
+        System.out.println("After swap: a=" + a + ", b=" + b);
+    }
+}
+
+
+👉 Output:
+
+Before swap: a=5, b=9
+After swap: a=9, b=5
+
+🔹 XOR Swap Questions (Interview Style)
+
+Swap two numbers without using third variable
+
+Use XOR logic instead of temp.
+
+Reverse a string using XOR swap
+
+char[] arr = "akanksha".toCharArray();
+int i = 0, j = arr.length - 1;
+while (i < j) {
+    arr[i] ^= arr[j];
+    arr[j] ^= arr[i];
+    arr[i] ^= arr[j];
+    i++; j--;
+}
+System.out.println(new String(arr)); // output: "ahsknaka"
+
+
+Swap even and odd indexed elements in an array
+
+int[] arr = {1,2,3,4,5,6};
+for (int i = 0; i < arr.length-1; i+=2) {
+    arr[i] ^= arr[i+1];
+    arr[i+1] ^= arr[i];
+    arr[i] ^= arr[i+1];
+}
+// Result: {2,1,4,3,6,5}
+
+
+Swap two numbers in an array given their indices
+
+int[] arr = {10, 20, 30, 40};
+int i = 1, j = 3;
+arr[i] ^= arr[j];
+arr[j] ^= arr[i];
+arr[i] ^= arr[j];
+// Result: {10,40,30,20}
+
+
+Swap diagonal elements of a matrix
+(XOR works to swap matrix[i][i] and matrix[i][n-1-i]).
+
+⚠️ Important Note:
+
+If i == j (same index), XOR swap makes it 0.
+
+So always check if (i != j) before swapping in array/string.
+
+👉 Do you want me to create a list of XOR-only problems (like swapping, missing number, single number detection, etc.), or just stick with swapping variations?
+
 1. Find the single non-repeating element
 
 2.Find the two non-repeating elements
