@@ -1,0 +1,176 @@
+Array Questions (In-Place)
+
+Reverse an array
+
+Input: [1, 2, 3, 4, 5]
+
+Output: [5, 4, 3, 2, 1]
+
+Approach: Use two pointers (i=0, j=n-1) and swap elements until i<j.
+
+Find duplicate in an array (1 to n)
+
+Input: [3, 1, 3, 4, 2]
+
+Output: 3
+
+Approach: Use index marking (negate the value at index abs(arr[i]) - 1). If already negative, that number is duplicate.
+
+Remove duplicates from sorted array
+
+Input: [1,1,2,2,3,4,4]
+
+Output: [1,2,3,4] (in-place, return new length)
+
+Approach: Two pointer method (slow and fast).
+
+Move zeros to the end
+
+Input: [0,1,0,3,12]
+
+Output: [1,3,12,0,0]
+
+Approach: Use two pointers to shift non-zero elements forward.
+
+Find missing number (1 to n)
+
+Input: [3,0,1]
+
+Output: 2
+
+Approach: Use XOR or sum formula (n*(n+1))/2.
+
+Rotate array by k
+
+Input: [1,2,3,4,5,6,7], k=3
+
+Output: [5,6,7,1,2,3,4]
+
+Approach: Reverse full array, then reverse first k and last n-k.
+
+Check if array is sorted and rotated
+
+Input: [3,4,5,1,2]
+
+Output: true
+
+Approach: Count number of "drops" (where arr[i] > arr[i+1]). If more than 1, return false.
+
+🔹 Map / Frequency-Based Questions (But without extra DS)
+
+Since you can’t use HashMap, here are tricks:
+
+Find frequency of elements (range: 1 to n only)
+
+Modify array by using index as a counter:
+
+arr[arr[i] % n] += n;
+
+
+Finally, arr[i]/n gives frequency.
+
+Find majority element (> n/2 times)
+
+Use Moore’s Voting Algorithm (O(1) space).
+
+Check if two arrays are equal (without HashMap)
+
+Sort both arrays and compare element by element.
+
+Find first repeating element
+
+Use index marking (negating like in duplicate detection).
+
+Find missing and repeating element (1 to n)
+
+Use XOR or math formula (sum of n natural numbers – actual sum) and (sum of squares) to derive missing and repeating.
+
+✅ These questions are basic but cover array + map logic.
+✅ All are in-place, without extra space.
+✅ Common in FAANG-style DSA interviews for freshers/juniors.
+
+Do you want me to write Java code implementations for each of these (step-by-step), or just a short trick explanation for interviews?
+
+You said:
+Find missing number (1 to n)
+ChatGPT said:
+
+Great choice 👍
+Let’s solve Find Missing Number (1 to n) without using extra space.
+
+Problem
+
+Given an array of size n containing numbers from 0 to n (or 1 to n), one number is missing. Find the missing number.
+
+Example
+
+Input:
+
+arr = [3, 0, 1]
+
+
+Output:
+
+2
+
+Approaches
+✅ 1. Sum Formula
+
+Expected sum = n*(n+1)/2
+
+Actual sum = sum of array elements
+
+Missing = Expected – Actual
+
+public class MissingNumber {
+    public static int findMissing(int[] nums) {
+        int n = nums.length;
+        int expected = n * (n + 1) / 2;
+        int actual = 0;
+        for (int num : nums) {
+            actual += num;
+        }
+        return expected - actual;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {3, 0, 1};
+        System.out.println(findMissing(arr)); // 2
+    }
+}
+
+
+⏱ Time: O(n)
+📦 Space: O(1)
+
+✅ 2. XOR Method (No Overflow Risk)
+
+XOR of all numbers from 0 to n
+
+XOR of all elements in array
+
+Missing = XOR of both
+
+public class MissingNumberXOR {
+    public static int findMissing(int[] nums) {
+        int n = nums.length;
+        int xor1 = 0, xor2 = 0;
+
+        // XOR with numbers from 0..n
+        for (int i = 0; i <= n; i++) {
+            xor1 ^= i;
+        }
+
+        // XOR with array elements
+        for (int num : nums) {
+            xor2 ^= num;
+        }
+
+        return xor1 ^ xor2;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {3, 0, 1};
+        System.out.println(findMissing(arr)); // 2
+    }
+}
