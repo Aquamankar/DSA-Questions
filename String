@@ -41,6 +41,64 @@ public class Main {
         System.out.println("Sum of all digits = " + sum);  // Output: 1+2+3+4+5+6+7+8+9 = 45
     }
 }
+------------------------------------------------------------------------------------------------------------------------------------
+✅ 1. ASCII values of characters:
+import java.util.*;
+import java.util.stream.Collectors;
+
+class Main {
+    public static void main(String[] args) {
+        String str = "abss";
+
+        List<Integer> item = str.chars()  // IntStream of code points
+                                .boxed()  // box to Integer
+                                .collect(Collectors.toList());
+
+        System.out.println(item);  // [97, 98, 115, 115]
+    }
+}
+}
+------------------------------------------------------------------------------------------------------------------------------------
+
+✅ 2. Just characters in a list:
+
+import java.util.*;
+import java.util.stream.Collectors;
+
+class Main {
+    public static void main(String[] args) {
+        String str = "abss";
+
+        List<Character> item = str.chars()
+                                  .mapToObj(c -> (char) c)
+                                  .collect(Collectors.toList());
+
+        System.out.println(item);  // [a, b, s, s]
+    }
+}
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+✅ 3. Numeric value if digits only (e.g. "1234" → [1,2,3,4]):
+import java.util.*;
+import java.util.stream.Collectors;
+
+class Main {
+    public static void main(String[] args) {
+        String str = "1234";
+
+        List<Integer> item = str.chars()
+                                .mapToObj(c -> c - '0') // works only for digits
+                                .collect(Collectors.toList());
+
+        System.out.println(item);  // [1, 2, 3, 4]
+    }
+}
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------
 
 
 
