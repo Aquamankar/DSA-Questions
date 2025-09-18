@@ -1,5 +1,60 @@
 ### Java Interview Questions and Programs
 
+
+#### **101. How to calculate nth Root?**
+//         ["103","56","987","589","99","11111"]
+ 
+// Output:
+//   [ "103" , "11111" , "56" , "99" , "589" , "987" ]
+ 
+// 4 11 24 22 18 5
+
+```
+import java.util.*;
+import java.util.stream.*;
+
+class Main {
+    public static void main(String[] args) {
+        String[] str = {"103","56","987","589","99","11111"};
+
+        // Map each number -> digit sum
+        Map<String, Integer> map = Arrays.stream(str)
+                .collect(Collectors.toMap(
+                        s -> s,
+                        Main::digitSum
+                ));
+
+        // Sort entries by digit sum
+        List<Map.Entry<String, Integer>> sorted = map.entrySet()
+                .stream()
+                .sorted(Map.Entry.comparingByValue())
+                .collect(Collectors.toList());
+
+        // Print keys (numbers) in sorted order
+        System.out.println(
+            sorted.stream()
+                  .map(Map.Entry::getKey)
+                  .collect(Collectors.toList())
+        );
+
+        // Print digit sums in same order
+        sorted.forEach(e -> System.out.print(e.getValue() + " "));
+    }
+
+    // Helper method: sum of digits
+    private static int digitSum(String s) {
+        int num = Integer.parseInt(s);
+        int sum = 0;
+        while (num > 0) {
+            sum += num % 10;
+            num /= 10;
+        }
+        return sum;
+    }
+}
+
+```
+
 #### **1. How to calculate nth Root?**
 
 
