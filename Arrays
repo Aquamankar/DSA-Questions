@@ -335,6 +335,45 @@ public static void main(String[] args) {
 10.Merge two sorted arrays into a single sorted array.
 
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+11.Merge overlapping intervals.
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        int [][] intervals = {{1,2},{2,5},{3,7},{4,8}};
+        
+        // Step 1: sort intervals by start time
+        Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
+        
+        List<int[]> res = new ArrayList<>();
+        
+        int[] curr = intervals[0];
+        
+        for(int[] inter : intervals){
+            if(inter[0] <= curr[1]) {
+                // Overlap → merge
+                curr[1] = Math.max(curr[1], inter[1]);
+            } else {
+                // No overlap → push current and reset
+                res.add(curr);
+                curr = inter;
+            }
+        }
+        
+        // Add last interval
+        res.add(curr);
+        
+        // Print result
+        for(int[] r : res){
+            System.out.println(Arrays.toString(r));
+        }
+    }
+}
+-------------------------------------------------------------------------------------------------------------------------------
+
 🌸 Day 3: Arrays – Kadane’s Algorithm, Prefix Sum
 
 1.Find the maximum subarray sum using Kadane’s Algorithm.
