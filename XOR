@@ -169,6 +169,37 @@ So, we need:
 
 prefixXor[r] ^ prefixXor[l-1] = K
 
+---------------------------------------------------------
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        int[] arr = {2, 1, 4, 5, 6, 8, 0};
+        int k = 6;
+        
+        HashMap<Integer, Integer> map = new HashMap<>();
+        int count = 0, xor = 0;
+        
+        for (int i : arr) {
+            xor ^= i;
+            
+            int complement = xor ^ k;
+            
+            // If complement exists in map, add its frequency
+            count += map.getOrDefault(complement, 0);
+            
+            // If current prefix xor itself equals k, count it
+            if (xor == k) {
+                count++;
+            }
+            
+            // Update map with current prefix xor frequency
+            map.put(xor, map.getOrDefault(xor, 0) + 1);
+        }
+        
+        System.out.println("Count of subarrays with XOR " + k + " = " + count);
+    }
+}
 
 
 
