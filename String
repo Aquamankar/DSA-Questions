@@ -8,7 +8,7 @@ String str = "123";
 int num = Integer.parseInt(str);
 System.out.println(num);  // Output: 123
 
-
+------------------------------------------------------------------------------------------------------------------------------------
 1.2 Collect numbers from String of "aaa123bbb456"
 
 String input = "aaa123bbb456";
@@ -22,7 +22,7 @@ for (char c : input.toCharArray()) {
 
 System.out.println(numbers.toString());  // Output: 123456
 
-
+------------------------------------------------------------------------------------------------------------------------------------
 1.3 Sum of numbers in String "abc123def456gkl"
 public class Main {
     public static void main(String[] args) {
@@ -41,6 +41,34 @@ public class Main {
         System.out.println("Sum of all digits = " + sum);  // Output: 1+2+3+4+5+6+7+8+9 = 45
     }
 }
+------------------------------------------------------------------------------------------------------------------------------------
+
+1.4 find the largest digit in the string "123abh9".
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        String str = "123abh9";
+
+        int max = -1; // start with -1 to handle edge cases (no digits found)
+
+        for (char c : str.toCharArray()) {
+            if (Character.isDigit(c)) {
+                int digit = c - '0';  // convert char to number
+                max = Math.max(max, digit);
+            }
+        }
+
+        if (max == -1) {
+            System.out.println("No digits found in the string");
+        } else {
+            System.out.println("Largest digit = " + max);
+        }
+    }
+}
+
+
 ------------------------------------------------------------------------------------------------------------------------------------
 ✅ 1. ASCII values of characters:
 import java.util.*;
