@@ -1,7 +1,7 @@
 ### Java Interview Questions and Programs
 
 
-#### **101. How to calculate nth Root?**
+#### **101. sort them based of their digit **
 //         ["103","56","987","589","99","11111"]
  
 // Output:
