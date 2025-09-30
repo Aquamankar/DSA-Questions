@@ -1,32 +1,118 @@
 Day 10: Stack – Valid Parentheses
 
-Implement a stack to check if parentheses in a string are balanced.
+1.Implement a stack to check if parentheses in a string are balanced.
 
 
-Implement a min stack that supports push, pop, and min operations.
+
+----------------------------------------------------------------------------------------------------------------------------------------
+2.Implement a min stack that supports push, pop, and min operations.
 
 
-Implement next greater element using a stack.
+import java.util.Stack;
+
+class MinStack {
+    private Stack<Integer> stack;
+    private Stack<Integer> minStack;
+
+    public MinStack() {
+        stack = new Stack<>();
+        minStack = new Stack<>();
+    }
+
+    public void push(int x) {
+        stack.push(x);
+        // if minStack empty or x <= current min
+        if (minStack.isEmpty() || x <= minStack.peek()) {
+            minStack.push(x);
+        }
+    }
+
+    public void pop() {
+        if (stack.isEmpty()) return;
+        int removed = stack.pop();
+        // also pop from minStack if it's the minimum
+        if (removed == minStack.peek()) {
+            minStack.pop();
+        }
+    }
+
+    public int top() {
+        return stack.isEmpty() ? -1 : stack.peek();
+    }
+
+    public int getMin() {
+        return minStack.isEmpty() ? -1 : minStack.peek();
+    }
+}
+
+// Example usage
+class TestMinStack {
+    public static void main(String[] args) {
+        MinStack ms = new MinStack();
+        ms.push(5);
+        ms.push(3);
+        ms.push(7);
+        ms.push(2);
+        System.out.println("Min: " + ms.getMin()); // 2
+        ms.pop();
+        System.out.println("Min: " + ms.getMin()); // 3
+    }
+}
 
 
-Evaluate postfix expressions using a stack.
 
 
-Sort a stack using recursion.
+----------------------------------------------------------------------------------------------------------------------------------------
+3.Implement next greater element using a stack.
 
+import java.util.*;
+
+class NextGreaterElement {
+    public static int[] findNextGreater(int[] arr) {
+        int n = arr.length;
+        int[] result = new int[n];
+        Stack<Integer> stack = new Stack<>();
+
+        for (int i = n - 1; i >= 0; i--) {
+            // pop smaller or equal elements
+            while (!stack.isEmpty() && stack.peek() <= arr[i]) {
+                stack.pop();
+            }
+            result[i] = stack.isEmpty() ? -1 : stack.peek();
+            stack.push(arr[i]);
+        }
+
+        return result;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {4, 5, 2, 25};
+        int[] res = findNextGreater
+
+
+----------------------------------------------------------------------------------------------------------------------------------------
+4.Evaluate postfix expressions using a stack.
+
+
+----------------------------------------------------------------------------------------------------------------------------------------
+5.Sort a stack using recursion.
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------
 
 Day 11: Stack – Min Stack, NGE
 
-Implement a min stack that returns the minimum element in constant time.
+1.Implement a min stack that returns the minimum element in constant time.
 
 
-Find the next greater element for each element in an array.
+2.Find the next greater element for each element in an array.
 
 
-Implement sort a stack using another stack.
+3.Implement sort a stack using another stack.
 
 
-Find the previous greater element for each element in an array.
+4.Find the previous greater element for each element in an array.
 
 
-Implement a dynamic stack that doubles its size when full.
+5.Implement a dynamic stack that doubles its size when full.
