@@ -198,9 +198,70 @@ class Main {
 
 9.Find the frequency of each element in an array.
 
+---------------------------new--------------------------------------------------------------------------------
+10.Subarrays with K Different Integers
+
+exactlyK(k) = atMost(k) – atMost(k-1)
+
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        int[] nums = {1, 2, 1, 2, 3};
+        int k = 2;
+
+        int ans = subarraysWithKDistinct(nums, k);
+        System.out.println("Subarrays with exactly " + k + " distinct = " + ans);
+    }
+
+    public static int subarraysWithKDistinct(int[] nums, int k) {
+        return atMost(nums, k) - atMost(nums, k - 1);
+    }
+
+    private static int atMost(int[] nums, int k) {
+        Map<Integer, Integer> map = new HashMap<>();
+        int l = 0, ans = 0;
+
+        for (int r = 0; r < nums.length; r++) {
+            map.put(nums[r], map.getOrDefault(nums[r], 0) + 1);
+
+            while (map.size() > k) {
+                map.put(nums[l], map.get(nums[l]) - 1);
+                if (map.get(nums[l]) == 0) {
+                    map.remove(nums[l]);
+                }
+                l++;
+            }
+
+            ans += r - l + 1; // all subarrays ending at r
+        }
+
+        return ans;
+    }
+}
 
 
 
+
+
+
+
+atMost(k) = number of subarrays with at most k distinct integers.
+
+atMost(k-1) = number of subarrays with at most (k-1) distinct integers.
+
+Subtracting gives exactly k distinct.
+
+🔹 How atMost(nums, k) works (sliding window idea)
+
+We keep a window [l … r] (left to right pointer).
+At each step, we expand r (right pointer), and shrink l (left pointer) if we have more than k distinct numbers.
+
+
+
+
+----------------------------------------------------------------------------------------------------------------
 
 Q12   find the peak elemnt ----->
 
