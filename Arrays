@@ -240,10 +240,23 @@ class Main {
         return ans;
     }
 }
+=======================================================================
+Count new subarrays ending at r
+ans += r - l + 1;
 
 
+👉 Why (r - l + 1)?
+Because:
 
+Current valid window is [l … r].
 
+Any subarray ending at r and starting anywhere between l and r is valid.
+
+That means there are exactly:
+
+[l … r], [l+1 … r], [l+2 … r], … [r … r]
+
+========================================================================
 
 
 
