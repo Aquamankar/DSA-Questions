@@ -26,7 +26,25 @@ Longest Repeating Character Replacement
 
 Subarrays with K Different Integers
 
+
+=====================================================
 Smallest Subarray with Sum ≥ K
+
+How to Solve (Idea):
+
+Use a sliding window:
+
+Start with two pointers: l (left) and r (right) at start of array.
+
+Expand r and add nums[r] to current sum.
+
+If sum ≥ target → try shrinking window from l to minimize length.
+
+Keep track of the smallest length during this process.
+
+Time complexity: O(n) because each element is visited at most twice (once by r, once by l).
+
+=====================================================
 
 Max Consecutive Ones (with at most K flips)
 
