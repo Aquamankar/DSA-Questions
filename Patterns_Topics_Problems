@@ -24,10 +24,76 @@ Permutation in String (Check if s2 contains permutation of s1)
 
 Longest Repeating Character Replacement
 
+
+
+=========================================================================================================
 Subarrays with K Different Integers
 
 
-=====================================================
+2️⃣ Idea
+
+A very neat trick:
+
+Number of subarrays with exactly K distinct integers =
+number of subarrays with ≤ K distinct integers - number of subarrays with ≤ (K-1) distinct integers
+
+Why?
+
+“≤ K” counts all subarrays with 1,2,…,K distinct numbers
+
+Subtract “≤ K-1” to leave exactly K.
+
+3️⃣ Implementation — Sliding Window
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        int[] nums = {1,2,1,2,3};
+        int K = 2;
+
+        int result = subarraysWithKDistinct(nums, K);
+        System.out.println(result); // Output: 7
+    }
+
+    public static int subarraysWithKDistinct(int[] nums, int K) {
+        return atMostK(nums, K) - atMostK(nums, K - 1);
+    }
+
+    public static int atMostK(int[] nums, int K) {
+        Map<Integer, Integer> count = new HashMap<>();
+        int left = 0, res = 0;
+
+        for (int right = 0; right < nums.length; right++) {
+            count.put(nums[right], count.getOrDefault(nums[right], 0) + 1);
+
+            while (count.size() > K) {
+                count.put(nums[left], count.get(nums[left]) - 1);
+                if (count.get(nums[left]) == 0)
+                    count.remove(nums[left]);
+                left++;
+            }
+
+            res += right - left + 1; // all subarrays ending at 'right'
+        }
+
+        return res;
+    }
+}
+
+4️⃣ How it works
+
+atMostK(nums, K) counts all subarrays with ≤ K distinct integers
+
+atMostK(nums, K-1) counts all subarrays with ≤ K-1 distinct integers
+
+Subtract → exactly K distinct integer
+
+
+
+
+
+
+======================================================================================================
 Smallest Subarray with Sum ≥ K
 
 How to Solve (Idea):
