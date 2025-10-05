@@ -43,7 +43,81 @@ If sum ≥ target → try shrinking window from l to minimize length.
 Keep track of the smallest length during this process.
 
 Time complexity: O(n) because each element is visited at most twice (once by r, once by l).
+---------------------------------------------------------------------------------------------------------------------------
 
+for negative use deques
+
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        int[] arr = {1, 3, 6, 9, -6, 1};
+        int k = 10;
+
+        int n = arr.length;
+        long[] prefix = new long[n + 1];
+        for (int i = 0; i < n; i++) {
+            prefix[i + 1] = prefix[i] + arr[i];
+        }
+
+        Deque<Integer> dq = new ArrayDeque<>();
+        int minLen = Integer.MAX_VALUE;
+
+        for (int i = 0; i <= n; i++) {
+            // while current prefix - smallest prefix >= k
+            while (!dq.isEmpty() && prefix[i] - prefix[dq.peekFirst()] >= k) {
+                minLen = Math.min(minLen, i - dq.pollFirst());
+            }
+
+            // maintain increasing prefix sums
+            while (!dq.isEmpty() && prefix[i] <= prefix[dq.peekLast()]) {
+                dq.pollLast();
+            }
+
+            dq.offerLast(i);
+        }
+
+        if (minLen == Integer.MAX_VALUE)
+            System.out.println("No subarray found");
+        else
+            System.out.println("Smallest subarray length with sum ≥ " + k + " is: " + minLen);
+    }
+}
+--------------------------------------------------------------
+
+
+
+Iteration i=1 (prefix[1]=1)
+
+prefix[1] ≥ prefix[0] + k? 1-0 ≥ 10? ❌
+
+Remove from back if prefix[i] ≤ prefix[dq.back]? 1 ≤ 0? ❌
+
+Add 1 at back → dq = [0,1]
+
+Iteration i=2 (prefix[2]=4)
+
+Check front: prefix[2]-prefix[0]=4-0=4 < 10 → ❌
+
+Check back: prefix[2] ≤ prefix[1]? 4 ≤ 1? ❌
+
+Add 2 at back → dq = [0,1,2]
+
+Iteration i=3 (prefix[3]=10)
+
+Check front: prefix[3]-prefix[0]=10-0=10 ✅
+
+Found subarray length = 3-0=3 → update minLen = 3
+
+Remove front 0 → dq=[1,2]
+
+Check front again: prefix[3]-prefix[1]=10-1=9 < 10 ❌
+
+Remove from back if prefix[3] ≤ prefix[dq.back]? 10 ≤ 4 ❌
+
+Add 3 at back → dq=[1,2,3]
+-------------------------------------------------------------------------------------------------------------------------------
 =====================================================
 
 Max Consecutive Ones (with at most K flips)
