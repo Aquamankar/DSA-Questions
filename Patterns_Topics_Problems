@@ -47,6 +47,23 @@ Time complexity: O(n) because each element is visited at most twice (once by r, 
 =====================================================
 
 Max Consecutive Ones (with at most K flips)
+==≠========≠==============({{{{{======≠=≠≠===≠=======
+
+
+✅ Approach — Sliding Window
+
+This is a classic sliding window problem.
+
+🧠 Logic:
+
+Keep a window [left, right].
+
+Count how many zeros are inside the window.
+
+If zeros > K → move left pointer until zeros ≤ K again.
+
+Track the maximum window size.
+,=======================================≠=====≠========≠==≠≠=≠′°°°°′°°°
 
 2️⃣ Two Pointers Pattern
 
