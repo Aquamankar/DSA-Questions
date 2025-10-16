@@ -333,6 +333,35 @@ public class ContainerWithMostWater {
 Trapping Rain Water (Two Pointer version)
 
 
+class Main {
+    public static void main(String[] args) {
+        int[] arr = {2, 1, 5, 6, 7, 7};
+        int water = 0, leftmax = 0, rightmax = 0;
+        int l = 0, r = arr.length - 1;
+
+        while (l < r) {
+            if (arr[l] < arr[r]) {
+                if (leftmax < arr[l]) {
+                    leftmax = arr[l];
+                } else {
+                    water += leftmax - arr[l]; // ✅ correct difference
+                }
+                l++;
+            } else {
+                if (rightmax <= arr[r]) {
+                    rightmax = arr[r];
+                } else {
+                    water += rightmax - arr[r]; // ✅ correct difference
+                }
+                r--;
+            }
+        }
+
+        System.out.println("Total trapped water: " + water);
+    }
+}
+
+
 
 
 =========================================={{{{{{{==========================================
