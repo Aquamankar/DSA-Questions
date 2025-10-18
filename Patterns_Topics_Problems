@@ -559,6 +559,48 @@ public class IntervalListIntersections {
 ============================================================================================================
 Minimum Number of Meeting Rooms
 
+
+
+import java.util.*;
+
+public class MinimumMeetingRooms {
+    public static void main(String[] args) {
+        int[][] intervals = {{0,30},{5,10},{15,20}};
+        System.out.println(minMeetingRooms(intervals));
+    }
+    
+    public static int minMeetingRooms(int[][] intervals) {
+        if (intervals.length == 0) return 0;
+        
+        int n = intervals.length;
+        int[] start = new int[n];
+        int[] end = new int[n];
+        
+        for (int i = 0; i < n; i++) {
+            start[i] = intervals[i][0];
+            end[i] = intervals[i][1];
+        }
+        
+        Arrays.sort(start);
+        Arrays.sort(end);
+        
+        int rooms = 0, endPtr = 0;
+        
+        for (int i = 0; i < n; i++) {
+            if (start[i] < end[endPtr]) {
+                rooms++; // need another room
+            } else {
+                endPtr++; // meeting ended
+            }
+        }
+        
+        return rooms;
+    }
+}
+
+
+================================================================================================================
+
 Employee Free Time
 
 Non-overlapping Intervals
