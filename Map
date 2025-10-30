@@ -162,6 +162,47 @@ class Main {
 
 
 
+---------------------------------------------------------
+
+import java.util.Map;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class MapReverser {
+
+    public static void main(String[] args) {
+        // Original Map: <Name, City>
+        Map<String, String> originalMap = Map.of(
+            "Alice", "New York",
+            "Bob", "London",
+            "Charlie", "Paris",
+            "David", "London",  // Bob and David share the same city
+            "Eve", "New York"   // Alice and Eve share the same city
+        );
+
+        // Reverse the map using Collectors.groupingBy()
+        Map<String, List<String>> reversedMap = originalMap.entrySet().stream()
+            // 1. Grouping Key: Use the original entry's VALUE (the City)
+            .collect(Collectors.groupingBy(
+                Map.Entry::getValue,
+                // 2. Downstream Collector: Map the group members (Entries) 
+                //    to their original KEY (the Name) and collect them into a List
+                Collectors.mapping(
+                    Map.Entry::getKey,
+                    Collectors.toList()
+                )
+            ));
+
+        System.out.println("Original Map: " + originalMap);
+        System.out.println("------------------------------------------");
+        System.out.println("Reversed Map (City -> List of Residents): " + reversedMap);
+        
+        // Expected Output:
+        // Reversed Map (City -> List of Residents): {New York=[Alice, Eve], London=[Bob, David], Paris=[Charlie]}
+    }
+}
+
+
 
 -------------------------------------------------------------------------------------------------------------------
 9. Groupes words by length
