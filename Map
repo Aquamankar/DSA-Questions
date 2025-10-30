@@ -67,6 +67,40 @@ public class ArrayIntersection {
         System.out.println(grouped);
     }
 
+
+
+
+----------------------------------------------------------------------
+
+
+
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class StringCapitalizer {
+
+    public static void main(String[] args) {
+        String[] str = {"apple", "avocado", "bananana", "grapes", "gouava"};
+        
+        // Use Collectors.toList() to gather the results into a List<String>
+        List<String> capitalizedList = Arrays.stream(str)
+            .map(s -> {
+                if (s == null || s.isEmpty()) {
+                    return s;
+                }
+                // Capitalize the first character and append the rest of the string
+                return s.substring(0, 1).toUpperCase() + s.substring(1);
+            })
+            // --- The Collector Step ---
+            .collect(Collectors.toList()); 
+
+        // Print the result
+        System.out.println(capitalizedList);
+        // Output: [Apple, Avocado, Bananana, Grapes, Gouava]
+    }
+}
 --------------------------------------------------------------------------------------------------------
 
 7. Groupe Int [] by module value %3.
