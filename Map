@@ -252,6 +252,56 @@ public class WordFrequencySorter {
                 System.out.println(entry.getKey() + " = " + entry.getValue()));
     }
 }
+
+
+
+±+++++++±±++++++++++++++++++++++++++±++++++++++
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+public class WordFrequencyExample {
+    public static void main(String[] args) {
+        String sentence = "this is a test this is only a test this test is";
+
+        // Step 1: Count word frequencies
+        Map<String, Long> frequencyMap = Arrays.stream(sentence.split("\\s+"))
+                .collect(Collectors.groupingBy(
+                        Function.identity(),
+                        Collectors.counting()
+                ));
+
+        // Step 2: Sort by frequency (desc) then alphabetically
+        List<Map.Entry<String, Long>> sortedWords = frequencyMap.entrySet().stream()
+                .sorted(Comparator
+                        .comparing(Map.Entry<String, Long>::getValue, Comparator.reverseOrder())
+                        .thenComparing(Map.Entry::getKey)
+                )
+                .collect(Collectors.toList());
+
+        // Step 3: Print frequency table
+        System.out.println("Word Frequency Table:");
+        sortedWords.forEach(entry ->
+                System.out.println(entry.getKey() + " = " + entry.getValue()));
+
+        // Step 4A: Create string of unique words (sorted by frequency)
+        String uniqueWords = sortedWords.stream()
+                .map(Map.Entry::getKey)
+                .collect(Collectors.joining(" "));
+
+        System.out.println("\nUnique words by frequency:");
+        System.out.println(uniqueWords);
+
+        // Step 4B: Create string with words repeated by frequency
+        String repeatedWords = sortedWords.stream()
+                .flatMap(e -> Collections.nCopies(e.getValue().intValue(), e.getKey()).stream())
+                .collect(Collectors.joining(" "));
+
+        System.out.println("\nWords repeated by frequency:");
+        System.out.println(repeatedWords);
+    }
+}
+
 ----+±+++--++------------------------------------------------------
 String result = frequencyMap.entrySet().stream()
         .sorted(
