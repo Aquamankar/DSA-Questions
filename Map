@@ -312,6 +312,35 @@ String result = frequencyMap.entrySet().stream()
         .flatMap(e -> Collections.nCopies(e.getValue().intValue(), e.getKey()).stream())
         .collect(Collectors.joining(" "));
 
+±+++++++++++++++++++++++++++++++++++++++++++++++±++++++++++++±++
+
+✅ Example 1: Sort Map by Value (Descending)
+
+import java.util.*;
+import java.util.stream.Collectors;
+
+public class SortMapByValueDescending {
+    public static void main(String[] args) {
+        Map<String, Integer> map = new HashMap<>();
+        map.put("apple", 5);
+        map.put("banana", 2);
+        map.put("orange", 8);
+        map.put("grape", 3);
+
+        // Sort by value in descending order
+        Map<String, Integer> sortedMap = map.entrySet().stream()
+                .sorted(Map.Entry.<String, Integer>comparingByValue(Comparator.reverseOrder()))
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue,
+                        (e1, e2) -> e1,               // merge function (in case of duplicates)
+                        LinkedHashMap::new            // preserves the sorted order
+                ));
+
+        // Print sorted map
+        sortedMap.forEach((key, value) -> System.out.println(key + " = " + value));
+    }
+}
 
 ----_-----------------------------------------------------------
 
