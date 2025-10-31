@@ -311,7 +311,11 @@ String result = frequencyMap.entrySet().stream()
         )
         .flatMap(e -> Collections.nCopies(e.getValue().intValue(), e.getKey()).stream())
         .collect(Collectors.joining(" "));
-
+=========≠======================================================≠========
+🏁 TL;DR
+You use	When
+Comparator.comparing(Map.Entry::getValue, Comparator.reverseOrder())	When you want a readable, generic comparator (works for any type).
+Comparator.comparingLong(Map.Entry::getValue).reversed()	When you’re comparing numbers and want slightly better performance
 ±+++++++++++++++++++++++++++++++++++++++++++++++±++++++++++++±++
 
 ✅ Example 1: Sort Map by Value (Descending)
