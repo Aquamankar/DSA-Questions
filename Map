@@ -252,6 +252,15 @@ public class WordFrequencySorter {
                 System.out.println(entry.getKey() + " = " + entry.getValue()));
     }
 }
+----+±+++--++------------------------------------------------------
+String result = frequencyMap.entrySet().stream()
+        .sorted(
+            Comparator.<Map.Entry<String, Long>>comparingLong(Map.Entry::getValue)
+                    .reversed()
+                    .thenComparing(Map.Entry::getKey)
+        )
+        .flatMap(e -> Collections.nCopies(e.getValue().intValue(), e.getKey()).stream())
+        .collect(Collectors.joining(" "));
 
 
 ----_-----------------------------------------------------------
