@@ -208,6 +208,17 @@ public class MapReverser {
 9. Groupes words by length
 
 
+Map<Integer, List<String>> groupedByLength = words.stream()
+        .collect(Collectors.groupingBy(
+                String::length,
+                TreeMap::new,     // keeps the keys sorted
+                Collectors.toList()
+        ));
+
+groupedByLength.forEach((len, list) -> 
+    System.out.println("Length " + len + " -> " + list));
+
+
 -------------------------------------------------------------------------------------------------------------------
 Day 16: Map – Group Anagrams
 
