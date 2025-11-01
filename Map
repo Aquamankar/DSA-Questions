@@ -1,5 +1,15 @@
 Day 15: Map – Frequency, First Unique
 
+
+
+
+.sorted(
+    Comparator.comparing(Type::primaryField, Comparator.reverseOrder())
+        .thenComparing(Type::secondaryField)
+)
+
+
+-----------------------+++-----------------------_------
 1.Count the frequency of each element using a HashMap.
 
 
