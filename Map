@@ -229,6 +229,36 @@ groupedByLength.forEach((len, list) ->
     System.out.println("Length " + len + " -> " + list));
 
 
+
+Length 1 -> [i]
+Length 2 -> [am, do]
+Length 3 -> [can]
+Length 6 -> [mankar]
+Length 8 -> [akanksha, anything]
+
+================================================================
+
+
+import java.util.*;
+import java.util.stream.*;
+import java.util.function.*; // ✅ Needed for Function.identity()
+
+class Main {
+    public static void main(String[] args) {
+        String str = "i am akanksha mankar i can do anything";
+        String[] arr = str.split(" ");
+        
+        Map<String, Integer> map = Arrays.stream(arr)
+                .collect(Collectors.toMap(Function.identity(), String::length, (a, b) -> a)); // ✅ handle duplicates
+        
+        System.out.println(map);
+    }
+}
+
+{i=1, am=2, akanksha=8, mankar=6, can=3, do=2, anything=8}
+
+
+
 -------------------------------------------------------------------------------------------------------------------
 Day 16: Map – Group Anagrams
 
