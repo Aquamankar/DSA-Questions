@@ -105,6 +105,27 @@ public class Main {
 1.Find the maximum element in an array.
 
 
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Try programiz.pro");
+        
+        int[] arr = {1, 2, 4, 5, 6};
+        
+        // Find max in array using streams
+        int ans = Arrays.stream(arr)
+                        .max()
+                        .orElse(0); // returns 0 if array is empty
+
+        System.out.println("Maximum element is: " + ans);
+    }
+}
+
+
+-----------------------------------------------------------------------------------------------------------
+
+
 2.Find the minimum element in an array.
 
 
