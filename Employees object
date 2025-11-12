@@ -620,6 +620,8 @@ System.out.println(names);
 🔹 9. Check if Any Employee Has Salary > 1,00,000
 boolean highEarnerExists = employees.stream()
         .anyMatch(e -> e.getSalary() > 100000);
+
+//   anyMatch return -> boolean 
 System.out.println(highEarnerExists);
 🔹 10. Get Employees Sorted by Department and Then Salary
 List<Employee> sorted = employees.stream()
