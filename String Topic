@@ -7,6 +7,30 @@ Check if a string is a palindrome.
 
 Count vowels and consonants in a string.
 
+public class Main {
+    public static void main(String[] args) {
+        String s = "this is a string";
+
+        long vowels = s.toLowerCase()
+                .chars()
+                .mapToObj(c -> (char) c)
+                .filter(Character::isLetter) // consider only letters
+                .filter(c -> "aeiou".indexOf(c) != -1)
+                .count();
+
+        long consonants = s.toLowerCase()
+                .chars()
+                .mapToObj(c -> (char) c)
+                .filter(Character::isLetter)
+                .filter(c -> "aeiou".indexOf(c) == -1)
+                .count();
+
+        System.out.println("Vowels: " + vowels);
+        System.out.println("Consonants: " + consonants);
+    }
+}
+-----------------------------------------------------------------------------------------------------------
+
 Convert the first letter of each word to uppercase.
 
 Remove all duplicates from a string.
