@@ -126,8 +126,66 @@ Smallest substring with all unique characters.
 
 Count substrings with exactly k distinct characters.
 
+
+
+----------------------------------------------------------------------------------------------------------------
 Find all anagram indices of a pattern in a string.
 
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Try programiz.pro");
+
+        String s = "abscdvabdbca";
+        String p = "abc";
+
+        List<Integer> res = startPermuteIndice(s, p);
+        System.out.println(res);
+    }
+
+    public static List<Integer> startPermuteIndice(String s, String p) {
+        List<Integer> result = new ArrayList<>();
+
+        if (s.length() < p.length()) return result;
+
+        HashMap<Character, Integer> need = new HashMap<>();
+        HashMap<Character, Integer> window = new HashMap<>();
+
+        // count characters of p
+        for (char c : p.toCharArray()) {
+            need.put(c, need.getOrDefault(c, 0) + 1);
+        }
+
+        int left = 0;
+        int k = p.length();
+
+        for (int right = 0; right < s.length(); right++) {
+            char c = s.charAt(right);
+
+            window.put(c, window.getOrDefault(c, 0) + 1);
+
+            // if window size exceeds k → shrink
+            if (right - left + 1 > k) {
+                char leftChar = s.charAt(left);
+                window.put(leftChar, window.get(leftChar) - 1);
+                if (window.get(leftChar) == 0) window.remove(leftChar);
+                left++;
+            }
+
+            // when window size == k, compare maps
+            if (right - left + 1 == k && window.equals(need)) {
+                result.add(left);
+            }
+        }
+
+        return result;
+    }
+}
+
+
+--------------------------------------------------------------------------------------------------------------------
 Longest substring with at most k distinct characters.
 
 3. Pattern Matching & Searching
