@@ -1,0 +1,69 @@
+RUTHLESS DSA MENTOR – COMPLETE STUDY SHEET
+PHASE 1: CORE STRING & TWO-POINTER MASTERY
+Focus: O(N) solutions
+1. Reverse String
+- Technique: Two pointers, in-place swap
+- Notes: No library calls
+2. Valid Palindrome II
+- Technique: Two pointers + branching
+- Notes: Implement helper check
+3. Longest Substring Without Repeating Characters
+- Technique: Variable sliding window + HashMap/Set
+- Importance: CRITICAL
+4. Check if String Contains Permutation of Another
+- Technique: Fixed window + frequency array + match counter
+- Importance: CRITICAL
+5. Minimum Window Substring (LC 76)
+- Technique: Two frequency maps + match counter
+- Level: Expert
+6. Longest Palindromic Substring
+- Technique: Expand around center
+-----------------------------------------------------
+
+
+
+
+
+
+
+PHASE 2: ARRAYS & LINKED LISTS
+ARRAYS & HASHING
+1. Two Sum
+- Technique: HashMap lookup
+2. Container With Most Water
+- Technique: Two pointers inward
+3. Subarray Sum Equals K
+- Technique: Prefix sum + HashMap
+4. Meeting Rooms II
+- Technique: Sorting + Min-Heap
+LINKED LISTS
+1. Reverse Linked List
+- Technique: Prev, curr, next (iterative)
+2. Cycle Detection
+- Technique: Floyd's slow/fast pointers
+3. Merge Two Sorted Lists
+- Technique: Dummy node
+4. Remove Nth Node From End
+- Technique: Two pointers (fixed gap)
+
+PHASE 3: RECURSION, TREES & GRAPHS
+BINARY TREES
+1. Tree Traversals (Pre/In/Post)
+- Technique: Recursive + Iterative with stack
+2. Maximum Depth of Binary Tree
+- Technique: DFS
+3. Level Order Traversal
+- Technique: BFS queue
+4. Validate BST
+- Technique: In-order or min/max bound recursion
+BACKTRACKING & DP
+1. Subsets (Power Set)
+- Technique: DFS recursion
+2. Combinations/Permutations
+- Technique: DFS with state tracking
+3. Word Break I & II
+- Technique: DFS + memoization
+------------------------------------------------------------
+IMMEDIATE TASKS (MANDATORY)
+1. Solve: Find All Anagram Indices (O(N) with frequency array + match counter)
+2. Solve: Longest Substring Without Repeating Characters (O(N) sliding window)
