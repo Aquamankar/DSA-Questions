@@ -444,6 +444,50 @@ public static void main(String[] args) {
         
     }
 }
+
+888888888888888888888888888888888888888888888888888888888888888888
+✅ Insertion Sort – Approach (Step-by-Step)
+1. Start from the second element (i = 1)
+
+Because the first element is already considered sorted.
+
+2. Pick the current element → call it key
+
+This is the element we want to insert into the correct position in the sorted left side.
+
+3. Compare key with elements on the left side
+
+Start with index j = i - 1.
+
+4. Shift elements to the right
+
+While:
+
+j >= 0
+
+AND left-of-key element > key
+
+Shift that element right:
+
+arr[j+1] = arr[j]
+j--
+
+
+This creates space for the key.
+
+5. Insert the key at the correct position
+
+When the loop stops, we have found the right position.
+
+Place the key:
+
+arr[j + 1] = key;
+
+6. Repeat for all elements
+
+Increase i and do the same until the whole array becomes sorted.
+
+
 ----------------------------------------------------------------------------------------------------------------------
 
 
