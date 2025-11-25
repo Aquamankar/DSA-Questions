@@ -377,6 +377,44 @@ class Main {
 
 
 
+888888888888888888888888888888888888888888888888888888888888888888888888888
+
+✅ Selection Sort – Approach (Step by Step)
+1️⃣ Start from index i = 0
+
+Assume the left side (before i) is already sorted.
+
+2️⃣ Assume the element at index i is the minimum
+
+Set:
+
+min = i
+
+3️⃣ Scan the remaining elements (i+1 → n-1)
+
+For every j from i+1 to end:
+
+If arr[j] < arr[min]
+→ update
+
+min = j
+
+
+This finds the index of the smallest element in the unsorted part.
+
+4️⃣ After scanning, min holds the index of the smallest element
+
+This is the correct element that should be placed at position i.
+
+5️⃣ Swap arr[i] and arr[min]
+
+Place the smallest element in the ith position of the array.
+
+6️⃣ Increase i and repeat
+
+Now the sorted portion grows by 1 elemen
+
+
 ---------------------------------------------------------------------------------------------------
 
 
