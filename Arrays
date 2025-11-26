@@ -335,6 +335,64 @@ class Main {
 
 Find the largest and smallest element in a single traversal.
 
+----------------------------------------------------------------------------------------------------
+
+@.13 Product of Array Except Self
+
+Input:  [1,2,3,4]
+Output: [24,12,8,6]
+Explanation:
+
+For index 0 → product of [234] = 24
+
+For index 1 → product of [134] = 12
+
+For index 2 → product of [124] = 8
+
+For index 3 → product of [123] = 6
+
+🧠 Key Concept: Prefix + Suffix Products Without Extra Arrays
+
+We compute:
+
+prefix product: product of all elements to the left
+
+suffix product: product of all elements to the right
+
+But we do not store two separate arrays.
+
+We fill result in two passes:
+
+Step 1 → Fill prefix products in result
+result[i] = product of all elements left of i
+
+Step 2 → Multiply suffix products into result
+result[i] *= product of all elements right of i
+
+public int[] productExceptSelf(int[] nums) {
+    int n = nums.length;
+
+    int[] result = new int[n];
+
+    // Step 1: prefix product
+    result[0] = 1;
+    for (int i = 1; i < n; i++) {
+        result[i] = result[i - 1] * nums[i - 1];
+    }
+
+    // Step 2: suffix product
+    int suffix = 1;
+    for (int i = n - 1; i >= 0; i--) {
+        result[i] = result[i] * suffix;
+        suffix *= nums[i];
+    }
+
+    return result;
+}
+
+
+
+------------------------------------------------------------------------------------------------------
 
 🌸 Day 2: Arrays – Sorting, Searching
 
