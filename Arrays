@@ -332,8 +332,140 @@ class Main {
     }
 }
 
+Q Binary search with simple problems->>>>>>>>>>>>>>>>>>>>>>>>>>
+1. Find first occuance using binart search---
 
-Find the largest and smallest element in a single traversal.
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        int [] nums = {2, 4, 4, 4, 7};
+        
+        int k = 4;
+        int ans = -1;
+        int low = 0, high = nums.length - 1;
+        
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            
+            if (nums[mid] == k) {
+                ans = mid;
+                high = mid - 1; // go left for first occurrence
+            } else if (nums[mid] < k) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+        
+        System.out.println("First Occurrence = " + ans);
+    }
+}
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------
+
+2. Find last occuance using binary search-------------
+
+
+
+while(low<=high){
+    int mid=low + (high -low)/2;
+    
+    if(nums[mid]==k){
+        ans=mid;      // store index
+        low=mid+1;    // go RIGHT to find last occurrence
+    }
+    else if(nums[mid] < k){
+        low=mid+1;    // go right
+    }
+    else{
+        high=mid-1;   // go left
+    }
+}
+
+
+
+-------------------------------------------------------------------
+
+
+
+3.Peek Element using binary  search
+✅ Peak Element (Binary Search Approach)
+
+A peak is an index i such that:
+
+nums[i] > nums[i-1] && nums[i] > nums[i+1]
+
+
+You only need to return one peak.
+
+🧠 Intuition (Very Important)
+
+We compare:
+
+nums[mid]   and   nums[mid + 1]
+
+✔ If nums[mid] < nums[mid + 1]
+
+The slope is going upwards.
+So peak MUST be on the right side.
+
+Move right:
+
+low = mid + 1
+
+✔ If nums[mid] > nums[mid + 1]
+
+The slope is going downwards.
+So peak is on the left side or at mid.
+
+Move left:
+
+high = mid
+
+📌 Stop condition
+
+We stop when:
+
+low == high
+
+
+That index is guaranteed to be a peak.
+
+
+int findPeakElement(int[] nums) {
+    int low = 0, high = nums.length - 1;
+
+    while (low < high) {
+        int mid = low + (high - low) / 2;
+
+        if (nums[mid] < nums[mid + 1]) {
+            // Peak is on the right side
+            low = mid + 1;
+        } else {
+            // Peak is on the left side or mid
+            high = mid;
+        }
+    }
+
+    return low; // Peak index
+}
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------------
+@Find the largest and smallest element in a single traversal.
 
 ----------------------------------------------------------------------------------------------------
 
