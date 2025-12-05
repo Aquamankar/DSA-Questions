@@ -1,0 +1,302 @@
+✅ 90+ MUST-DO ARRAY + STRING INTERVIEW QUESTIONS
+All grouped by topic + variants included
+
+(These cover 95% of real interviews.)
+
+🔵 PART 1 — ARRAYS (55 QUESTIONS)
+📌 1. Basic Array + Math (5 Questions)
+
+Find max and min in an array
+
+Second largest / second smallest
+
+Check if array is sorted
+
+Rotate array by k positions
+
+Move zeros to end
+
+Variants:
+
+Move negatives to left
+
+Move even numbers to left
+
+📌 2. Prefix Sum / Subarray Sum Problems (12 Questions)
+
+Subarray sum = K (hashmap)
+
+Longest subarray with sum = 0
+
+Count subarrays with sum divisible by K
+
+Count subarrays with sum = K
+
+Longest subarray with sum divisible by K
+
+Count subarrays with equal 0s and 1s
+
+Count subarrays with XOR = K
+
+Longest subarray with XOR = K
+
+Count subarrays with product < K
+
+Maximum average subarray
+
+Maximum circular subarray sum
+
+Kadane’s algorithm (max subarray sum)
+
+Variants:
+
+Replace sum with XOR
+
+Replace sum with product
+
+Replace sum with modulo
+
+📌 3. Sliding Window Pattern (10 Questions)
+
+Maximum sum subarray of size K
+
+Minimum size subarray sum ≥ target
+
+Longest substring/array with at most K distinct elements
+
+Longest window with no repeating elements
+
+Longest window with 2 distinct numbers
+
+Count windows with exactly K distinct numbers
+
+Longest window of ones after flipping K zeros
+
+Fruit into baskets (2 types max)
+
+Count subarrays with sum in a range
+
+Maximum consecutive ones
+
+Variants:
+
+Replace “distinct” with “frequency <= K”
+
+Replace zeros with any target number
+
+📌 4. Two-Pointer / Sorting Problems (8 Questions)
+
+Two sum sorted array
+
+3 sum
+
+4 sum
+
+Container with most water
+
+Pair with sum closest to target
+
+Difference between two arrays
+
+Sort colors (0,1,2)
+
+Merge two sorted arrays
+
+Variants:
+
+3Sum closest
+
+Count triplets < K
+
+📌 5. Binary Search (7 Questions)
+
+Search element in rotated sorted array
+
+Find minimum in rotated array
+
+Find peak element
+
+Find first and last position of element
+
+Square root (binary search)
+
+Find missing number (0 to n)
+
+Find duplicate using Floyd cycle detection
+
+Variants:
+
+Rotation count in rotated array
+
+Find bitonic peak
+
+📌 6. Matrix (6 Questions)
+
+Print matrix in spiral order
+
+Rotate matrix 90°
+
+Transpose matrix
+
+Search in a sorted matrix
+
+Set matrix zeros
+
+Diagonal traversal
+
+Variants:
+
+Rotate 180°
+
+Rotate 270°
+
+Reverse each row
+
+📌 7. Intervals (6 Questions)
+
+Merge intervals
+
+Insert interval
+
+Meeting rooms (can attend all?)
+
+Minimum meeting rooms required
+
+Non-overlapping intervals
+
+Employee free time
+
+Variants:
+
+Find number of overlapping intervals
+
+Erase minimum intervals
+
+📌 8. Misc + Important (6 Questions)
+
+Product of array except self
+
+Trapping rainwater
+
+Gas station circuit
+
+Jump game I
+
+Jump game II
+
+Majority element (Moore voting)
+
+Variants:
+
+Majority element > n/3
+
+Gas station multiple answers
+
+🟣 PART 2 — STRINGS (40 QUESTIONS)
+📌 1. Basic (5 Questions)
+
+Reverse string
+
+Reverse words in a sentence
+
+Check palindrome
+
+Check anagram
+
+Character frequency map
+
+Variants:
+
+Remove duplicate characters
+
+Sort characters by frequency
+
+📌 2. Sliding Window (10 Questions)
+
+Longest substring without repeating
+
+Longest substring with at most K distinct
+
+Longest repeating character replacement
+
+Minimum window substring
+
+Check if permutation exists in the string
+
+Find all anagrams of pattern
+
+Maximum vowels in substring size K
+
+Smallest substring containing pattern
+
+Longest substring with exactly K distinct
+
+Longest substring with same letters after K replacements
+
+Variants:
+
+Window for digits only
+
+Window for uppercase/lowercase patterns
+
+📌 3. Palindromes (6 Questions)
+
+Longest palindromic substring
+
+Count palindromic substrings
+
+Palindromic partitioning
+
+Valid palindrome II (remove one char)
+
+Longest palindrome that can be built
+
+Palindrome subsequence (DP)
+
+Variants:
+
+Palindrome after swapping
+
+Palindrome after reversing a substring
+
+📌 4. Pattern Matching + Hashing (7 Questions)
+
+Implement strstr()
+
+Longest common prefix
+
+Repeated substring pattern
+
+Rabin–Karp substring search
+
+Group anagrams
+
+Word pattern
+
+Check isomorphic strings
+
+Variants:
+
+Anagram groups including numbers
+
+Pattern matching for alphabets + digits combined
+
+📌 5. Dynamic Programming on Strings (6 Questions)
+
+Longest common subsequence
+
+Edit distance
+
+Longest repeating subsequence
+
+Shortest common supersequence
+
+Count distinct subsequences
+
+Minimum insertions to make palindrome
+
+Variants:
+
+LCS for 3 strings
+
+Edit distance with costs
