@@ -1,0 +1,250 @@
+✅ JAVA STREAM API — 65 IMPORTANT INTERVIEW QUESTIONS (WITH VARIANTS + INPUT/OUTPUT PRACTICE)
+Topic 1 — Basic Stream Operations (10 Questions)
+1. Convert list of strings to uppercase
+
+Variant: lowercase, trim, append text
+Input: ["java", "spring"]
+Output: ["JAVA", "SPRING"]
+
+2. Filter even numbers
+
+Variant: odd numbers, numbers > X
+Input: [2,5,7,8]
+Output: [2,8]
+
+3. Find unique elements
+
+Variant: find duplicates
+Input: [1,2,2,3,3,3]
+Output: [1,2,3]
+
+4. Count elements satisfying condition
+
+Input: [1,2,3,4] count > 2
+Output: 2
+
+5. Sort list using stream
+
+Variant: reverse sort
+Input: [5,1,4]
+Output: [1,4,5]
+
+6. Sum of integers using reduce
+
+Variant: product
+Input: [1,2,3]
+Output: 6
+
+7. Max and Min using stream
+
+Input: [10, 5, 30]
+Output: Max = 30, Min = 5.
+
+8. Check if all values match condition
+
+Input: [2,4,6]
+Output: true
+
+9. Convert array to stream
+
+Variant: map + convert to List
+
+10. Convert List< String > to List< Integer >
+
+Input: ["1","2","3"]
+Output: [1,2,3]
+
+Topic 2 — Intermediate Operations (10 Questions)
+11. Map() vs FlatMap() difference
+
+Practice:
+Employees with list of projects → return unique project names.
+
+12. Remove null values
+
+Input: [1, null, 2, null, 3]
+Output: [1,2,3]
+
+13. Convert List< List<Integer> > to single list
+
+Input: [[1,2], [3], [4,5]]
+Output: [1,2,3,4,5]
+
+14. Find second highest number
+
+Input: [10, 20, 30, 40]
+Output: 30
+
+15. Skip N elements
+
+Input: [1,2,3,4,5], skip 2
+Output: [3,4,5]
+
+16. Limit results
+
+Input: [5,4,3,2] limit 2
+Output: [5,4]
+
+17. Convert List<Object> → List<String> safely
+
+map(String::valueOf)
+
+18. Sorting custom objects
+
+Input: Employees by salary
+Output: sorted list
+
+19. Filter objects based on two conditions
+
+Input: age > 25 and city = “Delhi”
+Output: matching employees
+
+20. custom comparator using streams
+
+ex: sort strings by length
+
+Topic 3 — Terminal Operations (10 Questions)
+21. Collect to Set
+
+Variant: Collect to LinkedList / Map
+
+22. GroupingBy example
+
+Input: Employee → department
+Output: Map<Dept, List<Employee>>
+
+23. PartitioningBy example
+
+Input: numbers even/odd
+Output: {true: [2,4], false:[1,3]}
+
+24. Join list of strings
+
+Input: ["java","spring"]
+Output: "java,spring"
+
+25. Convert Stream to array
+
+Variant: primitive arrays
+
+26. distinct() example
+
+Remove duplicates
+
+27. anyMatch()
+
+Check if any employee earns > 1L salary
+
+28. noneMatch()
+
+Password does not contain space
+
+29. findFirst()
+
+Return first even number
+
+30. collect → custom collector
+Topic 4 — Map Operations (10 Questions)
+31. Convert List<Employee> → Map<id, name>
+
+Variant: handling duplicate keys
+
+32. Sort Map by Key
+33. Sort Map by Value
+34. Find max salary using map + stream
+35. Convert Map → List of keys
+36. Convert Map → List of entries
+37. Increase all salaries by 10%
+38. Filter map by value
+39. Convert Map<String, List<Integer>> → single List<Integer>
+40. Merge two maps
+Topic 5 — Advanced & Tricky Stream Questions (10 Questions)
+41. Stream vs parallel stream
+
+Explain + example
+
+42. Why streams cannot be reused?
+
+Demonstrate exception
+
+43. Stateful vs stateless operations
+
+Interview favorite
+
+44. Lazy evaluation
+
+Explain why map() alone prints nothing
+
+45. What happens if stream has side effects?
+
+Wrong usage example
+
+46. Why to avoid parallel stream?
+
+Thread-safety issues
+
+47. Reduce empty list (Optional handling)
+48. Infinite Stream (Stream.iterate)
+
+Generate first 5 even numbers.
+
+49. Custom collector to join integers with hyphen
+
+E.g., "1-2-3-4"
+
+50. Difference between map(), peek(), forEach()
+Topic 6 — Real Interview Coding Problems Using Streams (15 Questions)
+51. Find frequency of characters in string
+
+Input: "banana"
+Output: {b=1, a=3, n=2}
+
+52. Find first non-repeated character
+
+Input: "swiss"
+Output: w
+
+53. Sort strings by frequency of characters
+54. Find common elements between two lists
+
+Input: [1,2,3] & [2,3,4]
+Output: [2,3]
+
+55. Find duplicate numbers
+
+Input: [1,2,2,3,3]
+Output: [2,3]
+
+56. Reverse each word in a sentence
+57. Count words in a sentence
+58. Find longest string
+
+Input: ["a", "abc", "ab"]
+Output: "abc"
+
+59. Top 3 highest numbers
+
+Input: [5,1,10,7,8]
+Output: [10,8,7]
+
+60. Anagrams grouping using Stream
+
+Input: ["eat","tea","ate","bat"]
+Output: [[eat,tea,ate],[bat]]
+
+61. Check palindrome using streams
+
+Input: "madam"
+Output: true
+
+62. Convert integer list to comma-separated string
+
+Input: [1,2,3]
+Output: "1,2,3"
+
+63. Find longest subarray of positives (stream-based idea)
+64. Custom sorting: sort strings by last character
+65. Count vowels in string using stream
+
+Input: "java"
+Output: 2
