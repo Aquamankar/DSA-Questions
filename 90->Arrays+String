@@ -1,16 +1,27 @@
 
 
-| S.No | Topic / Subtopic          | No. of Questions | Estimated Days | Variants Included                                |
-| ---- | ------------------------- | ---------------- | -------------- | ------------------------------------------------ |
-| 1    | Basic Array + Math        | 5                | 1              | Move negatives/even numbers to left              |
-| 2    | Prefix Sum / Subarray Sum | 12               | 2              | Replace sum with XOR/product/modulo              |
-| 3    | Sliding Window            | 10               | 2              | Frequency ≤ K, any target numbers                |
-| 4    | Two-Pointer / Sorting     | 8                | 1              | 3Sum closest, count triplets < K                 |
-| 5    | Binary Search             | 7                | 1              | Rotation count, bitonic peak                     |
-| 6    | Matrix                    | 6                | 1              | Rotate 180°/270°, reverse each row               |
-| 7    | Intervals                 | 6                | 1              | Overlapping intervals, erase min intervals       |
-| 8    | Miscellaneous / Important | 6                | 1              | Majority > n/3, multiple answers for gas station |
-
+| S.No | Question                                                 | Input                       | Output / Hint                         | Technique / Pattern          | Variant / Notes                                 |
+| ---- | -------------------------------------------------------- | --------------------------- | ------------------------------------- | ---------------------------- | ----------------------------------------------- |
+| 1    | Find max and min in an array                             | `[1,5,3,9,2]`               | `Max=9, Min=1`                        | Iteration / Comparison       | Can be done in single pass                      |
+| 2    | Second largest / second smallest                         | `[4,2,7,1,9]`               | `Second Largest=7, Second Smallest=2` | Sorting / Single pass        | Variant: Kth largest/smallest                   |
+| 3    | Check if array is sorted                                 | `[1,2,3,4]`                 | `true`                                | Iteration                    | Check non-decreasing / non-increasing           |
+| 4    | Rotate array by k positions                              | `[1,2,3,4,5], k=2`          | `[4,5,1,2,3]`                         | Reverse / Slicing            | Rotate left/right                               |
+| 5    | Move zeros to end                                        | `[0,1,0,3,12]`              | `[1,3,12,0,0]`                        | Two pointers / Partition     | Variant: move negatives or even numbers to left |
+| 6    | Subarray sum = K                                         | `[1,2,3], K=3`              | `[1,2]` or `[3]`                      | Prefix sum + HashMap         | Variant: Replace sum with XOR/product           |
+| 7    | Longest subarray with sum = 0                            | `[1,-1,3,-3,4]`             | `Length=4`                            | Prefix sum + HashMap         | Can use hashmap to store first occurrence       |
+| 8    | Count subarrays with sum divisible by K                  | `[4,5,0,-2,-3,1], K=5`      | `7`                                   | Prefix sum + HashMap         | Handle negative numbers carefully               |
+| 9    | Maximum sum subarray (Kadane’s)                          | `[−2,1,−3,4,−1,2,1,−5,4]`   | `6`                                   | Kadane’s Algorithm           | Variant: Maximum product subarray               |
+| 10   | Maximum sum subarray of size K                           | `[1,2,3,4,5], K=3`          | `12`                                  | Sliding window               | Minimum sum subarray variant                    |
+| 11   | Minimum size subarray sum ≥ target                       | `[2,3,1,2,4,3], target=7`   | `2`                                   | Sliding window               | Return 0 if no such subarray                    |
+| 12   | Longest substring/array with at most K distinct elements | `[1,2,1,2,3], K=2`          | `4`                                   | Sliding window + HashMap     | Variant: frequency ≤ K                          |
+| 13   | Two sum sorted array                                     | `[1,2,3,4,6], target=6`     | `[1,3]` (indices)                     | Two pointers                 | Input array must be sorted                      |
+| 14   | 3 sum                                                    | `[−1,0,1,2,−1,−4]`          | `[[-1,-1,2],[-1,0,1]]`                | Sorting + Two pointers       | Variant: 3Sum closest                           |
+| 15   | Container with most water                                | `[1,8,6,2,5,4,8,3,7]`       | `49`                                  | Two pointers                 | Max area between lines                          |
+| 16   | Search element in rotated sorted array                   | `[4,5,6,7,0,1,2], target=0` | `4`                                   | Binary Search                | Variant: rotation count                         |
+| 17   | Find minimum in rotated array                            | `[4,5,6,7,0,1,2]`           | `0`                                   | Binary Search                | Variant: find bitonic peak                      |
+| 18   | Print matrix in spiral order                             | `[[1,2,3],[4,5,6],[7,8,9]]` | `[1,2,3,6,9,8,7,4,5]`                 | Simulation / 4 pointers      | Variant: reverse spiral, rotate 180°            |
+| 19   | Merge intervals                                          | `[[1,3],[2,6],[8,10]]`      | `[[1,6],[8,10]]`                      | Sorting + Merge              | Variant: erase minimum intervals                |
+| 20   | Product of array except self                             | `[1,2,3,4]`                 | `[24,12,8,6]`                         | Prefix/Suffix multiplication | Variant: without division                       |
 
 
 
