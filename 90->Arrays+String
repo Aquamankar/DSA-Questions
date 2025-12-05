@@ -1,3 +1,27 @@
+
+
+| S.No | Topic / Subtopic          | No. of Questions | Estimated Days | Variants Included                                |
+| ---- | ------------------------- | ---------------- | -------------- | ------------------------------------------------ |
+| 1    | Basic Array + Math        | 5                | 1              | Move negatives/even numbers to left              |
+| 2    | Prefix Sum / Subarray Sum | 12               | 2              | Replace sum with XOR/product/modulo              |
+| 3    | Sliding Window            | 10               | 2              | Frequency ≤ K, any target numbers                |
+| 4    | Two-Pointer / Sorting     | 8                | 1              | 3Sum closest, count triplets < K                 |
+| 5    | Binary Search             | 7                | 1              | Rotation count, bitonic peak                     |
+| 6    | Matrix                    | 6                | 1              | Rotate 180°/270°, reverse each row               |
+| 7    | Intervals                 | 6                | 1              | Overlapping intervals, erase min intervals       |
+| 8    | Miscellaneous / Important | 6                | 1              | Majority > n/3, multiple answers for gas station |
+
+
+
+
+
+
+
+
+
+
+
+
 ✅ 90+ MUST-DO ARRAY + STRING INTERVIEW QUESTIONS
 All grouped by topic + variants included
 
