@@ -227,6 +227,49 @@ Majority element > n/3
 
 Gas station multiple answers
 
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+| S.No | Question                                  | Input                                   | Output / Hint                                 | Technique / Pattern           | Variant / Notes                                   |
+| ---- | ----------------------------------------- | --------------------------------------- | --------------------------------------------- | ----------------------------- | ------------------------------------------------- |
+| 1    | Reverse string                            | `"hello"`                               | `"olleh"`                                     | Iteration / Two pointers      | In-place or using extra array                     |
+| 2    | Reverse words in a sentence               | `"the sky is blue"`                     | `"blue is sky the"`                           | Split + Reverse               | Handle multiple spaces                            |
+| 3    | Check palindrome                          | `"racecar"`                             | `true`                                        | Two pointers                  | Ignore cases / non-alphanumeric                   |
+| 4    | Check anagram                             | `"listen", "silent"`                    | `true`                                        | Sorting / HashMap             | Variant: include spaces and digits                |
+| 5    | Character frequency map                   | `"aabbcc"`                              | `{a:2,b:2,c:2}`                               | HashMap                       | Variant: sort by frequency                        |
+| 6    | Longest substring without repeating       | `"abcabcbb"`                            | `3`                                           | Sliding window + HashSet      | Variant: digits / uppercase patterns              |
+| 7    | Longest substring with at most K distinct | `"eceba", K=2`                          | `"ece"`                                       | Sliding window + HashMap      | Variant: frequency ≤ K                            |
+| 8    | Longest repeating character replacement   | `"AABABBA", K=1`                        | `4`                                           | Sliding window                | Variant: replace K chars to maximize same letters |
+| 9    | Minimum window substring                  | `"ADOBECODEBANC", "ABC"`                | `"BANC"`                                      | Sliding window + HashMap      | Variant: pattern with digits/uppercase/lowercase  |
+| 10   | Check if permutation exists in the string | `"oidbcaf", "abc"`                      | `true`                                        | Sliding window + HashMap      | Return start index or boolean                     |
+| 11   | Find all anagrams of pattern              | `"cbaebabacd", "abc"`                   | `[0,6]`                                       | Sliding window + HashMap      | Variant: any length pattern                       |
+| 12   | Maximum vowels in substring size K        | `"abciiidef", K=3`                      | `3`                                           | Sliding window                | Variant: consonants or other characters           |
+| 13   | Longest palindromic substring             | `"babad"`                               | `"bab"`                                       | Expand around center / DP     | Variant: count all palindromes                    |
+| 14   | Count palindromic substrings              | `"aaa"`                                 | `6`                                           | Expand around center          | Variant: distinct palindromes only                |
+| 15   | Palindromic partitioning                  | `"aab"`                                 | `[["a","a","b"],["aa","b"]]`                  | Backtracking                  | Variant: min cuts                                 |
+| 16   | Valid palindrome II (remove one char)     | `"abca"`                                | `true`                                        | Two pointers                  | Variant: remove K chars                           |
+| 17   | Longest palindrome that can be built      | `"abccccdd"`                            | `7`                                           | HashMap                       | Variant: include only letters or digits           |
+| 18   | Palindrome subsequence (DP)               | `"bbbab"`                               | `4`                                           | DP                            | Variant: longest palindromic substring            |
+| 19   | Implement strstr()                        | `"hello", "ll"`                         | `2`                                           | Two pointers / Sliding window | Variant: KMP / Rabin-Karp                         |
+| 20   | Longest common prefix                     | `["flower","flow","flight"]`            | `"fl"`                                        | Horizontal scanning / Trie    | Variant: vertical scanning                        |
+| 21   | Repeated substring pattern                | `"abab"`                                | `true`                                        | String + Math                 | Variant: check for numbers/digits included        |
+| 22   | Rabin–Karp substring search               | `"abcdabc", "abc"`                      | `[0,4]`                                       | Rolling hash                  | Variant: multiple patterns                        |
+| 23   | Group anagrams                            | `["eat","tea","tan","ate","nat","bat"]` | `[["eat","tea","ate"],["tan","nat"],["bat"]]` | HashMap                       | Variant: include numbers                          |
+| 24   | Word pattern                              | `"abba", "dog cat cat dog"`             | `true`                                        | HashMap                       | Variant: letters+digits                           |
+| 25   | Check isomorphic strings                  | `"egg", "add"`                          | `true`                                        | HashMap                       | Variant: multiple characters mapping              |
+| 26   | Longest common subsequence                | `"abcde","ace"`                         | `"ace"`                                       | DP                            | Variant: LCS for 3 strings                        |
+| 27   | Edit distance                             | `"horse","ros"`                         | `3`                                           | DP                            | Variant: with costs                               |
+| 28   | Longest repeating subsequence             | `"aabb"`                                | `2`                                           | DP                            | Variant: distinct letters                         |
+| 29   | Shortest common supersequence             | `"abac", "cab"`                         | `"cabac"`                                     | DP                            | Variant: multiple strings                         |
+| 30   | Count distinct subsequences               | `"rabbbit"`                             | `3`                                           | DP                            | Variant: modulo large numbers                     |
+| 31   | Minimum insertions to make palindrome     | `"ab"`                                  | `1`                                           | DP                            | Variant: remove instead of insert                 |
+
+
+
+
+
+
+
 🟣 PART 2 — STRINGS (40 QUESTIONS)
 📌 1. Basic (5 Questions)
 
