@@ -1,0 +1,115 @@
+| S.No | Question                  | Input                     | Output             | Technique / Pattern              | Variant / Notes                      |
+| ---- | ------------------------- | ------------------------- | ------------------ | -------------------------------- | ------------------------------------ |
+| 1    | Reverse Linked List       | `1->2->3->4->5`           | `5->4->3->2->1`    | Iterative / Recursion            | Can reverse sublist, reverse k-group |
+| 2    | Middle of Linked List     | `1->2->3->4->5`           | `3`                | Fast & Slow Pointers             | Return 2nd middle for even length    |
+| 3    | Detect Cycle              | `1->2->3->2`              | `true`             | Fast & Slow Pointers             | Return start node variant            |
+| 4    | Remove Nth Node From End  | `1->2->3->4->5, n=2`      | `1->2->3->5`       | Two Pointers                     | Single pass solution                 |
+| 5    | Merge Two Sorted Lists    | `1->2->4, 1->3->4`        | `1->1->2->3->4->4` | Merge Technique / Recursion      | Iterative variant                    |
+| 6    | Add Two Numbers           | `2->4->3 + 5->6->4`       | `7->0->8`          | Simulation / Carry Forward       | Use dummy head                       |
+| 7    | Palindrome Linked List    | `1->2->2->1`              | `true`             | Reverse 2nd half + Two Pointers  | Restore list optional                |
+| 8    | Intersection of Two Lists | `A:1->2->3->4, B:6->3->4` | `3`                | Two Pointers / Length difference | HashSet variant                      |
+| 9    | Delete Node Without Head  | `4->5->1->9, delete 5`    | `4->1->9`          | Copy Next Node                   | Only works if node != tail           |
+| 10   | Reorder List              | `1->2->3->4->5`           | `1->5->2->4->3`    | Reverse + Merge                  | Split list into halves first         |
+
+
+🌸 Linked List – Interview Questions & Variants
+
+Reverse Linked List
+
+Input: 1->2->3->4->5
+
+Output: 5->4->3->2->1
+
+Technique/Pattern: Iterative / Recursion
+
+Variants: Reverse a sublist, reverse in groups of k
+
+Middle of Linked List
+
+Input: 1->2->3->4->5
+
+Output: 3
+
+Technique/Pattern: Fast & Slow Pointers
+
+Variants: Return 2nd middle for even length
+
+Detect Cycle
+
+Input: 1->2->3->2 (cycle exists)
+
+Output: true
+
+Technique/Pattern: Fast & Slow Pointers
+
+Variants: Return starting node of cycle
+
+Remove Nth Node From End
+
+Input: 1->2->3->4->5, n=2
+
+Output: 1->2->3->5
+
+Technique/Pattern: Two Pointers
+
+Variants: Single pass solution
+
+Merge Two Sorted Lists
+
+Input: 1->2->4, 1->3->4
+
+Output: 1->1->2->3->4->4
+
+Technique/Pattern: Merge Technique / Recursion
+
+Variants: Iterative merge
+
+Add Two Numbers (Linked List Representation)
+
+Input: 2->4->3 + 5->6->4
+
+Output: 7->0->8
+
+Technique/Pattern: Simulation / Carry Forward
+
+Variants: Use dummy head, handle different lengths
+
+Palindrome Linked List
+
+Input: 1->2->2->1
+
+Output: true
+
+Technique/Pattern: Reverse 2nd half + Two Pointers
+
+Variants: Restore original list after check
+
+Intersection of Two Linked Lists
+
+Input: A:1->2->3->4, B:6->3->4
+
+Output: 3
+
+Technique/Pattern: Two Pointers / Length difference
+
+Variants: HashSet approach
+
+Delete Node Without Head Pointer
+
+Input: 4->5->1->9, delete 5
+
+Output: 4->1->9
+
+Technique/Pattern: Copy Next Node
+
+Variants: Only works if node != tail
+
+Reorder List
+
+Input: 1->2->3->4->5
+
+Output: 1->5->2->4->3
+
+Technique/Pattern: Reverse + Merge
+
+Variants: Split list into halves first
