@@ -328,6 +328,75 @@ public class ContainerWithMostWater {
 }
 
 
+**********************************************
+
+🌊 Problem Explanation (Simple)
+
+You are given an array:
+
+[1,8,6,2,5,4,8,3,7]
+
+
+Each number is the height of a vertical line.
+
+Your job is to pick two lines that can hold maximum water between them.
+
+Water is stored as a rectangle between two lines.
+
+🧠 How do we calculate area (water)?
+
+Formula:
+
+Area = (shorter line) × (distance between two lines)
+
+Why shorter line?
+Because water spills out from the shorter side.
+
+Example:
+If heights are 8 and 3 →
+Water can go only up to 3 height.
+
+So:
+
+area = min(8, 3) * distance
+
+
+Distance means:
+rightIndex - leftIndex
+
+🎯 Two Pointer Logic (SUPER IMPORTANT)
+
+We start with:
+
+left = first line
+right = last line
+
+
+Why?
+
+Because this gives us the maximum width.
+
+After calculating area, we have two heights:
+
+Example:
+
+height[left] = 1
+height[right] = 7
+
+
+The shorter one is 1.
+
+→ Water can only go up to height 1
+So if we move the taller line (7), it won’t help.
+
+💡 Only moving the smaller height can give a better result.
+
+That is the golden rule:
+
+if leftHeight < rightHeight: left++
+else: right--
+
+
 ========================================================================================
 
 Trapping Rain Water (Two Pointer version)
