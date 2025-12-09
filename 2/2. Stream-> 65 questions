@@ -195,6 +195,12 @@ map(String::valueOf)
 Input: Employees by salary
 Output: sorted list
 
+ans->  employees.stream()
+         .sorted(Comparator.comparing(e -> e.salary))  // int gets boxed to Integer
+         .collect(Collectors.toList());
+
+
+------------------------------------
 19. Filter objects based on two conditions
 
 Input: age > 25 and city = “Delhi”
