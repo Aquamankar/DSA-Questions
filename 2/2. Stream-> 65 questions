@@ -98,6 +98,18 @@ System.out.println(a == b);   // true (same cached object)
 ****  valueOf() = String → wrapper object
 -----------------------------------------------------------
 
+| Input Type | Works?            | Notes                                       |
+| ---------- | ----------------- | ------------------------------------------- |
+| `int`      | ✅ Yes             | Returns `Integer`                           |
+| `String`   | ✅ Yes, if numeric | Returns `Integer`                           |
+| `float`    | ❌ No              | Must use `Float.valueOf(float)`             |
+| `double`   | ❌ No              | Must use `Double.valueOf(double)`           |
+| `Integer`  | ✅ Yes             | Returns same Integer (cached if -128..127)  |
+| `Object`   | ❌ No              | Cannot directly use Integer.valueOf(Object) |
+
+
+
+------------------------------------------------------------
 
 | Case        | toString()    | valueOf()          |
 | ----------- | ------------- | ------------------ |
