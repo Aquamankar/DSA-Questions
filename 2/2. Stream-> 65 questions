@@ -74,6 +74,63 @@ System.out.println(a == b);   // true (same cached object)
 ****  valueOf() = String → wrapper object
 -----------------------------------------------------------
 
+
+| Case        | toString()    | valueOf()          |
+| ----------- | ------------- | ------------------ |
+| Primitive   | ❌ Not allowed | ✔ Works            |
+| Object      | ✔ Works       | ✔ Works            |
+| Null object | ❌ NPE         | ✔ Returns `"null"` |
+
+
+------------------------------------------------
+
+1. String.valueOf() → BEST & SAFEST
+
+It works for EVERYTHING:
+
+primitives
+
+wrapper objects
+
+custom objects
+
+null values (returns "null")
+
+Example:
+String s1 = String.valueOf(10);       // "10"
+String s2 = String.valueOf(true);     // "true"
+String s3 = String.valueOf(10.5);     // "10.5"
+String s4 = String.valueOf(new Date()); // "Fri Dec 09..."
+String s5 = String.valueOf(null);     // "null"
+
+
+
+✅ 2. toString() → Works for objects (NOT primitives)
+Example:
+Integer x = 10;
+String s = x.toString();   // ok
+
+
+❌ But this fails:
+
+int x = 10;
+String s = x.toString(); // ❌ error (primitive has no methods)
+
+
+❌ And toString() throws NullPointerException if object is null.
+
+🚀 Your Code Example (Correct)
+List<String> ans = list.stream()
+        .map(i -> String.valueOf(i))
+        .collect(Collectors.toList());
+
+
+✔ Correct
+✔ Best way
+✔ Works for all types, not just Integer
+
+-------------------------------------------------------------------------------------------------------------
+
 Topic 2 — Intermediate Operations (10 Questions)
 11. Map() vs FlatMap() difference
 
