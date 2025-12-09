@@ -183,6 +183,12 @@ Output: [1,2,3]
 Input: [[1,2], [3], [4,5]]
 Output: [1,2,3,4,5]
 
+
+---------------------------------------
+        
+    List<Integer> ans=   list.stream().flatMap(i-> i.stream()).distinct().sorted().collect(Collectors.toList());
+------------------------------------------
+
 14. Find second highest number
 
 Input: [10, 20, 30, 40]
