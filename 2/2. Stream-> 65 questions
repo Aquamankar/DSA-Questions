@@ -54,6 +54,26 @@ Variant: map + convert to List
 Input: ["1","2","3"]
 Output: [1,2,3]
 
+ans->   List<Integer> ans=list.stream().map(i-> Integer.valueOf(i)).collect(Collectors.toList());
+----------------------------------------------------------
+Note-> 
+
+Integer x = Integer.valueOf(2000);
+Integer y = Integer.valueOf(2000);
+
+System.out.println(x == y);   // false (not same object)
+
+
+Integer a = Integer.valueOf(127);
+Integer b = Integer.valueOf(127);
+
+System.out.println(a == b);   // true (same cached object)
+---------------------------------------------------------
+
+****  parseXxx() = String → primitive
+****  valueOf() = String → wrapper object
+-----------------------------------------------------------
+
 Topic 2 — Intermediate Operations (10 Questions)
 11. Map() vs FlatMap() difference
 
