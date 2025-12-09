@@ -40,6 +40,30 @@ Output: 6
 Input: [10, 5, 30]
 Output: Max = 30, Min = 5.
 
+-----------------------------------------
+with comparator 
+  List<Integer> list = Arrays.asList(10, 5, 30, 20);
+
+        // Using Comparator
+        Integer max = list.stream()
+                          .max(Comparator.naturalOrder())  // or Integer::compareTo
+                          .orElse(null);
+
+------------------------------------
+Integer max = list.stream()
+                  .max(Integer::compareTo)
+                  .orElse(null);
+
+-------------------------------------
+Integer max = list.stream()
+                          .collect(Collectors.collectingAndThen(
+                              Collectors.maxBy(Integer::compareTo),
+                              Optional::get
+                          ));
+
+
+
+-----------------------------------------
 8. Check if all values match condition
 
 Input: [2,4,6]
