@@ -259,6 +259,13 @@ ans->  employees.stream()
 Input: age > 25 and city = “Delhi”
 Output: matching employees
 
+List<Employee> result = employees.stream()
+    .filter(e -> e.getAge() > 25 && "Delhi".equals(e.getCity()))
+    .collect(Collectors.toList());
+
+
+-----------------------------------------
+
 20. custom comparator using streams
 
 ex: sort strings by length
