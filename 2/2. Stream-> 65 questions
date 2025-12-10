@@ -59,7 +59,18 @@ Output: [1,4,5]
 Variant: product
 Input: [1,2,3]
 Output: 6
+----------------------------------------------
 
+int ans = Arrays.stream(arr)
+                .reduce((a, b) -> a + b)
+                .orElse(0);
+-----------------------------------------------
+int ans = Arrays.stream(arr)
+                .reduce(0, (a, b) -> a + b);
+
+System.out.println(ans);
+
+----------------------------------------------------
 7. Max and Min using stream
 
 Input: [10, 5, 30]
