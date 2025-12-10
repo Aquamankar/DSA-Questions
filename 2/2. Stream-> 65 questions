@@ -12,13 +12,13 @@ Variant: odd numbers, numbers > X
 Input: [2,5,7,8]
 Output: [2,8]
 
+
+------------------------------------------------
 3. Find unique elements
 
 Variant: find duplicates
 Input: [1,2,2,3,3,3]
 Output: [1,2,3]
-
--------------------------------------------
 
 List<Integer> ans = Arrays.stream(arr)
         .mapToObj(i -> i)      // instead of boxed()
@@ -28,7 +28,7 @@ List<Integer> ans = Arrays.stream(arr)
         .filter(e -> e.getValue() > 1)
         .map(Map.Entry::getKey)
         .collect(Collectors.toList());
----------------------------------------------
+------------------
   int[] arr = {1, 2, 2, 3, 3, 3};
 
         List<Integer> ans = Arrays.stream(arr)
@@ -59,12 +59,12 @@ Output: [1,4,5]
 Variant: product
 Input: [1,2,3]
 Output: 6
-----------------------------------------------
+
 
 int ans = Arrays.stream(arr)
                 .reduce((a, b) -> a + b)
                 .orElse(0);
------------------------------------------------
+-------------
 int ans = Arrays.stream(arr)
                 .reduce(0, (a, b) -> a + b);
 
@@ -74,10 +74,9 @@ System.out.println(ans);
 7. Max and Min using stream
 
 Input: [10, 5, 30]
-Output: Max = 30, Min = 5.
+Output: Max = 30, Min = 5
 
------------------------------------------
-with comparator 
+------with comparator 
   List<Integer> list = Arrays.asList(10, 5, 30, 20);
 
         // Using Comparator
@@ -85,12 +84,12 @@ with comparator
                           .max(Comparator.naturalOrder())  // or Integer::compareTo
                           .orElse(null);
 
-------------------------------------
+---------------
 Integer max = list.stream()
                   .max(Integer::compareTo)
                   .orElse(null);
 
--------------------------------------
+------------
 Integer max = list.stream()
                           .collect(Collectors.collectingAndThen(
                               Collectors.maxBy(Integer::compareTo),
