@@ -18,6 +18,31 @@ Variant: find duplicates
 Input: [1,2,2,3,3,3]
 Output: [1,2,3]
 
+-------------------------------------------
+
+List<Integer> ans = Arrays.stream(arr)
+        .mapToObj(i -> i)      // instead of boxed()
+        .collect(Collectors.groupingBy(i -> i, Collectors.counting()))
+        .entrySet()
+        .stream()
+        .filter(e -> e.getValue() > 1)
+        .map(Map.Entry::getKey)
+        .collect(Collectors.toList());
+---------------------------------------------
+  int[] arr = {1, 2, 2, 3, 3, 3};
+
+        List<Integer> ans = Arrays.stream(arr)
+                .boxed() // convert IntStream → Stream<Integer>
+                .collect(Collectors.groupingBy(i -> i, Collectors.counting()))
+                .entrySet()
+                .stream()
+                .filter(i -> i.getValue() > 1)
+                .map(e -> e.getKey())
+                .collect(Collectors.toList());
+
+        System.out.println(ans);
+---------------------------------------------
+
 4. Count elements satisfying condition
 
 Input: [1,2,3,4] count > 2
