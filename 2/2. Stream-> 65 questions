@@ -313,6 +313,18 @@ Check if any employee earns > 1L salary
 
 Password does not contain space
 
+
+String password = "My Secure Password";
+
+boolean noSpace = password.chars()
+        .noneMatch(ch -> ch == ' ');
+
+System.out.println(noSpace);   // false
+
+
+
+-------------------------------------------------
+
 29. findFirst()
 
 Return first even number
