@@ -285,6 +285,13 @@ Output: Map<Dept, List<Employee>>
 Input: numbers even/odd
 Output: {true: [2,4], false:[1,3]}
 
+Map<Boolean, List<Integer>> result =
+                numbers.stream()
+                       .collect(Collectors.partitioningBy(n -> n % 2 == 0));
+
+
+-------------------------------------------------
+
 24. Join list of strings
 
 Input: ["java","spring"]
