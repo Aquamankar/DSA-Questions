@@ -434,11 +434,47 @@ Output: [[eat,tea,ate],[bat]]
 Input: "madam"
 Output: true
 
+
+String str = "MadAm";
+
+boolean isPalindrome = IntStream.range(0, str.length() / 2)
+        .allMatch(i ->
+                Character.toLowerCase(str.charAt(i)) ==
+                Character.toLowerCase(str.charAt(str.length() - 1 - i))
+        );
+
+System.out.println(isPalindrome);   // true
+
+
+----------------------
+String str = "madam";
+
+String reversed = new StringBuilder(str).reverse().toString();
+
+boolean isPalindrome = IntStream.range(0, str.length())
+        .allMatch(i -> str.charAt(i) == reversed.charAt(i));
+
+System.out.println(isPalindrome);   // true
+
+
+
+---------------------------------------------------
 62. Convert integer list to comma-separated string
 
 Input: [1,2,3]
 Output: "1,2,3"
 
+int[] v = {1, 2, 3};
+
+ans->   String str = Arrays.stream(v)
+        .boxed()
+        .map(String::valueOf)
+        .collect(Collectors.joining(","));
+
+System.out.println(str);    // Output: 1,2,3
+
+
+----------------------------------------------------------
 63. Find longest subarray of positives (stream-based idea)
 64. Custom sorting: sort strings by last character
 65. Count vowels in string using stream
