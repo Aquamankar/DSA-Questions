@@ -323,6 +323,17 @@ System.out.println(noSpace);   // false
 
 
 
+--------------------------------
+NOTE->   
+1.Convert int → char by casting
+int a = 45;
+System.out.println((char) a);
+
+2. Convert int → String
+String s = String.valueOf((char) c);
+System.out.println(s);
+
+
 -------------------------------------------------
 
 29. findFirst()
