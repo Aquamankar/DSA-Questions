@@ -297,6 +297,11 @@ Map<Boolean, List<Integer>> result =
 Input: ["java","spring"]
 Output: "java,spring"
 
+   ans->     List<String> list = Arrays.asList("java", "spring");
+
+        String result = list.stream()
+                            .collect(Collectors.joining(","));
+------------------------------------------------------
 25. Convert Stream to array
 
 Variant: primitive arrays
