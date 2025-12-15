@@ -1,3 +1,59 @@
+
+*** Stream-based solution (INTERVIEW READY)
+1.Step-by-step logic
+
+2.Find min and max
+
+3.Create expected range
+
+4.Remove duplicates from array
+
+5. Filter missing numbers
+
+
+import java.util.*; 
+import java.util.stream.*;
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Try programiz.pro");
+int[] arr = {1, 2, 2, 4, 5, 7, 8};
+
+int min = Arrays.stream(arr).min().orElse(0);
+int max = Arrays.stream(arr).max().orElse(0);
+
+Set<Integer> existing =
+        Arrays.stream(arr).boxed().collect(Collectors.toSet());
+
+List<Integer> missing =
+        IntStream.rangeClosed(min, max)
+                .filter(i -> !existing.contains(i))
+                .boxed()
+                .toList();
+
+System.out.println(missing); // [3, 6]
+
+    }
+}
+====================
+
+int[] arr = {1, 2, 2, 4, 5, 7, 8};
+
+int min = Arrays.stream(arr).min().getAsInt();
+int max = Arrays.stream(arr).max().getAsInt();
+
+List<Integer> missing =
+        IntStream.rangeClosed(min, max)
+                .filter(i ->
+                        Arrays.stream(arr).noneMatch(x -> x == i)
+                )
+                .boxed()
+                .toList();
+
+System.out.println(missing); // [3, 6]
+
+
+----------------------------------------------
+
 ✅ JAVA STREAM API — 65 IMPORTANT INTERVIEW QUESTIONS (WITH VARIANTS + INPUT/OUTPUT PRACTICE)
 Topic 1 — Basic Stream Operations (10 Questions)
 1. Convert list of strings to uppercase
