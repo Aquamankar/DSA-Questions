@@ -346,20 +346,101 @@ System.out.println(s);
 Return first even number
 
 30. collect → custom collector
+
+
+---------------------------------------------------
 Topic 4 — Map Operations (10 Questions)
+
+
 31. Convert List<Employee> → Map<id, name>
 
 Variant: handling duplicate keys
 
+Map<Integer, String> empMap =
+    employees.stream()
+        .collect(Collectors.toMap(
+            Employee::getId,
+            Employee::getName,
+            (oldValue, newValue) -> oldValue   // handle duplicate keys
+        ));
+----------------------------------
+
 32. Sort Map by Key
+
+Map<Integer, String> sortedByKey =
+    empMap.entrySet().stream()
+        .sorted(Map.Entry.comparingByKey())
+        .collect(Collectors.toMap(
+            Map.Entry::getKey,
+            Map.Entry::getValue,
+            (a, b) -> a,
+            LinkedHashMap::new
+        ));
+
+----------------------------------
 33. Sort Map by Value
+
+Map<Integer, String> sortedByValue =
+    empMap.entrySet().stream()
+        .sorted(Map.Entry.comparingByValue())
+        .collect(Collectors.toMap(
+            Map.Entry::getKey,
+            Map.Entry::getValue,
+            (a, b) -> a,
+            LinkedHashMap::new
+        ));
+
+
+
+----------------------------------------
+
 34. Find max salary using map + stream
+
 35. Convert Map → List of keys
+
+List<Integer> keys =
+    empMap.keySet().stream().toList();
+
+
+
+----------------------------------------
+
 36. Convert Map → List of entries
+
+List<Map.Entry<Integer, Employee>> entries =
+    empMap.entrySet().stream().toList();
+
+
+-----------------------------------------
+
 37. Increase all salaries by 10%
+
+employees.forEach(e ->
+    e.setSalary(e.getSalary() * 1.10)
+);
+
+
+------------------------------------------
+
 38. Filter map by value
+
+Map<Integer, Employee> filteredMap =
+    empMap.entrySet().stream()
+        .filter(e -> e.getValue().getSalary() > 50000)
+        .collect(Collectors.toMap(
+            Map.Entry::getKey,
+            Map.Entry::getValue
+        ));
+
+
+---------------------------------------------
+
 39. Convert Map<String, List<Integer>> → single List<Integer>
+
 40. Merge two maps
+
+
+---------------------------------------------------------------
 Topic 5 — Advanced & Tricky Stream Questions (10 Questions)
 41. Stream vs parallel stream
 
