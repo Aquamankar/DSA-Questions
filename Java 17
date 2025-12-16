@@ -1,0 +1,173 @@
+✅ Java 17 – All Major Features with Examples
+1. Records (Finalized)
+What
+
+Concise, immutable data-carrier classes.
+
+Example
+public record User(int id, String name) {}
+
+
+Usage:
+
+User u = new User(1, "Akanksha");
+System.out.println(u.id());
+
+Why
+
+Removes boilerplate (constructor, getters, equals, hashCode).
+
+2. Sealed Classes (Finalized)
+What
+
+Restrict which classes can extend a class or interface.
+
+Example
+public sealed class Shape permits Circle, Rectangle {}
+
+final class Circle extends Shape {}
+final class Rectangle extends Shape {}
+
+Why
+
+Controlled inheritance, better domain modeling.
+
+3. Pattern Matching for instanceof (Finalized)
+Before Java 16
+if (obj instanceof String) {
+    String s = (String) obj;
+    System.out.println(s.length());
+}
+
+Java 17
+if (obj instanceof String s) {
+    System.out.println(s.length());
+}
+
+Why
+
+Less casting, cleaner code.
+
+4. Switch Expressions (Standard)
+Old Switch
+int result;
+switch (day) {
+    case 1: result = 10; break;
+    case 2: result = 20; break;
+    default: result = 0;
+}
+
+Java 17
+int result = switch (day) {
+    case 1 -> 10;
+    case 2 -> 20;
+    default -> 0;
+};
+
+Why
+
+Expression-based, no fall-through bugs.
+
+5. Text Blocks (""") (Standard)
+Before
+String json = "{\n" +
+              "  \"id\": 1\n" +
+              "}";
+
+Java 17
+String json = """
+        {
+          "id": 1
+        }
+        """;
+
+Why
+
+Readable multi-line strings (SQL, JSON, HTML).
+
+6. Helpful NullPointerExceptions
+Before
+Exception in thread "main" java.lang.NullPointerException
+
+Java 17
+Cannot invoke "User.getName()" because "user" is null
+
+Why
+
+Much easier debugging.
+
+7. Stream API Enhancements
+toList() (Immutable)
+List<Integer> list = stream.toList();
+
+
+Instead of:
+
+Collectors.toList()
+
+8. Local Variable Type Inference (var) (Enhanced)
+var name = "Akanksha";  // String
+var list = List.of(1, 2, 3);
+
+
+Rules:
+
+Only for local variables
+
+Not for method parameters or fields
+
+9. Sealed Interfaces
+public sealed interface Payment permits Card, Upi {}
+
+record Card(String number) implements Payment {}
+record Upi(String id) implements Payment {}
+
+Why
+
+Very common with record.
+
+10. Pattern Matching + Sealed + Switch (Power Feature)
+static double area(Shape shape) {
+    return switch (shape) {
+        case Circle c -> 100;
+        case Rectangle r -> 200;
+    };
+}
+
+
+✔ Compiler forces all cases handled
+
+11. New Random Generator API
+RandomGenerator rg = RandomGenerator.getDefault();
+int num = rg.nextInt(100);
+
+
+More flexible than java.util.Random.
+
+12. Strong Encapsulation of JDK Internals
+
+Illegal access to internal APIs blocked
+
+Improves security and stability
+
+(Interview answer: Better modularity and safety)
+
+13. Foreign Function & Memory API (Incubator)
+
+Allows Java to interact with native memory safely.
+
+(Usually not asked in depth for 2–3 yrs experience)
+
+14. Deprecations & Removals
+
+Removed:
+
+Applets
+
+Security Manager (deprecated)
+
+RMI Activation
+
+Interview note:
+
+Java 17 cleans legacy features.
