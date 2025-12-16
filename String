@@ -2,6 +2,34 @@ Day 4: Strings – Reversal, Char Count
 
 Important Problems:
 
+Q1. merge two strings as [axbycz]
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+
+        String s = "abc", v = "xyz";
+
+        // Expected output: axbycz
+        StringBuilder sv = new StringBuilder();
+
+        int maxLength = Math.max(s.length(), v.length());
+
+        for (int i = 0; i < maxLength; i++) {
+            if (i < s.length()) {
+                sv.append(s.charAt(i));
+            }
+            if (i < v.length()) {
+                sv.append(v.charAt(i));
+            }
+        }
+
+        System.out.println(sv.toString());
+    }
+}
+
+--------------------------------------------------------
 1.1 convert String to Number
 
 String str = "123";
