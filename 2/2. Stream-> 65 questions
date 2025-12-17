@@ -436,6 +436,9 @@ Map<Integer, String> sortedByKey =
             LinkedHashMap::new
         ));
 
+instead if map.entry wr also can use compatator
+.sorted(Comparator.comparing(Map.Entry::getKey, Comparator.reverseOrder()))
+
 ----------------------------------
 33. Sort Map by Value
 
