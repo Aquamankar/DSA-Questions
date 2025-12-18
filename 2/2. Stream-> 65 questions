@@ -550,6 +550,9 @@ Input: "swiss"
 Output: w
 
 53. Sort strings by frequency of characters
+
+
+
 54. Find common elements between two lists
 
 Input: [1,2,3] & [2,3,4]
@@ -561,11 +564,38 @@ Input: [1,2,2,3,3]
 Output: [2,3]
 
 56. Reverse each word in a sentence
+
+
 57. Count words in a sentence
+
+
+
+
+-------------------------------------------------------
 58. Find longest string
 
 Input: ["a", "abc", "ab"]
 Output: "abc"
+
+import java.util.*;
+import java.util.stream.*;
+
+class Main {
+    public static void main(String[] args) {
+
+        String[] arr = {"a", "abc", "ab"};
+
+        Optional<String> max = Arrays.stream(arr)
+                .collect(Collectors.maxBy(
+                        Comparator.comparing(String::length)
+                ));
+
+        System.out.println(max.orElse(""));
+    }
+}
+
+
+-------------------------------------------------------
 
 59. Top 3 highest numbers
 
