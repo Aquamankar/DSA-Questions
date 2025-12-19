@@ -541,24 +541,28 @@ E.g., "1-2-3-4"
 
 Why “collector” exists at all
 
+
+Ans---->
+
 A Java Stream processes data one element at a time.
 A Collector tells Java:
 
-Where to store intermediate results
+*Where to store intermediate results
 
-How to add each element
+*How to add each element
 
-How to merge results (for parallel streams)
+*How to merge results (for parallel streams)
 
-How to produce the final output
+*How to produce the final output
 
-What makes it custom
-
+*What makes it custom
+-------------
 Built-in collectors:
 
 toList() → fixed behavior
 
 joining() → fixed behavior
+----------------
 
 A custom collector:
 
@@ -581,16 +585,17 @@ Build complex objects
 Mental Model (Very Important)
 
 Think of a collector as a factory + worker + manager + finisher.
-
-Part	Meaning
-Supplier	Creates an empty container
-Accumulator	Adds one stream element
-Combiner	Merges two containers
-Finisher	Converts to final result
+-------------------------------------------
+Part	    |   Meaning
+Supplier	|   Creates an empty container
+Accumulator	|   Adds one stream element
+Combiner	|   Merges two containers
+Finisher    |   Converts to final result
+--------------------------------------------
 Custom Collector in Plain English
 
 For "1-2-3-4":
-
+-------------------------
 import java.util.*;
 import java.util.stream.*;
 import java.util.function.*;
@@ -620,8 +625,18 @@ class Main {
     }
 }
 
+-------------------------
+. Full execution timeline
 
------------------------
+Supplier creates StringBuilder
+
+Accumulator processes each integer
+
+Combiner merges partial results (if needed)
+
+Finisher converts to String
+
+--------------------------------------------------------
 “Start with an empty box,
 put numbers into it one by one,
 add - between them,
@@ -666,7 +681,7 @@ Do not use it when:
 
 Collectors.joining, toList, groupingBy already solve the problem
 
------------------------------------------------
+--------------------------------------------------------------------------------------------
 50. Difference between map(), peek(), forEach()
 
 
