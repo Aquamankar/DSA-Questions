@@ -529,16 +529,152 @@ Wrong usage example
 Thread-safety issues
 
 47. Reduce empty list (Optional handling)
+
+
 48. Infinite Stream (Stream.iterate)
 
-Generate first 5 even numbers.
+     Generate first 5 even numbers.
 
 49. Custom collector to join integers with hyphen
 
 E.g., "1-2-3-4"
 
+Why “collector” exists at all
+
+A Java Stream processes data one element at a time.
+A Collector tells Java:
+
+Where to store intermediate results
+
+How to add each element
+
+How to merge results (for parallel streams)
+
+How to produce the final output
+
+What makes it custom
+
+Built-in collectors:
+
+toList() → fixed behavior
+
+joining() → fixed behavior
+
+A custom collector:
+
+You decide how accumulation happens
+
+You decide format, rules, conditions
+
+You decide merge strategy
+
+Example:
+
+Add hyphen only between numbers
+
+Skip certain values
+
+Apply formatting rules
+
+Build complex objects
+
+Mental Model (Very Important)
+
+Think of a collector as a factory + worker + manager + finisher.
+
+Part	Meaning
+Supplier	Creates an empty container
+Accumulator	Adds one stream element
+Combiner	Merges two containers
+Finisher	Converts to final result
+Custom Collector in Plain English
+
+For "1-2-3-4":
+
+import java.util.*;
+import java.util.stream.*;
+import java.util.function.*;
+
+class Main {
+    public static void main(String[] args) {
+
+        List<Integer> list = List.of(1, 2, 3, 4);
+
+        String result = list.stream().collect(
+            Collector.of(
+                StringBuilder::new,              // supplier
+                (sb, i) -> {
+                    if (sb.length() > 0) sb.append("-");
+                    sb.append(i);
+                },                                // accumulator
+                (sb1, sb2) -> {
+                    if (sb1.length() > 0 && sb2.length() > 0) sb1.append("-");
+                    sb1.append(sb2);
+                    return sb1;
+                },                                // combiner
+                StringBuilder::toString           // finisher
+            )
+        );
+
+        System.out.println(result); // 1-2-3-4
+    }
+}
+
+
+-----------------------
+“Start with an empty box,
+put numbers into it one by one,
+add - between them,
+if multiple boxes exist (parallel), merge them,
+finally convert to a string.”
+
+That instruction set = custom collector.
+
+Why interviewer cares
+
+Because it proves you understand:
+
+How Streams actually work internally
+
+Mutable reduction
+
+Difference between:
+
+map() → transforms data
+
+collect() → accumulates data
+
+One-Sentence Interview Answer (Memorize This)
+
+“A custom collector is a user-defined implementation of
+the Collector interface that controls how stream elements 
+are accumulated, merged, and transformed into a final result.”
+
+When should you use it?
+
+Use a custom collector when:
+
+Built-in collectors are not flexible enough
+
+You need complex accumulation logic
+
+You want performance optimization
+
+You need stateful accumulation
+
+Do not use it when:
+
+Collectors.joining, toList, groupingBy already solve the problem
+
+-----------------------------------------------
 50. Difference between map(), peek(), forEach()
+
+
+
+---------------------------------------------------------------------
 Topic 6 — Real Interview Coding Problems Using Streams (15 Questions)
+
+
 51. Find frequency of characters in string
 
 Input: "banana"
