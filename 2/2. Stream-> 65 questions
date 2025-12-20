@@ -700,6 +700,36 @@ Output: {b=1, a=3, n=2}
 Input: "swiss"
 Output: w
 
+import java.util.*;
+import java.util.stream.*;
+
+class Main {
+    public static void main(String[] args) {
+
+        String s = "swiss";
+
+        Optional<Character> result =
+                s.chars()
+                 .mapToObj(c -> (char) c)
+                 .collect(Collectors.groupingBy(
+                         c -> c,
+                         LinkedHashMap::new,
+                         Collectors.counting()
+                 ))
+                 .entrySet()
+                 .stream()
+                 .filter(e -> e.getValue() == 1)
+                 .map(Map.Entry::getKey)
+                 .findFirst();
+
+        System.out.println(result.orElse(null));
+    }
+}
+
+
+
+-------------------------------------------
+
 53. Sort strings by frequency of characters
 
 
