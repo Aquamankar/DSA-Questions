@@ -499,6 +499,21 @@ Map<Integer, Employee> filteredMap =
 
 39. Convert Map<String, List<Integer>> → single List<Integer>
 
+
+
+
+
+Map<String, List<Integer>> map = new HashMap<>();
+map.put("A", List.of(1, 2, 3));
+map.put("B", List.of(4, 5));
+map.put("C", List.of(6));
+
+List<Integer> result = map.values()
+                          .stream()
+                          .flatMap(List::stream)
+                          .collect(Collectors.toList());
+------_--------------------------------------------------__-
+
 40. Merge two maps
 
 
