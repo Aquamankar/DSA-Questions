@@ -517,6 +517,31 @@ List<Integer> result = map.values()
 40. Merge two maps
 
 
+
+
+Map<String, Integer> map1 = new HashMap<>();
+map1.put("A", 10);
+map1.put("B", 20);
+
+Map<String, Integer> map2 = new HashMap<>();
+map2.put("B", 30);
+map2.put("C", 40);
+
+Map<String, Integer> merged = new HashMap<>(map1);
+
+map2.forEach((key, value) ->
+    merged.merge(key, value, Integer::sum)
+);
+-------------_--------------------------------------____
+Map<String, Integer> merged =
+    Stream.of(map1, map2)
+          .flatMap(m -> m.entrySet().stream())
+          .collect(Collectors.toMap(
+              Map.Entry::getKey,
+              Map.Entry::getValue,
+              Integer::sum
+          ));
+
 ---------------------------------------------------------------
 Topic 5 — Advanced & Tricky Stream Questions (10 Questions)
 41. Stream vs parallel stream
