@@ -784,8 +784,30 @@ Output: [2,3]
 Input: [1,2,2,3,3]
 Output: [2,3]
 
+
+
+-----------------------------------------------------
 56. Reverse each word in a sentence
 
+
+import java.util.*;
+import java.util.stream.*;
+
+class Main {
+    public static void main(String[] args) {
+
+        String s = "i am java developer";
+        String[] strs = s.split(" ");
+
+        String ans = Arrays.stream(strs)
+                .map(i -> new StringBuilder(i).reverse().toString())
+                .collect(Collectors.joining(" "));
+
+        System.out.println(ans);
+    }
+}
+
+--------------------------------------------------
 
 57. Count words in a sentence
 
