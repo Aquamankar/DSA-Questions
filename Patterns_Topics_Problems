@@ -542,7 +542,20 @@ Find the Starting Node of Cycle in Linked List
 
 
 ==========================================================================================
-Happy Number
+Q1 Happy Number
+
+
+---What is a Happy Number?
+
+A number is called a Happy Number if:
+
+Replace the number by the sum of the squares of its digits.
+
+Repeat the process.
+
+If the result eventually becomes 1, the number is happy.
+
+If it enters a cycle (never reaches 1), it is not happy.--------
 
 import java.util.*;
 
@@ -574,6 +587,34 @@ class Main {
             n /= 10;
         }
         return sum;
+    }
+}
+===================================================
+Q2. Find if number is prime or not 
+
+Why i * i <= n Works
+
+If n has a divisor greater than √n,
+the other divisor must be smaller than √n.
+
+So checking up to √n is sufficient.
+class Main {
+    public static void main(String[] args) {
+        int n = 13;
+
+        if (n <= 1) {
+            System.out.println("Not Prime");
+            return;
+        }
+
+        for (int i = 2; i * i <= n; i++) {
+            if (n % i == 0) {
+                System.out.println("Not Prime");
+                return;
+            }
+        }
+
+        System.out.println("Prime");
     }
 }
 
