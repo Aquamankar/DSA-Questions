@@ -26,6 +26,27 @@ Pattern 2: Grouping / Mapping
 
 ["a", "to", "tea", "ted", "ten"] → {1=[a], 2=[to], 3=[tea, ted, ten]}
 
+import java.util.*;
+import java.util.stream.*;
+
+class Main {
+    public static void main(String[] args) {
+
+        String[] strs = {"a", "to", "tea", "ted", "ten"};
+
+        Map<Integer, List<String>> map =
+                Arrays.stream(strs)
+                      .collect(Collectors.groupingBy(String::length));
+
+        System.out.println(map);
+    }
+}
+
+
+
+
+----------------------------------------------------------------------------------
+
 2. Group anagrams together.
 
 ["eat","tea","tan","ate","nat","bat"] → [["eat","tea","ate"], ["tan","nat"], ["bat"]]
