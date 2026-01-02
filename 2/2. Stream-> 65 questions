@@ -1,3 +1,38 @@
+------------------------String based questions------------------
+
+1. : Count vowels using Streams
+
+String str = "i am words";
+
+long count = str.chars()
+        .mapToObj(c -> (char) c)
+        .filter(c -> "aeiouAEIOU".indexOf(c) != -1)
+        .count();
+
+System.out.println(count);
+----------------------------------------------------------
+2. Find length of the longest word
+
+int maxLength = Arrays.stream(str.split("\\s+"))
+        .mapToInt(String::length)
+        .max()
+        .orElse(0);
+
+System.out.println(maxLength);
+
+----------------------------
+
+String str = "i am learning java streams";
+
+String longestWord = Arrays.stream(str.split("\\s+"))
+        .max(Comparator.comparingInt(String::length))
+        .orElse("");
+
+System.out.println(longestWord);
+
+
+
+-------------------------------------------------------------------
 Q1.1 Partition the countries based on GDP threshold and return only the country names in each group.
 Map<Boolean, Map<String, Double>> result =
         countryGDP.entrySet()
