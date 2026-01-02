@@ -1,4 +1,17 @@
-Q1. Find all missing number in the giver array range
+Q1.1 Partition the countries based on GDP threshold and return only the country names in each group.
+Map<Boolean, Map<String, Double>> result =
+        countryGDP.entrySet()
+                  .stream()
+                  .collect(Collectors.partitioningBy(
+                      e -> e.getValue() >= 1.4,
+                      Collectors.toMap(
+                          Map.Entry::getKey,
+                          Map.Entry::getValue
+                      )
+                  ));
+
+
+Q1.2 Find all missing number in the giver array range
 
 
 
