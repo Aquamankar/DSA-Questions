@@ -30,7 +30,42 @@ String longestWord = Arrays.stream(str.split("\\s+"))
 
 System.out.println(longestWord);
 
+--------------------------------------------------------------
+Q3. sort String using stream
 
+String str = s.chars()
+              .sorted()
+              .mapToObj(c -> String.valueOf((char) c))
+              .collect(Collectors.joining());
+-----------------------------------
+
+using mapping 
+
+String str = s.chars()
+              .sorted()
+              .boxed()
+              .collect(Collectors.mapping(
+                  c -> String.valueOf((char) c.intValue()),
+                  Collectors.joining()
+              ));
+
+---------------------------------------------------------------------
+Q4. convert String to Uppercase 
+
+String result =
+    s.chars()
+     .mapToObj(c -> (char) c)                // IntStream → Stream<Character>
+     .map(ch -> Character.toUpperCase(ch))   // Stream<Character>
+     .map(String::valueOf)                   // Stream<String>
+     .collect(Collectors.joining());
+
+------------------------------
+
+String result = s.chars()
+                 .filter(c -> c != ' ')
+                 .map(Character::toUpperCase)
+                 .mapToObj(c -> String.valueOf((char) c))
+                 .collect(Collectors.joining());
 
 -------------------------------------------------------------------
 Q1.1 Partition the countries based on GDP threshold and return only the country names in each group.
